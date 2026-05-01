@@ -40,3 +40,5 @@
 - Simplifique ao máximo a codificação, deixando o código limpo, legível e organizado.
 - Não adicione comentários desnecessários no código.
 - O código enviado pelo desenvolvedor deve servir apenas como inspiração para entender o layout e a estrutura do projeto, você deve implementar o código seguindo as diretrizes do projeto,  com o padrão tailwind.
+- Evite o uso de bibliotecas, mantedo o código limpo e enxuto. O uso de bibliotecas deve haver apenas se o taiwind css não resolver o problema.
+- Padronize o uso de bibliotecas. Fazendo a importação no diretorio global.
