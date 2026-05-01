@@ -1,44 +1,115 @@
-# Especificações Técnicas (Frontend)
+# ElitePlay: Especificações Técnicas e Protocolos de Desenvolvimento
 
-## Core
+Este documento serve como a única fonte de verdade para o desenvolvimento do frontend da plataforma ElitePlay. Todos os agentes e desenvolvedores devem seguir estas diretrizes rigorosamente.
+
+## 1. Stack Tecnológica Core
+
 - **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 - **Library:** [React 19](https://react.dev/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/) (Strict Mode)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 
-## CMS & Backend Integration
-- **CMS:** [Strapi](https://strapi.io/)
-- **Integração:** Consumo de APIs REST/GraphQL do Strapi seguindo a [documentação oficial](https://strapi.io/integrations/nextjs-cms).
-- **Estratégia de Transição:** Início com Mock Data/Context para simular o Strapi, evoluindo para chamadas de API reais.
+---
 
-## Internacionalização (i18n)
-- **Escopo:** Suporte a 3 idiomas (Português-BR, Espanhol e Inglês), configurados no Strapi.
-- **Implementação:** `LanguageProvider` via React Context para gerenciamento de estado de idioma e traduções.
-- **Dicionário:** Mapeamento de chaves para todos os componentes e seções da plataforma.
+## 2. Arquitetura de Diretórios
 
-## Styling & UI
-- **CSS Framework:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Estrutura Organizacional:**
-    - `components/`: Componentes atômicos.
-    - `sections/`: Seções complexas que consomem dados do CMS/Context.
-    - `pages/`: Camada de visão.
-    - `global/`: Estilos, tipos e contextos (como o `LanguageContext`).
+A estrutura deve ser mantida de forma organizada e modular:
 
-## Ferramentas de Qualidade
-- **Linting:** [ESLint](https://eslint.org/)
-- **Type Checking:** TypeScript Strict Mode.
+- `app/`: Rotas, layouts e páginas da aplicação.
+- `elements/`: Componentes atômicos e reutilizáveis (Botões, Inputs, Avatares, Badges).
+- `components/`: Componentes atômicos e reutilizáveis (Cards).
+- `sections/`: Componentes complexos (organismos) que compõem as páginas (Hero, Carrosséis, Grid de Conteúdo, Footer).
+- `global/`:
+    - `global/styles/`: Configurações de CSS, temas e fontes.
+    - `global/contexts/`: Contextos do React (ex: `LanguageContext`, `AuthContext`).
+    - `global/types/`: Definições de tipos TypeScript globais e interfaces do Strapi.
+    - `global/lib/`: Configurações de bibliotecas externas permitidas.
 
+---
 
-# 3. Fluxo de Trabalho e Protocolos de Desenvolvimento
+## 3. Protocolos de Desenvolvimento Next.js 16
 
-## Diretrizes de Interface e Conteúdo
-- **Estética:** O desenvolvedor vai passar o código das sessões pronto, o seu foco será apenas na implementação de código limpo, seguindo as boas práticas de desenvolvimento e a documentação do projeto.
+### 3.1. Otimização de Imagem (`next/image`)
+Sempre utilize o componente `<Image />` do Next.js para garantir performance e SEO.
 
-- Cards e elementos das sessões devem ser divididos em componentes atômicos, seguindo a filosofia de design system do projeto.
-- As sessões também devem ser divididas em componentes atômicos, importando os cards necessários.
-- As páginas devem importar as sessões necessárias.
-- O diretorio global deve ter configurações globais do tailwind, tipografia, cores, etc, além de componentes globais como header e footer.
-- Simplifique ao máximo a codificação, deixando o código limpo, legível e organizado.
-- Não adicione comentários desnecessários no código.
-- O código enviado pelo desenvolvedor deve servir apenas como inspiração para entender o layout e a estrutura do projeto, você deve implementar o código seguindo as diretrizes do projeto,  com o padrão tailwind.
-- Evite o uso de bibliotecas, mantedo o código limpo e enxuto. O uso de bibliotecas deve haver apenas se o taiwind css não resolver o problema.
-- Padronize o uso de bibliotecas. Fazendo a importação no diretorio global.
+- **Imagens Locais:** Importe estaticamente para obter `width` e `height` automáticos.
+- **Imagens Remotas (Strapi):** 
+    - Deve-se fornecer `width` e `height` manualmente ou usar a propriedade `fill`.
+    - Configure obrigatoriamente o `remotePatterns` no `next.config.ts`.
+- **Placeholder:** Utilize `placeholder="blur"` para melhorar a percepção de carregamento.
+
+```tsx
+import Image from 'next/image'
+
+// Exemplo de Imagem Remota
+<Image 
+  src={strapiUrl} 
+  alt="Descrição da imagem" 
+  width={1920} 
+  height={1080} 
+  className="object-cover"
+/>
+```
+
+### 3.2. Formulários e Navegação (`next/form`)
+Para buscas e filtros que atualizam parâmetros de URL, utilize o componente `<Form />`.
+
+- Benefícios: Pré-busca da interface de carregamento e navegação otimizada no lado do cliente.
+
+```tsx
+import Form from 'next/form'
+
+export default function SearchSection() {
+  return (
+    <Form action="/search">
+      <input name="query" placeholder="Buscar filmes..." />
+      <button type="submit">Buscar</button>
+    </Form>
+  )
+}
+```
+
+### 3.3. SEO e Sitemaps Dinâmicos
+Utilize a função `generateSitemaps` para gerenciar grandes volumes de páginas (Filmes, Séries) de forma otimizada para o Google.
+
+---
+
+## 4. CMS & Integração Strapi
+
+- **Integração:** Consumo via REST ou GraphQL.
+- **Estratégia:** Iniciar com Mock Data dentro de contextos para simular o Strapi, facilitando o desenvolvimento paralelo.
+- **Internacionalização (i18n):**
+    - 3 Idiomas: Português-BR (padrão), Espanhol, Inglês.
+    - Gerenciado via `LanguageProvider` no diretório `global/contexts/`.
+
+---
+
+## 5. Diretrizes de UI e Styling (Tailwind CSS v4)
+
+- **Prioridade:** Tailwind CSS v4 deve resolver 100% das necessidades de layout e estilo.
+- **Bibliotecas Externas:** O uso deve ser evitado ao máximo. Se for estritamente necessário (ex: Framer Motion para animações complexas), a importação deve ser padronizada no diretório `global/`.
+- **Clean Code:**
+    - Proibido comentários óbvios.
+    - Componentes devem ser divididos em arquivos menores se crescerem demais.
+    - Estrutura de componente:
+        - `ComponentName/index.tsx`
+        - `ComponentName/types.ts` (se houver props complexas)
+
+---
+
+## 6. Protocolo para Agentes (Instruções Específicas)
+
+1. **Código de Inspiração:** O desenvolvedor fornecerá códigos de "inspiração". O agente deve:
+    - Entender a estrutura e o layout.
+    - **Refatorar** completamente para o padrão Tailwind CSS v4.
+    - **Modularizar** o código em componentes atômicos (`components/`) e seções (`sections/`).
+2. **Simplicidade:** Mantenha o código limpo, legível e organizado. Evite "over-engineering".
+3. **Padrão de Resposta:** Responda sempre em Português-BR (pt-br) quando solicitado pelo usuário.
+
+---
+
+## 7. Qualidade de Código
+
+- **ESLint:** Siga rigorosamente as regras definidas.
+- **TypeScript:** Strict mode ativado. Tipagem explícita para todas as props de componentes.
+- **Acessibilidade:** Garanta que todos os elementos interativos tenham `aria-labels` e suporte a navegação por teclado.
