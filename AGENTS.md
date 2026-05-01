@@ -21,9 +21,9 @@ A estrutura deve ser mantida de forma organizada e modular:
 - `sections/`: Componentes complexos (organismos) que compõem as páginas (Hero, Carrosséis, Grid de Conteúdo, Footer).
 - `global/`:
     - `global/styles/`: Configurações de CSS, temas e fontes.
-    - `global/contexts/`: Contextos do React (ex: `LanguageContext`, `AuthContext`).
+    - `global/components/`: Componentes globais (Header, Footer).
     - `global/types/`: Definições de tipos TypeScript globais e interfaces do Strapi.
-    - `global/lib/`: Configurações de bibliotecas externas permitidas.
+    - `global/lib/`: Configurações de bibliotecas externas e utilitários.
 
 ---
 
@@ -80,7 +80,15 @@ Utilize a função `generateSitemaps` para gerenciar grandes volumes de páginas
 - **Estratégia:** Iniciar com Mock Data dentro de contextos para simular o Strapi, facilitando o desenvolvimento paralelo.
 - **Internacionalização (i18n):**
     - 3 Idiomas: Português-BR (padrão), Espanhol, Inglês.
-    - Gerenciado via `LanguageProvider` no diretório `global/contexts/`.
+    - **Estratégia Simplificada:** Cada seção/componente gerencia suas próprias traduções (mockadas localmente).
+    ```tsx
+    const translations: any = {
+      "pt-br": { forArenas: "Para Arenas", howItWorks: "Como Funciona", app: "O App", becomePartner: "Seja um Parceiro" },
+      "es": { forArenas: "Para Arenas", howItWorks: "Cómo Funciona", app: "La App", becomePartner: "Hazte Socio" },
+      "en": { forArenas: "For Arenas", howItWorks: "How It Works", app: "The App", becomePartner: "Become a Partner" },
+    };
+    ```
+    - **Navegação:** O idioma é controlado via parâmetro de URL `?lang=...`. A troca de idioma deve forçar o recarregamento da página para atualização de dados.
 
 ---
 
