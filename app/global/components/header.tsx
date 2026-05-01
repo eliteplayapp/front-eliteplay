@@ -1,14 +1,14 @@
 'use client';
 
-import { useSearchParams } from '@/global/lib/libraries';
-import { mockData, getLangKey } from '@/global/lib/translations';
+import { useSearchParams } from '@/app/global/lib/libraries';
+import { mockData, getLangKey } from '@/app/global/lib/translations';
 import HeaderView from './HeaderView';
 
 export default function Header() {
   const searchParams = useSearchParams();
-  const lang = searchParams.get('lang') || 'pt-br';
+  const lang = searchParams.get('lang') || 'es';
   const langKey = getLangKey(lang);
-  
+
   const { header } = mockData;
 
   const navLinks = [

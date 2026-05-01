@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence, Image, ChevronDown } from '@/global/lib/libraries';
+import { motion, AnimatePresence, Image, ChevronDown } from '@/app/global/lib/libraries';
 
 interface BannerProps {
   data: {
@@ -16,7 +16,7 @@ export function Banner({ data }: BannerProps) {
 
   useEffect(() => {
     if (!images || images.length === 0) return;
-    
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000);
@@ -64,15 +64,15 @@ export function Banner({ data }: BannerProps) {
               transition={{ duration: 1, ease: 'easeOut' }}
               className="mb-8"
             >
-              <Image 
-                src="/img/image_banner.png" 
-                alt="Elite Play Logo" 
+              <Image
+                src="/img/image_banner.png"
+                alt="Elite Play Logo"
                 width={600}
                 height={200}
                 className="w-full max-w-[600px] h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
               />
             </motion.div>
-            
+
             <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed px-6 tracking-widest uppercase lg:whitespace-nowrap text-center">
               {description}
             </p>

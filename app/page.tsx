@@ -1,9 +1,9 @@
 'use client';
 
-import { Banner } from "@/sections/banner";
+import { Banner } from "@/app/sections/banner";
 import { Suspense } from "react";
-import { useSearchParams } from "@/global/lib/libraries";
-import { mockData, getLangKey } from "@/global/lib/translations";
+import { useSearchParams } from "@/app/global/lib/libraries";
+import { mockData, getLangKey } from "@/app/global/lib/translations";
 
 export default function Home() {
   return (
@@ -11,8 +11,7 @@ export default function Home() {
       <Suspense fallback={<div className="min-h-[85vh] bg-black" />}>
         <HomeContent />
       </Suspense>
-      
-      {/* Outras seções podem ser adicionadas aqui */}
+
       <section className="py-20 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Em breve mais novidades</h2>
         <p className="text-zinc-400">
@@ -25,9 +24,9 @@ export default function Home() {
 
 function HomeContent() {
   const searchParams = useSearchParams();
-  const lang = searchParams.get('lang') || 'pt-br';
+  const lang = searchParams.get('lang') || 'es';
   const langKey = getLangKey(lang);
-  
+
   const bannerData = {
     description: mockData.banner[`description_${langKey}`],
     images: mockData.banner.images,
@@ -35,3 +34,5 @@ function HomeContent() {
 
   return <Banner data={bannerData} />;
 }
+
+
