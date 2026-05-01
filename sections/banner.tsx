@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence, Image, ChevronDown } from '@/global/lib/libraries';
 
 interface BannerProps {
   data: {

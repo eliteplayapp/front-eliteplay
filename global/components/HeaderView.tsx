@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Link, Image, Menu, X, Globe, ChevronDown } from "@/global/lib/libraries";
 
 interface HeaderProps {
   lang: string;

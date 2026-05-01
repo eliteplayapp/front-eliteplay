@@ -1,6 +1,6 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from '@/global/lib/libraries';
 import { mockData, getLangKey } from '@/global/lib/translations';
 import HeaderView from './HeaderView';
 
