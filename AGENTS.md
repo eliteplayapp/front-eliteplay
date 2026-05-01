@@ -105,6 +105,7 @@ Utilize a função `generateSitemaps` para gerenciar grandes volumes de páginas
     - **Modularizar** o código em componentes atômicos (`components/`) e seções (`sections/`).
 2. **Simplicidade:** Mantenha o código limpo, legível e organizado. Evite "over-engineering".
 3. **Padrão de Resposta:** Responda sempre em Português-BR (pt-br) quando solicitado pelo usuário.
+4. **Uso de Imagens:** O agente **não deve gerar novas imagens** utilizando ferramentas externas. Utilize exclusivamente os recursos visuais já disponíveis na pasta `public/img`.
 
 ---
 
