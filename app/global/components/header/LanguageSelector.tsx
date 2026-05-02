@@ -20,7 +20,7 @@ export default function LanguageSelector({ variant = 'desktop' }: LanguageSelect
   
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const language = (searchParams.get("lang") || "pt-br") as string;
+  const language = (searchParams.get("lang") || "es") as string;
 
   // Garante que o componente só renderize conteúdo dinâmico após a hidratação
   useEffect(() => {

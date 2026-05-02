@@ -78,12 +78,13 @@ export default function BannerOne({ data, language }: BannerOneProps) {
             className="mb-8"
           >
             <Image 
-              src="/img/image_banner.png" 
+              src={getStrapiMedia(data.logo_banner.url)!}
               alt="Elite Play Banner" 
               width={600}
               height={200}
               className="w-full max-w-[600px] h-auto drop-shadow-[0_0_20px_rgba(148,206,0,0.3)]"
               priority
+              unoptimized
             />
           </motion.div>
           

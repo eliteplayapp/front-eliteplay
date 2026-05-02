@@ -7,7 +7,7 @@ export default async function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const params = await searchParams;
-  const language = (params.lang as string) || "pt-br";
+  const language = (params.lang as string) || "es";
   const pageData = await getPaginaInicial();
 
   if (!pageData) {

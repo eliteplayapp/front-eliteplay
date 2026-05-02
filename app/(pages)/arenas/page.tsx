@@ -5,7 +5,7 @@ export default function ArenasPage({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const language = (searchParams.lang as string) || "pt-br";
+  const language = (searchParams.lang as string) || "es";
 
   return (
     <div className="min-h-screen pt-32 px-6 md:px-24">

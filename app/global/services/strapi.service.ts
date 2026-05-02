@@ -85,7 +85,7 @@ export async function getPaginaInicial(): Promise<HomePageModel | null> {
       populate: {
         // Banner
         banner_home_page: {
-          populate: ['imgs_banner', 'description_banner']
+          populate: ['imgs_banner', 'description_banner', 'logo_banner']
         },
         // Seção Instruções
         section_instructions: {

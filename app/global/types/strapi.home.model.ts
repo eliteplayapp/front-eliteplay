@@ -109,6 +109,7 @@ export interface BannerHomePage {
   id: number;
   description_banner: InputLanguages;
   imgs_banner: StrapiMedia[];
+  logo_banner: StrapiMedia;
 }
 
 /**
