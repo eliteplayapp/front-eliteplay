@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         <Header 
           logoUrl={logoUrl} 
           logoAlt={informacoesGlobais?.logo_global?.alternativeText || "ElitePlay"}
