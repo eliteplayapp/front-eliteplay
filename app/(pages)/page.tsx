@@ -1,23 +1,24 @@
 import { getPaginaInicial } from "../global/services/strapi.service";
+import BannerOne from "../sections/banner_one";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const language = (params.lang as string) || "pt-br";
   const pageData = await getPaginaInicial();
 
+  if (!pageData) {
+    return <div className="min-h-screen flex items-center justify-center text-white">Erro ao carregar dados da página.</div>;
+  }
+
   return (
-    <div className="min-h-screen pt-24 px-6 md:px-24">
-      <h1 className="text-4xl font-bold text-white mb-8">
-        Bem-vindo à ElitePlay
-      </h1>
-      <p className="text-zinc-400 text-lg">
-        {pageData ? "Dados carregados do Strapi com sucesso!" : "Página inicial em desenvolvimento."}
-      </p>
+    <div className="min-h-screen bg-black">
+      <BannerOne data={pageData.banner_home_page} language={language} />
       
-      {/* Aqui entrarão as seções como Hero, Sports, etc */}
-      <div className="mt-12 p-8 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-md">
-        <p className="text-white/60 italic">
-          O conteúdo principal da página será construído utilizando os componentes das seções.
-        </p>
-      </div>
+      {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );
 }
