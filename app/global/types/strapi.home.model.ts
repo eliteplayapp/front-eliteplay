@@ -1,120 +1,184 @@
-// ─── Primitivo compartilhado ────────────────────────────────────────────────
-
-/** Componente Input_languages: texto multilíngue */
+/**
+ * Interface para textos multi-idioma (Padrão ElitePlay)
+ */
 export interface InputLanguages {
-  language_es: string;
+  id: number;
   language_pt: string;
-  language_en?: string;
+  language_es?: string | null;
+  language_en?: string | null;
 }
 
-/** Mídia do Strapi (imagem ou vídeo) */
+/**
+ * Formatos de mídia do Strapi
+ */
+export interface StrapiMediaFormat {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path: string | null;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes: number;
+}
+
+/**
+ * Modelo de Mídia do Strapi 5
+ */
 export interface StrapiMedia {
   id: number;
+  documentId: string;
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number;
+  height: number;
+  formats?: {
+    large?: StrapiMediaFormat;
+    small?: StrapiMediaFormat;
+    medium?: StrapiMediaFormat;
+    thumbnail?: StrapiMediaFormat;
+  };
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
   url: string;
-  alternativeText?: string;
-  width?: number;
-  height?: number;
-  mime?: string;
+  previewUrl: string | null;
+  provider: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
 }
 
-// ─── Componentes Atômicos ────────────────────────────────────────────────────
-
-/** Componente Button_info */
+/**
+ * Componente genérico de Botão
+ */
 export interface ButtonInfo {
+  id: number;
   text_button: InputLanguages;
   link: string;
 }
 
-/** Componente Video */
-export interface VideoComponent {
-  link?: string;
+/**
+ * Componente de Vídeo
+ */
+export interface VideoItem {
+  id: number;
+  link?: string | null;
   conteudo: StrapiMedia;
 }
 
-/** Componente Itens (item de lista dentro de Cta_one) */
-export interface CtaItem {
-  icon?: string;
-  item: InputLanguages;
-}
-
-// ─── Seção Banner (Section_banner_one) ──────────────────────────────────────
-
-/** Componente Instructions (repetível) */
-export interface Instruction {
+/**
+ * Item de Instrução (Componente repetível)
+ */
+export interface InstructionItem {
+  id: number;
   img_instruction: StrapiMedia;
-  icon: string;
-  title_card?: InputLanguages;
-  subtitle_card?: InputLanguages;
-}
-
-/** Componente Infos — usado em section_instructions e section_sports */
-export interface SectionInstructions {
-  tooltip_one: InputLanguages;
-  title: InputLanguages;
-  subtitle: InputLanguages;
-  instructions: Instruction[];
-  tooltip_two: InputLanguages;
-}
-
-/** Componente Section_banner_one */
-export interface BannerHomePage {
-  imgs_banner: StrapiMedia[];
-  description_banner: InputLanguages;
-  section_instructions: SectionInstructions;
-}
-
-// ─── Seção CTA Principal (Cta_one) ──────────────────────────────────────────
-
-/** Componente Cta_one */
-export interface CtaOne {
-  tooltip?: InputLanguages;
-  titulo: InputLanguages;
-  subtitle: InputLanguages;
-  itens: CtaItem[];
-  button_section_cta?: ButtonInfo;
-  video: VideoComponent;
-}
-
-// ─── Seção Esportes (section_sports → Infos com sports: Cta_one[]) ──────────
-
-export interface SectionSports {
-  tooltip: InputLanguages;
-  title: InputLanguages;
-  sports: CtaOne[];
-}
-
-// ─── Seção CTA Simples (Cta_two) ─────────────────────────────────────────────
-
-/** Componente Card_cta_simple (repetível) */
-export interface CardCtaSimple {
-  icon_tooltip: string;
-  text_tooltip_one?: InputLanguages;
+  icon: string; // Custom field (ícone em formato string/slug)
   title_card: InputLanguages;
   subtitle_card: InputLanguages;
 }
 
-/** Componente Cta_two */
-export interface CtaTwo {
+/**
+ * Item de CTA / Lista (Componente repetível)
+ */
+export interface ItemCta {
+  id: number;
+  icon: string;
+  item: InputLanguages;
+}
+
+/**
+ * Card CTA Simples (Componente repetível)
+ */
+export interface CardCtaSimple {
+  id: number;
+  icon_tooltip: string;
+  text_tooltip_one: InputLanguages;
+  title_card: InputLanguages;
+  subtitle_card: InputLanguages;
+}
+
+/**
+ * Componente de Banner da Home
+ */
+export interface BannerHomePage {
+  id: number;
+  description_banner: InputLanguages;
+  imgs_banner: StrapiMedia[];
+}
+
+/**
+ * Seção de Instruções (Infos)
+ */
+export interface SectionInstructions {
+  id: number;
+  tooltip_one: InputLanguages;
+  title: InputLanguages;
+  subtitle: InputLanguages;
+  instructions: InstructionItem[];
+  tooltip_two: InputLanguages;
+}
+
+/**
+ * Seção de CTA Padrão (Cta_one)
+ */
+export interface SectionCtaOne {
+  id: number;
+  tooltip: InputLanguages;
+  titulo: InputLanguages;
+  subtitle: InputLanguages;
+  itens: ItemCta[];
+  button_section_cta: ButtonInfo;
+  video: VideoItem;
+}
+
+/**
+ * Seção de Esportes (Infos)
+ */
+export interface SectionSports {
+  id: number;
+  tooltip: InputLanguages;
+  title: InputLanguages;
+  sports: SectionCtaOne[];
+}
+
+/**
+ * Seção de CTA Simples (Cta_two)
+ */
+export interface SectionCtaSimple {
+  id: number;
   tooltip: InputLanguages;
   title: InputLanguages;
   cards: CardCtaSimple[];
-  button_section_cta_simple?: ButtonInfo;
+  button_section_cta_simple: ButtonInfo;
 }
 
-// ─── Seção Download App (Cta_three) ──────────────────────────────────────────
-
-/** Componente Cta_three */
-export interface CtaThree {
+/**
+ * Seção de Download do App (Cta_three)
+ */
+export interface SectionDownloadApp {
+  id: number;
   title: InputLanguages;
-  subtitle?: InputLanguages;
+  subtitle: InputLanguages;
 }
 
-// ─── Modelo Raiz da Home Page ─────────────────────────────────────────────────
-
+/**
+ * Modelo Raiz da Página Inicial (Single Type)
+ */
 export interface HomePageModel {
+  id: number;
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
   banner_home_page: BannerHomePage;
-  section_cta: CtaOne;
+  section_instructions: SectionInstructions;
+  section_cta: SectionCtaOne;
   section_sports: SectionSports;
-  section_cta_simple: CtaTwo;
-  section_download_app: CtaThree;
+  section_cta_simple: SectionCtaSimple;
+  section_download_app: SectionDownloadApp;
 }

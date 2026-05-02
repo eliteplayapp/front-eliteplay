@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { HomePageModel } from '../types/strapi.home.model';
 
 
 /**
@@ -75,20 +76,89 @@ export async function getInformacoesGlobais(): Promise<any | null> {
 }
 
 /**
- * Busca a Página Inicial
+ * Busca a Página Inicial com todos os componentes e mídias populados
  */
-export async function getPaginaInicial(): Promise<any | null> {
+export async function getPaginaInicial(): Promise<HomePageModel | null> {
   try {
     const data = await fetchAPI('/pagina-inicial', {
-      populate: [
-        'banner_home_page.imgs_banner',
-        'banner_home_page.description_banner',
-        'section_instructions',
-        'section_sports',
-        'section_cta',
-        'section_cta_simple',
-        'section_download_app'
-      ],
+      populate: {
+        // Banner
+        banner_home_page: {
+          populate: ['imgs_banner', 'description_banner']
+        },
+        // Seção Instruções
+        section_instructions: {
+          populate: {
+            tooltip_one: { populate: '*' },
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            instructions: {
+              populate: ['img_instruction', 'title_card', 'subtitle_card']
+            },
+            tooltip_two: { populate: '*' }
+          }
+        },
+        // Seção CTA (Cta_one)
+        section_cta: {
+          populate: {
+            tooltip: { populate: '*' },
+            titulo: { populate: '*' },
+            subtitle: { populate: '*' },
+            itens: {
+              populate: ['item']
+            },
+            button_section_cta: {
+              populate: ['text_button']
+            },
+            video: {
+              populate: ['conteudo']
+            }
+          }
+        },
+        // Seção Sports (Usa Cta_one repetível internamente)
+        section_sports: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            sports: {
+              populate: {
+                tooltip: { populate: '*' },
+                titulo: { populate: '*' },
+                subtitle: { populate: '*' },
+                itens: {
+                  populate: ['item']
+                },
+                button_section_cta: {
+                  populate: ['text_button']
+                },
+                video: {
+                  populate: ['conteudo']
+                }
+              }
+            }
+          }
+        },
+        // Seção CTA Simples
+        section_cta_simple: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            cards: {
+              populate: ['text_tooltip_one', 'title_card', 'subtitle_card']
+            },
+            button_section_cta_simple: {
+              populate: ['text_button']
+            }
+          }
+        },
+        // Seção Download App
+        section_download_app: {
+          populate: {
+            title: { populate: '*' },
+            subtitle: { populate: '*' }
+          }
+        }
+      }
     }, {
       next: { revalidate: 60 }
     });
