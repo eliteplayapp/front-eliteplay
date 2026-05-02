@@ -34,7 +34,7 @@ export default async function RootLayout({
   const logoUrl = getStrapiMedia(rawLogoUrl);
 
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header 
           logoUrl={logoUrl} 

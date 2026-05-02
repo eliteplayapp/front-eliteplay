@@ -13,6 +13,7 @@ import {
   ChevronDown,
   Image
 } from '../../lib/libraries';
+import LanguageSelector from './LanguageSelector';
 import { getTranslation } from "../../lib/i18n";
 import type { StrapiHeader } from "../../types/strapi.global.model";
 
@@ -29,7 +30,6 @@ export default function Header({
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -38,12 +38,6 @@ export default function Header({
   const menuItems = headerData?.menu_header || [];
   const ctaButton = headerData?.button_cta_header;
 
-  const setLanguage = (newLang: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("lang", newLang);
-    // Força o recarregamento para atualização de dados conforme AGENTS.md
-    window.location.href = `${pathname}?${params.toString()}`;
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,39 +100,7 @@ export default function Header({
 
           {/* CTA and Language Toggle - Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="relative hidden sm:block">
-              <button
-                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                onBlur={() => setTimeout(() => setIsLangMenuOpen(false), 200)}
-                className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-sm font-medium text-white hover:bg-white/10 transition-colors"
-                aria-label="Select language"
-              >
-                <Globe size={14} className="text-zinc-400" />
-                <span>{language === 'pt-br' ? 'PT' : language === 'es' ? 'ES' : 'EN'}</span>
-                <ChevronDown size={14} className={`text-zinc-400 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              <div className={`absolute top-full mt-2 right-0 bg-zinc-900/90 border border-white/10 rounded-xl overflow-hidden backdrop-blur-md shadow-2xl transition-all duration-200 min-w-[140px] flex flex-col p-1 z-50 ${isLangMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-                <button
-                  onClick={() => { setLanguage('pt-br'); setIsLangMenuOpen(false); }}
-                  className={`px-3 py-2 text-sm text-left rounded-md transition-colors ${language === 'pt-br' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                >
-                  Português
-                </button>
-                <button
-                  onClick={() => { setLanguage('es'); setIsLangMenuOpen(false); }}
-                  className={`px-3 py-2 text-sm text-left rounded-md transition-colors ${language === 'es' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                >
-                  Español
-                </button>
-                <button
-                  onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
-                  className={`px-3 py-2 text-sm text-left rounded-md transition-colors ${language === 'en' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                >
-                  English
-                </button>
-              </div>
-            </div>
+            <LanguageSelector variant="desktop" />
 
             {ctaButton && (
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -200,47 +162,7 @@ export default function Header({
               })}
 
               {/* Language Selector - Mobile */}
-              <div className="relative w-full flex justify-center">
-                <button
-                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                  className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-lg font-medium text-white hover:bg-white/10 transition-colors"
-                  aria-label="Select language"
-                >
-                  <Globe size={18} className="text-zinc-400" />
-                  <span>{language === 'pt-br' ? 'Português' : language === 'es' ? 'Español' : 'English'}</span>
-                  <ChevronDown size={18} className={`text-zinc-400 transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                <AnimatePresence>
-                  {isLangMenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 bg-zinc-900 border border-white/10 rounded-xl overflow-hidden backdrop-blur-md shadow-2xl min-w-[200px] flex flex-col p-2 z-50"
-                    >
-                      <button
-                        onClick={() => { setLanguage('pt-br'); setIsLangMenuOpen(false); }}
-                        className={`px-4 py-3 text-base text-center rounded-md transition-colors ${language === 'pt-br' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                      >
-                        Português
-                      </button>
-                      <button
-                        onClick={() => { setLanguage('es'); setIsLangMenuOpen(false); }}
-                        className={`px-4 py-3 text-base text-center rounded-md transition-colors ${language === 'es' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                      >
-                        Español
-                      </button>
-                      <button
-                        onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
-                        className={`px-4 py-3 text-base text-center rounded-md transition-colors ${language === 'en' ? 'bg-[#94CE00]/20 text-[#94CE00] font-bold' : 'text-zinc-300 hover:bg-white/10 hover:text-white'}`}
-                      >
-                        English
-                      </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              <LanguageSelector variant="mobile" />
             </nav>
           </motion.div>
         )}
