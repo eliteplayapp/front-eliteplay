@@ -14,4 +14,4 @@ export { default as Image } from 'next/image';
 export { default as Link } from 'next/link';
 
 // Next.js Hooks
-export { useSearchParams } from 'next/navigation';
+export { useSearchParams, usePathname, useRouter } from 'next/navigation';
