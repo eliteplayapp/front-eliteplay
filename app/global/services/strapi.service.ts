@@ -1,10 +1,5 @@
 import qs from 'qs';
-import { 
-  StrapiHome, 
-  StrapiArenas, 
-  StrapiHeader, 
-  StrapiFooter 
-} from '../types/strapi.model';
+
 
 /**
  * Retorna o token da API configurado no ambiente ou o token padrão do projeto.
@@ -62,6 +57,7 @@ export async function getInformacoesGlobais(): Promise<any | null> {
   try {
     const data = await fetchAPI('/informacoes-globais', {
       populate: [
+        'logo_global',
         'header.menu_header.text_button',
         'header.button_cta_header.text_button',
         'footer.description',
