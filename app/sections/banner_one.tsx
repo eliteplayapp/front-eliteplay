@@ -122,7 +122,6 @@ export default function BannerOne({ data, language }: BannerOneProps) {
           />
         </div>
       </motion.div>
-      
     </section>
   );
 }
