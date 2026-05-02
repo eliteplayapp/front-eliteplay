@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   usePathname, 
   useSearchParams,
@@ -16,18 +16,28 @@ interface LanguageSelectorProps {
 
 export default function LanguageSelector({ variant = 'desktop' }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const language = (searchParams.get("lang") || "pt-br") as string;
 
+  // Garante que o componente só renderize conteúdo dinâmico após a hidratação
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const setLanguage = (newLang: string) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("lang", newLang);
-    // Força o recarregamento conforme AGENTS.md
     window.location.href = `${pathname}?${params.toString()}`;
   };
 
   const isMobile = variant === 'mobile';
+
+  // Enquanto não estiver montado no cliente, renderizamos uma versão estática segura (ou null)
+  // Isso evita qualquer erro de hidratação sem precisar de suppressHydrationWarning
+  if (!mounted) return null;
 
   return (
     <div className={`relative ${!isMobile ? 'hidden sm:block' : 'w-full flex justify-center'}`}>
