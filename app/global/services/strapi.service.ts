@@ -1,5 +1,6 @@
 import qs from 'qs';
 import { HomePageModel } from '../types/strapi.home.model';
+import { GlobalModel } from '../types/strapi.global.model';
 
 
 /**
@@ -54,7 +55,7 @@ export async function fetchAPI(
 /**
  * Busca as Informações Globais (Header, Footer, Contato, etc)
  */
-export async function getInformacoesGlobais(): Promise<any | null> {
+export async function getInformacoesGlobais(): Promise<GlobalModel> {
   try {
     const data = await fetchAPI('/informacoes-globais', {
       populate: [
@@ -71,7 +72,7 @@ export async function getInformacoesGlobais(): Promise<any | null> {
     return data?.data;
   } catch (error) {
     console.error("Erro ao carregar informações globais:", error);
-    return null;
+    throw error;
   }
 }
 

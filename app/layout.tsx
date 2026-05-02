@@ -24,14 +24,22 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const globais = await getPaginaInicial();
+  const informacoesGlobais = await getInformacoesGlobais();
+  
+  // LOGS DE DEPURAÇÃO (Verifique seu terminal/console do VS Code)
+  console.log("--- DEBUG STRAPI ---");
+  console.log("Logo URL bruta:", informacoesGlobais?.logo_global?.url);
+
+  const rawLogoUrl = informacoesGlobais?.logo_global?.url;
+  const logoUrl = getStrapiMedia(rawLogoUrl);
 
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* {JSON.stringify(getStrapiMedia(globais?.logo?.url ?? null))} */}
-        {JSON.stringify(globais)}
-
+        <Header 
+          logoUrl={logoUrl} 
+          logoAlt={informacoesGlobais?.logo_global?.alternativeText || "ElitePlay"}
+        />
         {children}
       </body>
     </html>
