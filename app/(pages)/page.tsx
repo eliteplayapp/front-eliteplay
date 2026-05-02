@@ -1,4 +1,4 @@
-import { getPaginaInicial } from "./global/services/strapi.service";
+import { getPaginaInicial } from "../global/services/strapi.service";
 
 export default async function Home() {
   const pageData = await getPaginaInicial();
