@@ -255,3 +255,32 @@ export interface StrapiSectionPageArenasPartners {
   subtitle?: StrapiInputLanguages;
   itens: StrapiSectionPageArenasItensPartners[];
 }
+
+export interface StrapiHomeAttributes {
+  banner: StrapiSectionBannerOne;
+  instructions: StrapiSectionInstructionInfos;
+  categories: StrapiSectionCategoryInfos;
+  cta_one: StrapiSectionCtaOne;
+  cta_two: StrapiSectionCtaTwo;
+  cta_three: StrapiSectionCtaThree;
+}
+
+export interface StrapiHome {
+  id: number;
+  attributes: StrapiHomeAttributes;
+}
+
+export interface StrapiArenasAttributes {
+  banner: StrapiSectionBannerTwoArenas;
+  differential: StrapiSectionPageArenasDifferential;
+  comparative: StrapiSectionPageArenasComparative;
+  impact: StrapiSectionPageArenasImpact;
+  installation: StrapiSectionPageArenasInstallation;
+  faq: StrapiSectionPageArenasFaq;
+  partners: StrapiSectionPageArenasPartners;
+}
+
+export interface StrapiArenas {
+  id: number;
+  attributes: StrapiArenasAttributes;
+}
