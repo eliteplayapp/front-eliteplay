@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./global/components/header";
-import { getInformacoesGlobais, getPaginaInicial, getStrapiMedia } from "./global/services/strapi.service";
+import { getInformacoesGlobais, getStrapiMedia } from "./global/services/strapi.service";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,8 +39,11 @@ export default async function RootLayout({
         <Header 
           logoUrl={logoUrl} 
           logoAlt={informacoesGlobais?.logo_global?.alternativeText || "ElitePlay"}
+          headerData={informacoesGlobais?.header}
         />
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
