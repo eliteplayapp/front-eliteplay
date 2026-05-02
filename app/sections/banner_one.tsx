@@ -29,7 +29,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
   const currentImage = images[currentImageIndex];
 
