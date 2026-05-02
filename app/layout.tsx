@@ -26,10 +26,6 @@ export default async function RootLayout({
 }>) {
   const informacoesGlobais = await getInformacoesGlobais();
   
-  // LOGS DE DEPURAÇÃO (Verifique seu terminal/console do VS Code)
-  console.log("--- DEBUG STRAPI ---");
-  console.log("Logo URL bruta:", informacoesGlobais?.logo_global?.url);
-
   const rawLogoUrl = informacoesGlobais?.logo_global?.url;
   const logoUrl = getStrapiMedia(rawLogoUrl);
 
