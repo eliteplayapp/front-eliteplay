@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_section_cta_cta_threes",
+  "info": {
+    "displayName": "cta_three"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

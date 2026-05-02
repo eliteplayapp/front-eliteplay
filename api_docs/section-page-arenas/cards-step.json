@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_page_arenas_cards_steps",
+  "info": {
+    "displayName": "cards_step"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon"
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_language_input_laguages",
+  "info": {
+    "displayName": "input_laguages"
+  },
+  "options": {},
+  "attributes": {
+    "language_es": {
+      "type": "string",
+      "required": true
+    },
+    "language_pt": {
+      "type": "string",
+      "required": true
+    },
+    "language_en": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

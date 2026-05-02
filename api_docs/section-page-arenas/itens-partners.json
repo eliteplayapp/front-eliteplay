@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_page_arenas_itens_partners",
+  "info": {
+    "displayName": "itens_partners"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon",
+      "required": true
+    },
+    "item": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subitem": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

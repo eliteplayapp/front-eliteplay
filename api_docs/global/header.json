@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_global_headers",
+  "info": {
+    "displayName": "header"
+  },
+  "options": {},
+  "attributes": {
+    "menu_header": {
+      "type": "component",
+      "component": "global.button-cta-header",
+      "repeatable": true,
+      "required": true,
+      "min": 1,
+      "max": 6
+    },
+    "button_cta_header": {
+      "type": "component",
+      "component": "global.button-cta-header",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

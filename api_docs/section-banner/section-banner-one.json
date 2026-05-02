@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_section_banner_section_banner_ones",
+  "info": {
+    "displayName": "section_banner_one"
+  },
+  "options": {},
+  "attributes": {
+    "imgs_banner": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description_banner": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_cta_itens",
+  "info": {
+    "displayName": "itens"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon"
+    },
+    "item": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

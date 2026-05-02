@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_socials",
+  "info": {
+    "displayName": "links_download_app"
+  },
+  "options": {},
+  "attributes": {
+    "link_google_play": {
+      "type": "string"
+    },
+    "link_apple_store": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

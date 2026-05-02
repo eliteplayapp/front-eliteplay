@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_page_arenas_comparatives",
+  "info": {
+    "displayName": "section_comparative"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": true,
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "component": "section-page-arenas.comparative-cards",
+      "repeatable": true,
+      "required": true,
+      "min": 2,
+      "max": 2
+    }
+  },
+  "config": {}
+}

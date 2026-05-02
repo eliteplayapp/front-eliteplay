@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_page_arenas_differentials",
+  "info": {
+    "displayName": "section_differential"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "component": "section-page-arenas.cards-step",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

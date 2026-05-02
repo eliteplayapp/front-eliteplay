@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_contato_footers",
+  "info": {
+    "displayName": "contato_footer"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "telefone": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_section_page_arenas_installations",
+  "info": {
+    "displayName": "section_installation"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": true,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    },
+    "cards": {
+      "type": "component",
+      "component": "section-page-arenas.cards-step",
+      "repeatable": true,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

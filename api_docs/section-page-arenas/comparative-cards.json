@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_section_page_arenas_comparative_cards",
+  "info": {
+    "displayName": "cards_comparative"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon"
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "itens": {
+      "type": "component",
+      "component": "section-cta.itens",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

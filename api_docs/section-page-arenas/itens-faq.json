@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_page_arenas_itens_faqs",
+  "info": {
+    "displayName": "itens_faq"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "answer": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_global_redes_sociais",
+  "info": {
+    "displayName": "redes_sociais"
+  },
+  "options": {},
+  "attributes": {
+    "link_instagram": {
+      "type": "string",
+      "required": false
+    },
+    "link_facebook": {
+      "type": "string",
+      "required": false
+    },
+    "link_twiter": {
+      "type": "string",
+      "required": false
+    },
+    "link_linkedin": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_category_infos",
+  "info": {
+    "displayName": "infos"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "sports": {
+      "type": "component",
+      "component": "section-cta.cta",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

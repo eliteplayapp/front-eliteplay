@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_page_arenas_cards_impacts",
+  "info": {
+    "displayName": "cards_impact"
+  },
+  "options": {},
+  "attributes": {
+    "metric": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "category": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "outcome": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

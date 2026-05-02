@@ -50,7 +50,7 @@ export function Banner({ data }: BannerProps) {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1920px] w-full mx-auto px-6 md:px-24 text-center">
+      <div className="relative z-10 w-full max-w-[1920px] mx-auto px-24 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

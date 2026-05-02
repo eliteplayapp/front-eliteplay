@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_section_page_arenas_impacts",
+  "info": {
+    "displayName": "section_impact"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "button_section_impact": {
+      "type": "component",
+      "component": "global.button-cta-header",
+      "repeatable": false
+    },
+    "cards": {
+      "type": "component",
+      "component": "section-page-arenas.cards-impact",
+      "repeatable": true,
+      "required": false,
+      "max": 4
+    }
+  },
+  "config": {}
+}

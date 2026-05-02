@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_page_arenas_section_faqs",
+  "info": {
+    "displayName": "section_faq"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    },
+    "itens": {
+      "type": "component",
+      "component": "section-page-arenas.itens-faq",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

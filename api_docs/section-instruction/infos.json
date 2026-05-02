@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_section_instruction_infos",
+  "info": {
+    "displayName": "infos"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip_one": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "instructions": {
+      "type": "component",
+      "component": "section-instruction.instructions",
+      "repeatable": true,
+      "required": true,
+      "min": 1,
+      "max": 4
+    },
+    "tooltip_two": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_section_cta_ctas",
+  "info": {
+    "displayName": "cta_one"
+  },
+  "options": {},
+  "attributes": {
+    "tooltip": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": false
+    },
+    "titulo": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "itens": {
+      "type": "component",
+      "component": "section-cta.itens",
+      "repeatable": true,
+      "required": true,
+      "min": 1,
+      "max": 6
+    },
+    "button_section_cta": {
+      "type": "component",
+      "component": "global.button-cta-header",
+      "repeatable": false,
+      "required": false
+    },
+    "video": {
+      "type": "component",
+      "component": "section-cta.video",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

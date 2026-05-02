@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_global_footers",
+  "info": {
+    "displayName": "footer"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "component": "global.menu-footer",
+      "repeatable": true,
+      "min": 1,
+      "max": 4
+    },
+    "contato": {
+      "type": "component",
+      "component": "global.contato-footer",
+      "repeatable": false,
+      "min": 1
+    }
+  },
+  "config": {}
+}

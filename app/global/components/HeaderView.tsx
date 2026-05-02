@@ -25,10 +25,10 @@ export default function HeaderView({ lang, navLinks, partnerLabel }: HeaderProps
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? "bg-black/90 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out backdrop-blur-md border-b border-white/5 ${isScrolled || isMobileMenuOpen ? "bg-black/90" : "bg-transparent"
       }`}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="relative h-8 w-32 flex items-center">
+      <div className="w-full max-w-[1920px] mx-auto px-24 py-4 flex items-center justify-between">
+        <Link href="/" className="relative h-10 w-40 flex items-center">
           <Image src="/img/logo-compact-dark.png" alt="Logo" fill className="object-contain object-left" priority />
         </Link>
 

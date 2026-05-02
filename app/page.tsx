@@ -12,7 +12,7 @@ export default function Home() {
         <HomeContent />
       </Suspense>
 
-      <section className="py-20 px-6 text-center">
+      <section className="py-20 max-w-[1920px] mx-auto px-24 text-center">
         <h2 className="text-3xl font-bold mb-4">Em breve mais novidades</h2>
         <p className="text-zinc-400">
           Estamos preparando a melhor experiência para você.

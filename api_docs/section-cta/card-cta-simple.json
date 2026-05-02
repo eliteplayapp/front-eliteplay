@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_section_cta_card_cta_simples",
+  "info": {
+    "displayName": "card_cta_simple"
+  },
+  "options": {},
+  "attributes": {
+    "icon_tooltip": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon",
+      "required": true
+    },
+    "text_tooltip_one": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    },
+    "title_card": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle_card": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

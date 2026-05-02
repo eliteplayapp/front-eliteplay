@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_section_instruction_instructions",
+  "info": {
+    "displayName": "instructions"
+  },
+  "options": {},
+  "attributes": {
+    "img_instruction": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icon": {
+      "type": "customField",
+      "customField": "plugin::strapi-lucide-icons.icon",
+      "required": true
+    },
+    "title_card": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    },
+    "subtitle_card": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

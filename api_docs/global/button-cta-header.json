@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_button_button_cta_headers",
+  "info": {
+    "displayName": "button_info",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "text_button": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

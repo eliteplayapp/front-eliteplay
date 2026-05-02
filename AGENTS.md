@@ -122,3 +122,5 @@ Utilize a função `generateSitemaps` para gerenciar grandes volumes de páginas
 - **ESLint:** Siga rigorosamente as regras definidas.
 - **TypeScript:** Strict mode ativado. Tipagem explícita para todas as props de componentes.
 - **Acessibilidade:** Garanta que todos os elementos interativos tenham `aria-labels` e suporte a navegação por teclado.
+
+Token do Strapi: 299be33b906192d25a91bc5639f0839db817b02777a1a93b974585fe7c3ba8322f1904b6b37ff6737e91c463f9477dda81900fb2a59a96e95074493f782e27812bebee55f598614068d7a75e48e004943464edfbe799f2548a4944e9ee014044ea1af63b4db88354fdd11222d5bb702655f332361610df49afa230abbfaef10

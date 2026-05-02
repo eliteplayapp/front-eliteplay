@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_section_banner_section_banner_two_arenas",
+  "info": {
+    "displayName": "section_banner_two-arenas"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tooltip_one": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": true,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": true,
+      "required": false
+    },
+    "button_cta_banner": {
+      "type": "component",
+      "component": "global.button-cta-header",
+      "repeatable": false,
+      "required": true
+    },
+    "tooltip_two": {
+      "type": "component",
+      "component": "global.input-laguages",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
