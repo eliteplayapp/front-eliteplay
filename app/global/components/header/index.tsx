@@ -7,10 +7,8 @@ import {
   useSearchParams,
   motion, 
   AnimatePresence, 
-  Globe, 
   Menu, 
   X, 
-  ChevronDown,
   Image
 } from '../../lib/libraries';
 import LanguageSelector from './LanguageSelector';
