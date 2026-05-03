@@ -11,7 +11,7 @@ interface SportsGalleryContentProps {
 }
 
 export function SportsGalleryContent({ sport, language }: SportsGalleryContentProps) {
-  const title = getTranslation(sport.titulo, language);
+  const title = getTranslation(sport.title, language);
   const subtitle = getTranslation(sport.subtitle, language);
   
   return (
@@ -32,7 +32,7 @@ export function SportsGalleryContent({ sport, language }: SportsGalleryContentPr
               key={item.id || idx} 
               className="flex items-center gap-4 text-white uppercase font-black tracking-wider text-sm"
             >
-              <div className="w-2 h-2 rounded-full bg-[#94CE00] shadow-[0_0_10px_rgba(148,206,0,0.8)]"></div>
+              <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(148,206,0,0.8)]"></div>
               {getTranslation(item.item, language)}
             </li>
           ))}
@@ -47,7 +47,7 @@ export function SportsGalleryContent({ sport, language }: SportsGalleryContentPr
         />
         
         {/* Decorative glow */}
-        <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#94CE00]/10 blur-[100px] rounded-full pointer-events-none"></div>
+        <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
       </div>
     </div>
   );

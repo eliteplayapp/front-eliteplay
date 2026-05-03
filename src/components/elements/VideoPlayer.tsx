@@ -53,19 +53,19 @@ export function VideoPlayer({ thumbnailUrl, videoUrl, alt, variant = "gallery" }
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
 
             {/* Play Button Overlay */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 bg-[#94CE00] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(148,206,0,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(148,206,0,0.8)] transition-all duration-500 z-10">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(148,206,0,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(148,206,0,0.8)] transition-all duration-500 z-10">
               <Play className="w-8 h-8 md:w-10 md:h-10 text-black fill-black ml-1" />
             </div>
 
             {/* Badge */}
             <div className="absolute bottom-6 left-6 right-6 hidden md:block">
               <div className="bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#94CE00] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
                   <Smartphone className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <p className="text-white font-bold text-base uppercase tracking-wide leading-tight">Elite Play TV</p>
-                  <p className="text-[#94CE00] text-sm font-medium">Assista em ação</p>
+                  <p className="text-primary text-sm font-medium">Assista em ação</p>
                 </div>
               </div>
             </div>
@@ -94,14 +94,14 @@ export function VideoPlayer({ thumbnailUrl, videoUrl, alt, variant = "gallery" }
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:bg-black/40 transition-colors duration-300" />
 
         {/* Play Button Overlay */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-[#94CE00] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(148,206,0,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(148,206,0,0.8)] transition-all duration-500">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(148,206,0,0.5)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(148,206,0,0.8)] transition-all duration-500">
           <Play className="w-8 h-8 text-black fill-black ml-1" />
         </div>
 
         <div className="absolute bottom-8 left-8 z-10">
           <div className="flex items-center gap-3 px-4 py-2 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
             <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#94CE00]">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">
               Elite Play Camera
             </span>
           </div>

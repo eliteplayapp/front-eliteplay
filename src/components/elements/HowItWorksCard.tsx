@@ -42,15 +42,15 @@ export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
 
           {/* Step number badge over image */}
           <div className="absolute top-4 left-4 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#94CE00] flex items-center justify-center shadow-[0_0_16px_rgba(148,206,0,0.6)]">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_16px_rgba(148,206,0,0.6)]">
               <span className="text-black text-xs font-black">{index + 1}</span>
             </div>
           </div>
 
           {/* Icon over image bottom-right */}
           <div className="absolute bottom-4 right-4">
-            <div className="w-10 h-10 rounded-xl bg-black/60 backdrop-blur-sm border border-[#94CE00]/30 flex items-center justify-center">
-              <DynamicIcon iconName={data.icon} size={20} className="text-[#94CE00]" fallback={Sparkles} />
+            <div className="w-10 h-10 rounded-xl bg-black/60 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
+              <DynamicIcon iconName={data.icon} size={20} className="text-primary" fallback={Sparkles} />
             </div>
           </div>
         </div>

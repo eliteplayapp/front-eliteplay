@@ -23,8 +23,8 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
   return (
     <section id="capture" className="relative py-16 md:py-24 bg-white overflow-hidden scroll-mt-20">
       {/* Background decoration */}
-      <div className="absolute top-20 right-10 w-80 h-80 bg-[#94CE00]/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#94CE00]/5 rounded-full blur-[120px]" />
+      <div className="absolute top-20 right-10 w-80 h-80 bg-primary/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
 
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
@@ -39,7 +39,7 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
             {/* Badge */}
             {badge && (
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-[#6aa000] text-xs font-black tracking-widest uppercase mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#94CE00] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 {badge}
               </div>
             )}
@@ -62,11 +62,11 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
               {data.itens?.map((item, i) => {
                 return (
                   <li key={item.id || i} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#94CE00]/10 border border-[#94CE00]/30 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                       <DynamicIcon 
                         iconName={item.icon} 
                         size={20} 
-                        className="text-[#94CE00]" 
+                        className="text-primary" 
                         fallback={fallbackIcons[i % fallbackIcons.length]} 
                       />
                     </div>
@@ -92,7 +92,7 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="absolute inset-0 bg-[#94CE00]/20 blur-[100px] rounded-full scale-75 group-hover:scale-100 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 group-hover:scale-100 transition-transform duration-700" />
 
             <VideoPlayer
               variant="capture"

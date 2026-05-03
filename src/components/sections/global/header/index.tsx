@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import {
   Link,
   usePathname,
@@ -21,7 +21,7 @@ interface HeaderProps {
   headerData?: StrapiHeader;
 }
 
-export default function Header({
+function HeaderContent({
   logoUrl,
   logoAlt = "ElitePlay",
   headerData
@@ -88,7 +88,7 @@ export default function Header({
                 <Link
                   key={item.id}
                   href={item.link!}
-                  className={`text-sm transition-all duration-300 ${pathname === item.link ? 'text-[#94CE00]' : 'text-white hover:text-[#94CE00]'}`}
+                  className={`text-sm transition-all duration-300 ${pathname === item.link ? 'text-primary' : 'text-white hover:text-primary'}`}
                 >
                   {label}
                 </Link>
@@ -104,7 +104,7 @@ export default function Header({
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href={ctaButton.link || "/arenas"}
-                  className="bg-[#94CE00] text-black px-6 py-2 rounded-lg font-bold hover:bg-[#7ab300] hover:shadow-[0_0_20px_rgba(148,206,0,0.5)] transition-all duration-300"
+                  className="bg-primary text-black px-6 py-2 rounded-lg font-bold hover:bg-[#7ab300] hover:shadow-[0_0_20px_rgba(148,206,0,0.5)] transition-all duration-300"
                 >
                   {getTranslation(ctaButton.text_button, language)}
                 </Link>
@@ -117,7 +117,7 @@ export default function Header({
             {ctaButton && (
               <Link
                 href={ctaButton.link || "/arenas"}
-                className="bg-[#94CE00] text-black px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase tracking-wider"
+                className="bg-primary text-black px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase tracking-wider"
               >
                 {getTranslation(ctaButton.text_button, language)}
               </Link>
@@ -152,7 +152,7 @@ export default function Header({
                     key={item.id}
                     href={item.link!}
                     onClick={closeMobileMenu}
-                    className={`text-xl transition-colors ${pathname === item.link ? 'text-[#94CE00]' : 'text-white'}`}
+                    className={`text-xl transition-colors ${pathname === item.link ? 'text-primary' : 'text-white'}`}
                   >
                     {label}
                   </Link>
@@ -166,5 +166,17 @@ export default function Header({
         )}
       </AnimatePresence>
     </motion.header>
+  );
+}
+
+export default function Header({
+  logoUrl,
+  logoAlt = "ElitePlay",
+  headerData
+}: HeaderProps) {
+  return (
+    <Suspense fallback={null}>
+      <HeaderContent logoUrl={logoUrl} logoAlt={logoAlt} headerData={headerData} />
+    </Suspense>
   );
 }

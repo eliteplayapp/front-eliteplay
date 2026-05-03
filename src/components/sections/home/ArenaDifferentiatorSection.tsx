@@ -20,9 +20,9 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
   return (
     <section id="arena-differentiator" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#94CE00_0%,_transparent_60%)] opacity-5 pointer-events-none" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#94CE00]/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#94CE00]/30 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--primary)_0%,_transparent_60%)] opacity-5 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
         {/* Badge + Title */}
@@ -32,9 +32,9 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-[#94CE00] text-xs font-black tracking-widest uppercase mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-primary text-xs font-black tracking-widest uppercase mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-[#94CE00] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               {badge}
             </motion.div>
           )}
@@ -64,13 +64,13 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: isElite ? 0.1 : 0 }}
-                className={`relative rounded-3xl border ${isElite ? 'border-2 border-[#94CE00] shadow-[0_0_60px_rgba(148,206,0,0.12)]' : 'border-white/10'} bg-zinc-900/60 backdrop-blur-sm p-8 md:p-10 flex flex-col gap-6 overflow-hidden`}
+                className={`relative rounded-3xl border ${isElite ? 'border-2 border-primary shadow-[0_0_60px_color-mix(in_srgb,var(--primary)_12%,transparent)]' : 'border-white/10'} bg-zinc-900/60 backdrop-blur-sm p-8 md:p-10 flex flex-col gap-6 overflow-hidden`}
               >
                 {/* Background tint */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${isElite ? 'from-[#94CE00]/8' : 'from-red-900/5'} to-transparent pointer-events-none rounded-3xl`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${isElite ? 'from-primary/8' : 'from-red-900/5'} to-transparent pointer-events-none rounded-3xl`} />
 
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${isElite ? 'bg-[#94CE00] shadow-[0_0_20px_rgba(148,206,0,0.5)]' : 'bg-zinc-800 border border-white/10'}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${isElite ? 'bg-primary shadow-[0_0_20px_color-mix(in_srgb,var(--primary)_50%,transparent)]' : 'bg-zinc-800 border border-white/10'}`}>
                     <DynamicIcon 
                       iconName={card.icon} 
                       size={20} 
@@ -78,7 +78,7 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
                       fallback={isElite ? Zap : X} 
                     />
                   </div>
-                  <span className={`font-black uppercase tracking-widest text-sm ${isElite ? 'text-[#94CE00]' : 'text-zinc-400'}`}>
+                  <span className={`font-black uppercase tracking-widest text-sm ${isElite ? 'text-primary' : 'text-zinc-400'}`}>
                     {getTranslation(card.text_tooltip_one, language)}
                   </span>
                 </div>
@@ -88,8 +88,8 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <div className={`w-3 h-3 rounded-full ${isElite ? 'bg-[#94CE00] shadow-[0_0_8px_rgba(148,206,0,0.8)]' : 'bg-zinc-600'}`} />
-                  <span className={`${isElite ? 'text-[#94CE00]/80' : 'text-zinc-500'} text-sm font-medium`}>
+                  <div className={`w-3 h-3 rounded-full ${isElite ? 'bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--primary)_80%,transparent)]' : 'bg-zinc-600'}`} />
+                  <span className={`${isElite ? 'text-primary/80' : 'text-zinc-500'} text-sm font-medium`}>
                     {getTranslation(card.subtitle_card, language)}
                   </span>
                 </div>

@@ -82,7 +82,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
               alt="Elite Play Banner"
               width={600}
               height={200}
-              className="w-4/5 max-w-[320px] md:max-w-[600px] md:w-full mx-auto h-auto drop-shadow-[0_0_20px_rgba(148,206,0,0.3)]"
+              className="w-4/5 max-w-[320px] md:max-w-[600px] md:w-full mx-auto h-auto drop-shadow-[0_0_20px_color-mix(in_srgb,var(--primary)_30%,transparent)]"
               priority
               unoptimized
             />
@@ -105,7 +105,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
           animate={{ y: [0, 8, 0], opacity: [0.3, 1, 0.3] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-6 h-6 text-[#94CE00]" />
+          <ChevronDown className="w-6 h-6 text-primary" />
         </motion.div>
       </motion.div>
 
@@ -115,11 +115,11 @@ export default function BannerOne({ data, language }: BannerOneProps) {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-[#94CE00]/30 rounded-full flex justify-center p-1.5 backdrop-blur-sm">
+        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center p-1.5 backdrop-blur-sm">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-2 bg-[#94CE00] rounded-full"
+            className="w-1 h-2 bg-primary rounded-full"
           />
         </div>
       </motion.div>

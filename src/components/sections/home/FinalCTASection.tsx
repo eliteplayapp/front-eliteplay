@@ -21,10 +21,10 @@ export default function FinalCTASection({ data, language }: FinalCTASectionProps
   const t = buttonTranslations[language] || buttonTranslations["pt-br"];
 
   return (
-    <section id="app" className="pt-16 pb-24 md:py-32 bg-black relative overflow-hidden border-t border-[#94CE00]/20">
+    <section id="app" className="pt-16 pb-24 md:py-32 bg-black relative overflow-hidden border-t border-primary/20">
       {/* Neon glow effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#94CE00_0%,_transparent_70%)] opacity-5" />
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#94CE00] to-transparent shadow-[0_0_20px_rgba(148,206,0,0.8)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_70%)] opacity-5" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_20px_color-mix(in_srgb,var(--primary)_80%,transparent)]" />
 
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
         <motion.div
@@ -41,7 +41,7 @@ export default function FinalCTASection({ data, language }: FinalCTASectionProps
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-4 italic" style={{ transform: 'skewX(-3deg)' }}>
-              <span className="text-[#94CE00] drop-shadow-[0_0_30px_rgba(148,206,0,0.6)]">
+              <span className="text-primary drop-shadow-[0_0_30px_color-mix(in_srgb,var(--primary)_60%,transparent)]">
                 {getTranslation(data.title, language)}
               </span>
             </h2>

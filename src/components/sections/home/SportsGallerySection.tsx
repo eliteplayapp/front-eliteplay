@@ -40,9 +40,9 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-[#94CE00] text-xs font-black tracking-widest uppercase mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-primary text-xs font-black tracking-widest uppercase mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-[#94CE00] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               {badge}
             </motion.div>
           )}
@@ -74,10 +74,10 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
               className="w-full bg-zinc-900 text-white px-6 py-4 rounded-xl border border-white/10 font-bold uppercase tracking-widest flex items-center justify-between cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <DynamicIcon iconName={activeSport.icon_tab} size={20} className="text-[#94CE00]" />
+                <DynamicIcon iconName={activeSport.icon_tab} size={20} className="text-primary" />
                 <span>{getTranslation(activeSport.tooltip, language)}</span>
               </div>
-              <ChevronDown className={`w-5 h-5 text-[#94CE00] transition-transform duration-300 ${isSelectOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isSelectOpen ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>

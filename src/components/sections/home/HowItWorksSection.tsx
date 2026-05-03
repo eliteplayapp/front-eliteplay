@@ -51,9 +51,9 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-[#94CE00] text-xs font-black tracking-widest uppercase mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-white/10 text-primary text-xs font-black tracking-widest uppercase mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-[#94CE00] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               {badge}
             </motion.div>
           )}
@@ -99,7 +99,7 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.12 }}
                 >
-                  <ArrowRight className="w-5 h-5 text-[#94CE00]/50" />
+                  <ArrowRight className="w-5 h-5 text-primary/50" />
                 </motion.div>
               )}
             </div>
@@ -116,12 +116,12 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
             className="mt-16 flex items-center justify-center"
           >
             <div className="flex items-center gap-3 bg-zinc-950 border border-white/10 rounded-2xl px-6 py-4">
-              <div className="w-3 h-3 rounded-full bg-[#94CE00] animate-pulse shrink-0 shadow-[0_0_10px_rgba(148,206,0,0.6)]" />
+              <div className="w-3 h-3 rounded-full bg-primary animate-pulse shrink-0 shadow-[0_0_10px_rgba(148,206,0,0.6)]" />
               <p className="text-white/70 text-sm font-medium">
                 {callout.includes('30 segundos') ? (
                   <>
                     {callout.split('30 segundos')[0]}
-                    <span className="text-[#94CE00] font-black">30 segundos</span>
+                    <span className="text-primary font-black">30 segundos</span>
                     {callout.split('30 segundos')[1]}
                   </>
                 ) : callout}

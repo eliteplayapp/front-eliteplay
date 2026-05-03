@@ -14,8 +14,8 @@ interface ButtonCTAProps {
 export function ButtonCTA({ link, label, iconName, className, variant = "dark" }: ButtonCTAProps) {
   // Define variant styles
   const variantStyles = {
-    dark: "bg-zinc-900 text-[#94CE00] border-zinc-800 hover:bg-zinc-800",
-    primary: "bg-[#94CE00] text-black border-[#94CE00] hover:bg-[#7ab300] hover:shadow-[0_0_40px_rgba(148,206,0,0.5)]",
+    dark: "bg-zinc-900 text-primary border-zinc-800 hover:bg-zinc-800",
+    primary: "bg-primary text-black border-primary hover:bg-[#7ab300] hover:shadow-[0_0_40px_rgba(148,206,0,0.5)]",
     light: "bg-white text-zinc-900 border-zinc-200 hover:bg-zinc-100",
   };
 

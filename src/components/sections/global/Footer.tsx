@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion, Link, Image, useSearchParams } from "../../../lib/libraries";
 import { getTranslation } from "../../../lib/i18n";
 import { GlobalModel } from "../../../types/strapi.global.model";
@@ -9,7 +10,7 @@ interface FooterProps {
   data: GlobalModel;
 }
 
-export default function Footer({ data }: FooterProps) {
+function FooterContent({ data }: FooterProps) {
   const searchParams = useSearchParams();
   const language = searchParams.get('lang') || 'es';
   const currentYear = new Date().getFullYear();
@@ -18,7 +19,7 @@ export default function Footer({ data }: FooterProps) {
 
   return (
 
-     <footer className="bg-black border-t border-[#94CE00]/30 py-12">
+     <footer className="bg-black border-t border-primary/30 py-12">
       <div className="max-w-[1920px] mx-auto px-6 md:px-24">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
@@ -44,7 +45,7 @@ export default function Footer({ data }: FooterProps) {
                     href={redes.link_instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#94CE00]/10 border border-[#94CE00] flex items-center justify-center text-[#94CE00] hover:bg-[#94CE00] hover:text-black transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary/10 border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -56,7 +57,7 @@ export default function Footer({ data }: FooterProps) {
                     href={redes.link_facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#94CE00]/10 border border-[#94CE00] flex items-center justify-center text-[#94CE00] hover:bg-[#94CE00] hover:text-black transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary/10 border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -68,7 +69,7 @@ export default function Footer({ data }: FooterProps) {
                     href={redes.link_twiter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#94CE00]/10 border border-[#94CE00] flex items-center justify-center text-[#94CE00] hover:bg-[#94CE00] hover:text-black transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary/10 border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -80,7 +81,7 @@ export default function Footer({ data }: FooterProps) {
                     href={redes.link_linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#94CE00]/10 border border-[#94CE00] flex items-center justify-center text-[#94CE00] hover:bg-[#94CE00] hover:text-black transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary/10 border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -102,7 +103,7 @@ export default function Footer({ data }: FooterProps) {
                   <li key={linkItem.id}>
                     <Link
                       href={`${linkItem.link}?lang=${language}`}
-                      className="text-white/70 hover:text-[#94CE00] transition-colors"
+                      className="text-white/70 hover:text-primary transition-colors"
                     >
                       {getTranslation(linkItem.title, language)}
                     </Link>
@@ -127,12 +128,20 @@ export default function Footer({ data }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#94CE00]/30 pt-8 text-center">
+        <div className="border-t border-primary/30 pt-8 text-center">
           <p className="text-white/50">
             © {currentYear} Elite Play. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+export default function Footer({ data }: FooterProps) {
+  return (
+    <Suspense fallback={null}>
+      <FooterContent data={data} />
+    </Suspense>
   );
 }
