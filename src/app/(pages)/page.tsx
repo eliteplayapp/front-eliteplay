@@ -29,7 +29,6 @@ export default async function Home({
       <SportsGallerySection data={pageData.section_sports} language={language} />
       <ArenaDifferentiatorSection data={pageData.section_cta_simple} language={language} />
       <FinalCTASection data={pageData.section_download_app} language={language} />
-      {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );
 }
