@@ -42,6 +42,7 @@ export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
             width={700}
             height={480}
             className="w-full h-full object-cover"
+            unoptimized
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-black/30 to-transparent" />
