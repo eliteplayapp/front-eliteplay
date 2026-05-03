@@ -3,7 +3,7 @@
 import { SectionCtaOne } from "../../types/strapi.home.model";
 import { getTranslation } from "../../lib/i18n";
 import { getStrapiMedia } from "../../services/strapi.service";
-import { GalleryVideoPlayer } from "./GalleryVideoPlayer";
+import { VideoPlayer } from "./VideoPlayer";
 
 interface SportsGalleryContentProps {
   sport: SectionCtaOne;
@@ -39,7 +39,8 @@ export function SportsGalleryContent({ sport, language }: SportsGalleryContentPr
         </ul>
       </div>
       <div className="relative h-full flex items-center justify-center">
-        <GalleryVideoPlayer
+        <VideoPlayer
+          variant="gallery"
           thumbnailUrl={getStrapiMedia(sport.video.conteudo.url) || ""}
           videoUrl={sport.video.link || ""}
           alt={title}
