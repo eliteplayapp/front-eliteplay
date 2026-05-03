@@ -13,7 +13,12 @@ export {
   Target,
   CircleDot,
   Activity,
-  Medal
+  Medal,
+  Hand,
+  Zap,
+  Sparkles,
+  Smartphone,
+  ArrowRight
 } from 'lucide-react';
 
 // Next.js Components
