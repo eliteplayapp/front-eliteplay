@@ -19,8 +19,8 @@ export function GalleryTabButton({
   variant = "desktop" 
 }: GalleryTabButtonProps) {
   // Resolve icon dynamically
-  const iconFormatted = iconName.charAt(0).toUpperCase() + iconName.slice(1);
-  const Icon = (Icons as any)[iconFormatted] || Icons.Sparkles;
+  const iconFormatted = iconName ? iconName.charAt(0).toUpperCase() + iconName.slice(1) : "";
+  const Icon = (iconFormatted && (Icons as any)[iconFormatted]) || Icons.Sparkles;
 
   if (variant === "mobile") {
     return (

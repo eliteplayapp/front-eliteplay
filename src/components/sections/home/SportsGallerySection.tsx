@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  motion, 
-  AnimatePresence, 
+import {
+  motion,
+  AnimatePresence,
   ChevronDown
 } from "../../../lib/libraries";
 import * as Icons from "../../../lib/libraries";
@@ -28,17 +28,17 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
   const title = getTranslation(data.title, language);
 
   const activeSport = data.sports[activeTabIndex];
-  const activeIconName = activeSport.tooltip ? getTranslation(activeSport.tooltip, language) : "Sparkles";
-  
+  const activeIconName = activeSport.icon_tab || "Sparkles";
+
   // Resolve icon for the active tab (mobile dropdown)
-  const iconFormatted = activeIconName.charAt(0).toUpperCase() + activeIconName.slice(1);
-  const ActiveIcon = (Icons as any)[iconFormatted] || Icons.Sparkles;
+  const iconFormatted = activeIconName ? activeIconName.charAt(0).toUpperCase() + activeIconName.slice(1) : "";
+  const ActiveIcon = (iconFormatted && (Icons as any)[iconFormatted]) || Icons.Sparkles;
 
   return (
     <section id="sports-gallery" className="pt-24 pb-12 md:pt-32 md:pb-16 bg-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black opacity-40"></div>
-      
+
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
         <div className="text-left md:text-center mb-12">
           {badge && (
@@ -98,8 +98,8 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
                     <GalleryTabButton
                       key={sport.id || index}
                       variant="mobile"
-                      iconName={getTranslation(sport.tooltip, language)}
-                      label={getTranslation(sport.titulo, language)}
+                      iconName={sport.icon_tab}
+                      label={getTranslation(sport.tooltip, language)}
                       isActive={activeTabIndex === index}
                       onClick={() => {
                         setActiveTabIndex(index);
@@ -117,8 +117,8 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
             {data.sports.map((sport, index) => (
               <GalleryTabButton
                 key={sport.id || index}
-                iconName={getTranslation(sport.tooltip, language)}
-                label={getTranslation(sport.titulo, language)}
+                iconName={sport.icon_tab}
+                label={getTranslation(sport.tooltip, language)}
                 isActive={activeTabIndex === index}
                 onClick={() => setActiveTabIndex(index)}
               />

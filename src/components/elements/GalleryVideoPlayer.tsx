@@ -44,6 +44,7 @@ export function GalleryVideoPlayer({ thumbnailUrl, videoUrl, alt }: GalleryVideo
           width={1000}
           height={750}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:bg-black/40 transition-colors duration-300" />
 

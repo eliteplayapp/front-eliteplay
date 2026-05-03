@@ -129,6 +129,7 @@ export interface SectionInstructions {
  */
 export interface SectionCtaOne {
   id: number;
+  icon_tab: string;
   tooltip: InputLanguages;
   titulo: InputLanguages;
   subtitle: InputLanguages;
