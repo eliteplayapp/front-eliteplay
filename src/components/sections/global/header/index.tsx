@@ -10,10 +10,10 @@ import {
   Menu,
   X,
   Image
-} from '../../../lib/libraries';
+} from '../../../../lib/libraries';
 import LanguageSelector from './LanguageSelector';
-import { getTranslation } from "../../../lib/i18n";
-import type { StrapiHeader } from "../../../types/strapi.global.model";
+import { getTranslation } from "../../../../lib/i18n";
+import type { StrapiHeader } from "../../../../types/strapi.global.model";
 
 interface HeaderProps {
   logoUrl?: string | null;

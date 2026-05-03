@@ -6,10 +6,10 @@ import {
   AnimatePresence,
   Image,
   ChevronDown
-} from '../../lib/libraries';
-import { getTranslation } from "../../lib/i18n";
-import { getStrapiMedia } from "../../services/strapi.service";
-import type { BannerHomePage } from "../../types/strapi.home.model";
+} from '../../../lib/libraries';
+import { getTranslation } from "../../../lib/i18n";
+import type { BannerHomePage } from "../../../types/strapi.home.model";
+import { getStrapiMedia } from '@/src/services/strapi.service';
 
 interface BannerOneProps {
   data: BannerHomePage;

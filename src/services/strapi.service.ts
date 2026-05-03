@@ -1,6 +1,6 @@
 import qs from 'qs';
-import { HomePageModel } from '../types/strapi.home.model';
-import { GlobalModel } from '../types/strapi.global.model';
+import { HomePageModel } from '../../types/strapi.home.model';
+import { GlobalModel } from '../../types/strapi.global.model';
 
 
 /**

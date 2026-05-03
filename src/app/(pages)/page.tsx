@@ -1,6 +1,6 @@
-import { getPaginaInicial } from "../services/strapi.service";
-import BannerOne from "../sections/home/banner_one";
-import SportsCarroucel from "../sections/global/sports_carroucel";
+import BannerOne from "../../components/sections/home/banner_one";
+import SportsCarroucel from "../../components/sections/global/sports_carroucel";
+import { getPaginaInicial } from "@/src/services/strapi.service";
 
 export default async function Home({
   searchParams,

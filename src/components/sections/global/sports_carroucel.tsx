@@ -9,8 +9,8 @@ import {
   CircleDot,
   Wind,
   Medal
-} from '../../lib/libraries';
-import { getTranslation } from '../../lib/i18n';
+} from '../../../lib/libraries';
+import { getTranslation } from '../../../lib/i18n';
 
 // Mapeamento de strings para componentes de ícones do Lucide
 const iconMap: Record<string, any> = {
