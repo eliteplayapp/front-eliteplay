@@ -60,6 +60,7 @@ export interface ButtonInfo {
   id: number;
   text_button: InputLanguages;
   link: string;
+  icon?: string;
 }
 
 /**

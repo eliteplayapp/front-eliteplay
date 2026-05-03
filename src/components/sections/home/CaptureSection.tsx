@@ -5,6 +5,7 @@ import { SectionCtaOne } from "../../../types/strapi.home.model";
 import { getTranslation } from "../../../lib/i18n";
 import { getStrapiMedia } from "../../../services/strapi.service";
 import { VideoPlayer } from "../../elements/VideoPlayer";
+import { ButtonCTA } from "../../elements/ButtonCTA";
 
 interface CaptureSectionProps {
   data: SectionCtaOne;
@@ -71,15 +72,11 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
             </ul>
 
             {/* CTA */}
-            <motion.a
-              href={data.button.link}
-              className="inline-flex items-center gap-2 bg-zinc-900 text-[#94CE00] border border-zinc-800 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all cursor-pointer shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Smartphone size={20} />
-              {getTranslation(data.button.text_button, language)}
-            </motion.a>
+            <ButtonCTA 
+              link={data.button.link}
+              label={getTranslation(data.button.text_button, language)}
+              iconName={data.button.icon}
+            />
           </motion.div>
 
           {/* Video — right */}
