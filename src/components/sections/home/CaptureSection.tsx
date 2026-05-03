@@ -51,7 +51,7 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
             </h2>
 
             {/* Subtitle */}
-            <p className="text-zinc-600 text-lg md:text-xl mb-10 max-w-xl leading-relaxed font-light">
+            <p className="text-zinc-600 text-lg md:text-xl mb-10 max-w-3xl leading-relaxed font-light">
               {getTranslation(data.subtitle, language)}
             </p>
 
