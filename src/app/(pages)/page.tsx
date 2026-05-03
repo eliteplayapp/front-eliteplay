@@ -23,8 +23,8 @@ export default async function Home({
       <BannerOne data={pageData.banner_home_page} language={language} />
       <SportsCarroucel language={language} />
       <HowItWorksSection data={pageData.section_instructions} language={language} />
-      <SportsGallerySection data={pageData.section_sports} language={language} />
       <CaptureSection data={pageData.section_cta} language={language} />
+      <SportsGallerySection data={pageData.section_sports} language={language} />
       {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );
