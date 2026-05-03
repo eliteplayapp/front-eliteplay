@@ -168,6 +168,8 @@ export interface SectionDownloadApp {
   id: number;
   title: InputLanguages;
   subtitle: InputLanguages;
+  link_google_play?: string;
+  link_apple_store?: string;
 }
 
 /**

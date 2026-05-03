@@ -35,13 +35,6 @@ export interface MenuFooter {
   title: InputLanguages;
 }
 
-// ─── Componente Links_download_app ────────────────────────────────────────────
-
-export interface LinksDownloadApp {
-  link_google_play?: string;
-  link_apple_store?: string;
-}
-
 // ─── Componente Redes_sociais ─────────────────────────────────────────────────
 
 export interface RedesSociais {
@@ -58,7 +51,6 @@ export interface StrapiFooter {
   description: InputLanguages;
   links?: MenuFooter[];
   contato?: ContatoFooter;
-  download_app?: LinksDownloadApp;
   redes_sociais?: RedesSociais[];
 }
 

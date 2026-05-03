@@ -4,6 +4,7 @@ import HowItWorksSection from "../../components/sections/home/HowItWorksSection"
 import SportsGallerySection from "../../components/sections/home/SportsGallerySection";
 import CaptureSection from "../../components/sections/home/CaptureSection";
 import ArenaDifferentiatorSection from "../../components/sections/home/ArenaDifferentiatorSection";
+import FinalCTASection from "../../components/sections/home/FinalCTASection";
 import { getPaginaInicial } from "@/src/services/strapi.service";
 
 export default async function Home({
@@ -27,6 +28,7 @@ export default async function Home({
       <CaptureSection data={pageData.section_cta} language={language} />
       <SportsGallerySection data={pageData.section_sports} language={language} />
       <ArenaDifferentiatorSection data={pageData.section_cta_simple} language={language} />
+      <FinalCTASection data={pageData.section_download_app} language={language} />
       {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );
