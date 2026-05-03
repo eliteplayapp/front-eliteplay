@@ -6,7 +6,13 @@ export {
   Menu, 
   X, 
   Globe, 
-  ChevronDown 
+  ChevronDown,
+  Trophy,
+  Volleyball,
+  Wind,
+  Target,
+  CircleDot,
+  Activity
 } from 'lucide-react';
 
 // Next.js Components
