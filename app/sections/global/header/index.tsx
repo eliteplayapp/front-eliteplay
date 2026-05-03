@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { 
-  Link, 
-  usePathname, 
+import {
+  Link,
+  usePathname,
   useSearchParams,
-  motion, 
-  AnimatePresence, 
-  Menu, 
-  X, 
+  motion,
+  AnimatePresence,
+  Menu,
+  X,
   Image
-} from '../../lib/libraries';
+} from '../../../lib/libraries';
 import LanguageSelector from './LanguageSelector';
-import { getTranslation } from "../../lib/i18n";
-import type { StrapiHeader } from "../../types/strapi.global.model";
+import { getTranslation } from "../../../lib/i18n";
+import type { StrapiHeader } from "../../../types/strapi.global.model";
 
 interface HeaderProps {
   logoUrl?: string | null;
@@ -28,7 +28,7 @@ export default function Header({
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const language = (searchParams.get("lang") || "pt-br") as string;
@@ -69,12 +69,12 @@ export default function Header({
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center z-50">
-            <Image 
-              src={logoUrl!} 
-              alt={logoAlt} 
-              width={180} 
-              height={40} 
-              className="h-8 md:h-9 w-auto object-contain" 
+            <Image
+              src={logoUrl!}
+              alt={logoAlt}
+              width={180}
+              height={40}
+              className="h-8 md:h-9 w-auto object-contain"
               priority
               unoptimized
             />

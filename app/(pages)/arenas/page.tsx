@@ -1,4 +1,4 @@
-import { getTranslation } from "../../global/lib/i18n";
+import { getTranslation } from "../../lib/i18n";
 
 export default function ArenasPage({
   searchParams,

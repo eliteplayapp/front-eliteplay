@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { 
-  motion, 
-  AnimatePresence, 
-  Image, 
-  ChevronDown 
-} from '../global/lib/libraries';
-import { getTranslation } from "../global/lib/i18n";
-import { getStrapiMedia } from "../global/services/strapi.service";
-import type { BannerHomePage } from "../global/types/strapi.home.model";
+import {
+  motion,
+  AnimatePresence,
+  Image,
+  ChevronDown
+} from '../../lib/libraries';
+import { getTranslation } from "../../lib/i18n";
+import { getStrapiMedia } from "../../services/strapi.service";
+import type { BannerHomePage } from "../../types/strapi.home.model";
 
 interface BannerOneProps {
   data: BannerHomePage;
@@ -18,7 +18,7 @@ interface BannerOneProps {
 
 export default function BannerOne({ data, language }: BannerOneProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const images = data?.imgs_banner || [];
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1, scale: 1.1 }}
             exit={{ opacity: 0 }}
-            transition={{ 
+            transition={{
               opacity: { duration: 2, ease: "easeInOut" },
               scale: { duration: 7, ease: "linear" }
             }}
@@ -77,9 +77,9 @@ export default function BannerOne({ data, language }: BannerOneProps) {
             transition={{ duration: 1, ease: 'easeOut' }}
             className="mb-8"
           >
-            <Image 
+            <Image
               src={getStrapiMedia(data.logo_banner.url)!}
-              alt="Elite Play Banner" 
+              alt="Elite Play Banner"
               width={600}
               height={200}
               className="w-full max-w-[600px] h-auto drop-shadow-[0_0_20px_rgba(148,206,0,0.3)]"
@@ -87,7 +87,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
               unoptimized
             />
           </motion.div>
-          
+
           <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed px-6 tracking-[0.2em] uppercase text-center max-w-4xl">
             {getTranslation(data?.description_banner, language)}
           </p>
@@ -116,10 +116,10 @@ export default function BannerOne({ data, language }: BannerOneProps) {
         transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="w-6 h-10 border-2 border-[#94CE00]/30 rounded-full flex justify-center p-1.5 backdrop-blur-sm">
-          <motion.div 
+          <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-2 bg-[#94CE00] rounded-full" 
+            className="w-1 h-2 bg-[#94CE00] rounded-full"
           />
         </div>
       </motion.div>

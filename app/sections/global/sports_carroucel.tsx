@@ -1,16 +1,16 @@
 "use client";
 
-import { 
-  motion, 
-  Trophy, 
-  Volleyball, 
-  Target, 
-  Activity, 
+import {
+  motion,
+  Trophy,
+  Volleyball,
+  Target,
+  Activity,
   CircleDot,
   Wind,
   Medal
-} from '../global/lib/libraries';
-import { getTranslation } from '../global/lib/i18n';
+} from '../../lib/libraries';
+import { getTranslation } from '../../lib/i18n';
 
 // Mapeamento de strings para componentes de ícones do Lucide
 const iconMap: Record<string, any> = {
@@ -102,7 +102,7 @@ export default function SportsCarousel({ language }: { language: string }) {
           {duplicatedSports.map((item, index) => {
             const Icon = iconMap[item.icon] || Trophy;
             const sportName = getTranslation(
-              { id: index, ...item.sport }, 
+              { id: index, ...item.sport },
               language
             );
 
@@ -112,19 +112,19 @@ export default function SportsCarousel({ language }: { language: string }) {
                 className="flex items-center gap-4 group cursor-default"
               >
                 <div className="p-2 rounded-full bg-[#76b900]/5 group-hover:bg-[#76b900]/20 transition-all duration-300">
-                  <Icon 
-                    className="w-5 h-5 md:w-6 md:h-6 text-[#76b900] group-hover:scale-110 transition-all duration-300" 
-                    strokeWidth={1.5} 
+                  <Icon
+                    className="w-5 h-5 md:w-6 md:h-6 text-[#76b900] group-hover:scale-110 transition-all duration-300"
+                    strokeWidth={1.5}
                   />
                 </div>
-                
+
                 <span className="text-white/70 text-[10px] md:text-sm font-semibold tracking-[0.18em] uppercase group-hover:text-[#76b900] transition-colors duration-300">
                   {sportName}
                 </span>
 
                 <div className="flex gap-1 ml-4 opacity-15 group-hover:opacity-100 transition-opacity duration-500">
-                   <div className="w-1 h-1 rounded-full bg-[#76b900]" />
-                   <div className="w-1 h-1 rounded-full bg-[#76b900]/50" />
+                  <div className="w-1 h-1 rounded-full bg-[#76b900]" />
+                  <div className="w-1 h-1 rounded-full bg-[#76b900]/50" />
                 </div>
               </div>
             );

@@ -8,7 +8,7 @@ import {
   AnimatePresence, 
   Globe, 
   ChevronDown 
-} from '../../lib/libraries';
+} from '../../../lib/libraries';
 
 interface LanguageSelectorProps {
   variant?: 'desktop' | 'mobile';
