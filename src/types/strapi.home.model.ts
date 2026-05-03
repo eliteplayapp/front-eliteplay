@@ -136,7 +136,7 @@ export interface SectionCtaOne {
   title: InputLanguages;
   subtitle: InputLanguages;
   itens: ItemCta[];
-  button: ButtonInfo;
+  button?: ButtonInfo;
   video: VideoItem;
 }
 

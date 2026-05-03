@@ -99,7 +99,7 @@ export async function getPaginaInicial(): Promise<HomePageModel | null> {
             tooltip_two: { populate: '*' }
           }
         },
-        // Seção CTA (Cta_one)
+        // Seção CTA (Cta_four)
         section_cta: {
           populate: {
             tooltip: { populate: '*' },
@@ -124,13 +124,10 @@ export async function getPaginaInicial(): Promise<HomePageModel | null> {
             sports: {
               populate: {
                 tooltip: { populate: '*' },
-                titulo: { populate: '*' },
+                title: { populate: '*' },
                 subtitle: { populate: '*' },
                 itens: {
                   populate: ['item']
-                },
-                button_section_cta: {
-                  populate: ['text_button']
                 },
                 video: {
                   populate: ['conteudo']
