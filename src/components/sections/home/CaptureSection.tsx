@@ -17,10 +17,6 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
   if (!data) return null;
 
   const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.titulo, language);
-  const subtitle = getTranslation(data.subtitle, language);
-  const buttonText = data.button_section_cta?.text_button ? getTranslation(data.button_section_cta.text_button, language) : "Baixar o App";
-  const buttonLink = data.button_section_cta?.link || "#";
 
   return (
     <section id="capture" className="relative py-16 md:py-24 bg-white overflow-hidden scroll-mt-20">
@@ -51,12 +47,12 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
               className="text-4xl md:text-6xl font-black text-black italic tracking-tight mb-6 leading-tight uppercase"
               style={{ transform: 'skewX(-3deg)' }}
             >
-              {title}
+              {getTranslation(data.title, language)}
             </h2>
 
             {/* Subtitle */}
             <p className="text-zinc-600 text-lg md:text-xl mb-10 max-w-xl leading-relaxed font-light">
-              {subtitle}
+              {getTranslation(data.subtitle, language)}
             </p>
 
             {/* Feature list */}
@@ -76,13 +72,13 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
 
             {/* CTA */}
             <motion.a
-              href={buttonLink}
+              href={data.button.link}
               className="inline-flex items-center gap-2 bg-zinc-900 text-[#94CE00] border border-zinc-800 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all cursor-pointer shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Smartphone size={20} />
-              {buttonText}
+              {getTranslation(data.button.text_button, language)}
             </motion.a>
           </motion.div>
 
@@ -100,7 +96,7 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
               variant="capture"
               thumbnailUrl={getStrapiMedia(data.video.conteudo.url) || ""}
               videoUrl={data.video.link || ""}
-              alt={title}
+              alt={getTranslation(data.button.text_button, language)}
             />
           </motion.div>
 

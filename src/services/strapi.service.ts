@@ -1,7 +1,6 @@
 import qs from 'qs';
-import { HomePageModel } from '../../types/strapi.home.model';
-import { GlobalModel } from '../../types/strapi.global.model';
-
+import { HomePageModel } from '@/src/types/strapi.home.model';
+import { GlobalModel } from '@/src/types/strapi.global.model';
 
 /**
  * Retorna o token da API configurado no ambiente ou o token padrão do projeto.
@@ -103,12 +102,12 @@ export async function getPaginaInicial(): Promise<HomePageModel | null> {
         section_cta: {
           populate: {
             tooltip: { populate: '*' },
-            titulo: { populate: '*' },
+            title: { populate: '*' },
             subtitle: { populate: '*' },
             itens: {
               populate: ['item']
             },
-            button_section_cta: {
+            button: {
               populate: ['text_button']
             },
             video: {

@@ -131,10 +131,10 @@ export interface SectionCtaOne {
   id: number;
   icon_tab: string;
   tooltip: InputLanguages;
-  titulo: InputLanguages;
+  title: InputLanguages;
   subtitle: InputLanguages;
   itens: ItemCta[];
-  button_section_cta: ButtonInfo;
+  button: ButtonInfo;
   video: VideoItem;
 }
 
