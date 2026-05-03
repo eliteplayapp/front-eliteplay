@@ -1,6 +1,7 @@
 import BannerOne from "../../components/sections/home/banner_one";
 import SportsCarroucel from "../../components/sections/global/sports_carroucel";
 import HowItWorksSection from "../../components/sections/home/HowItWorksSection";
+import SportsGallerySection from "../../components/sections/home/SportsGallerySection";
 import { getPaginaInicial } from "@/src/services/strapi.service";
 
 export default async function Home({
@@ -21,6 +22,7 @@ export default async function Home({
       <BannerOne data={pageData.banner_home_page} language={language} />
       <SportsCarroucel language={language} />
       <HowItWorksSection data={pageData.section_instructions} language={language} />
+      <SportsGallerySection data={pageData.section_sports} language={language} />
       {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );
