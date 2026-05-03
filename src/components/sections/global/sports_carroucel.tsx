@@ -4,8 +4,8 @@ import {
   motion,
   Trophy
 } from '../../../lib/libraries';
-import * as Icons from '../../../lib/libraries';
 import { getTranslation } from '../../../lib/i18n';
+import { DynamicIcon } from '../../elements/DynamicIcon';
 
 
 const sportsData = [
@@ -85,7 +85,6 @@ export default function SportsCarousel({ language }: { language: string }) {
           }}
         >
           {duplicatedSports.map((item, index) => {
-            const Icon = (Icons as any)[item.icon] || Trophy;
             const sportName = getTranslation(
               { id: index, ...item.sport },
               language
@@ -97,9 +96,11 @@ export default function SportsCarousel({ language }: { language: string }) {
                 className="flex items-center gap-4 group cursor-default"
               >
                 <div className="p-2 rounded-full bg-[#76b900]/5 group-hover:bg-[#76b900]/20 transition-all duration-300">
-                  <Icon
-                    className="w-5 h-5 md:w-6 md:h-6 text-[#76b900] group-hover:scale-110 transition-all duration-300"
-                    strokeWidth={1.5}
+                  <DynamicIcon 
+                    iconName={item.icon} 
+                    size={20} 
+                    className="text-[#76b900] group-hover:scale-110 transition-all duration-300" 
+                    fallback={Trophy} 
                   />
                 </div>
 

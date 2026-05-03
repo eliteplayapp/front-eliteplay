@@ -97,6 +97,7 @@ export interface ItemCta {
  */
 export interface CardCtaSimple {
   id: number;
+  icon?: string;
   icon_tooltip: string;
   text_tooltip_one: InputLanguages;
   title_card: InputLanguages;

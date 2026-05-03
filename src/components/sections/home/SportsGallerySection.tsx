@@ -9,9 +9,9 @@ import {
 import * as Icons from "../../../lib/libraries";
 import { SectionSports } from "../../../types/strapi.home.model";
 import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "../../../services/strapi.service";
 import { GalleryTabButton } from "../../elements/GalleryTabButton";
 import { SportsGalleryContent } from "../../elements/SportsGalleryContent";
+import { DynamicIcon } from "../../elements/DynamicIcon";
 
 interface SportsGallerySectionProps {
   data: SectionSports;
@@ -28,12 +28,6 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
   const title = getTranslation(data.title, language);
 
   const activeSport = data.sports[activeTabIndex];
-  const activeIconName = activeSport.icon_tab || "Sparkles";
-
-  // Resolve icon for the active tab (mobile dropdown)
-  const iconFormatted = activeIconName ? activeIconName.charAt(0).toUpperCase() + activeIconName.slice(1) : "";
-  const ActiveIcon = (iconFormatted && (Icons as any)[iconFormatted]) || Icons.Sparkles;
-
   return (
     <section id="sports-gallery" className="pt-16 pb-8 md:pt-20 md:pb-12 bg-black relative overflow-hidden">
       {/* Background elements */}
@@ -80,7 +74,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
               className="w-full bg-zinc-900 text-white px-6 py-4 rounded-xl border border-white/10 font-bold uppercase tracking-widest flex items-center justify-between cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <ActiveIcon className="w-5 h-5 text-[#94CE00]" />
+                <DynamicIcon iconName={activeSport.icon_tab} size={20} className="text-[#94CE00]" />
                 <span>{getTranslation(activeSport.tooltip, language)}</span>
               </div>
               <ChevronDown className={`w-5 h-5 text-[#94CE00] transition-transform duration-300 ${isSelectOpen ? 'rotate-180' : ''}`} />

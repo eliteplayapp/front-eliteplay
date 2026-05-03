@@ -3,6 +3,7 @@ import SportsCarroucel from "../../components/sections/global/sports_carroucel";
 import HowItWorksSection from "../../components/sections/home/HowItWorksSection";
 import SportsGallerySection from "../../components/sections/home/SportsGallerySection";
 import CaptureSection from "../../components/sections/home/CaptureSection";
+import ArenaDifferentiatorSection from "../../components/sections/home/ArenaDifferentiatorSection";
 import { getPaginaInicial } from "@/src/services/strapi.service";
 
 export default async function Home({
@@ -25,6 +26,7 @@ export default async function Home({
       <HowItWorksSection data={pageData.section_instructions} language={language} />
       <CaptureSection data={pageData.section_cta} language={language} />
       <SportsGallerySection data={pageData.section_sports} language={language} />
+      <ArenaDifferentiatorSection data={pageData.section_cta_simple} language={language} />
       {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );

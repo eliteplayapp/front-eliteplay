@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "../../lib/libraries";
-import * as Icons from "../../lib/libraries";
+import { motion, Sparkles } from "../../lib/libraries";
+import { DynamicIcon } from "./DynamicIcon";
 
 interface GalleryTabButtonProps {
   iconName: string;
@@ -18,10 +18,6 @@ export function GalleryTabButton({
   onClick, 
   variant = "desktop" 
 }: GalleryTabButtonProps) {
-  // Resolve icon dynamically
-  const iconFormatted = iconName ? iconName.charAt(0).toUpperCase() + iconName.slice(1) : "";
-  const Icon = (iconFormatted && (Icons as any)[iconFormatted]) || Icons.Sparkles;
-
   if (variant === "mobile") {
     return (
       <button
@@ -30,7 +26,7 @@ export function GalleryTabButton({
           isActive ? 'text-[#94CE00] bg-zinc-800/50' : 'text-zinc-400'
         }`}
       >
-        <Icon className="w-4 h-4" />
+        <DynamicIcon iconName={iconName} size={16} fallback={Sparkles} />
         <span className="font-bold uppercase tracking-widest text-xs">{label}</span>
       </button>
     );
@@ -45,7 +41,7 @@ export function GalleryTabButton({
           : 'bg-zinc-900 text-zinc-400 border border-white/5 hover:bg-zinc-800'
       }`}
     >
-      <Icon className="w-5 h-5" />
+      <DynamicIcon iconName={iconName} size={20} fallback={Sparkles} />
       {label}
     </button>
   );

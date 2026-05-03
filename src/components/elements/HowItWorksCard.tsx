@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, Image, Sparkles } from "../../lib/libraries";
-import * as Icons from "../../lib/libraries";
 import { InstructionItem } from "../../types/strapi.home.model";
 import { getTranslation } from "../../lib/i18n";
 import { getStrapiMedia } from "../../services/strapi.service";
+import { DynamicIcon } from "./DynamicIcon";
 
 interface HowItWorksCardProps {
   data: InstructionItem;
@@ -13,8 +13,6 @@ interface HowItWorksCardProps {
 }
 
 export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
-  const iconName = data.icon.charAt(0).toUpperCase() + data.icon.slice(1);
-  const Icon = (Icons as any)[iconName] || Sparkles;
   const title = getTranslation(data.title_card, language);
   const description = getTranslation(data.subtitle_card, language);
   const imageUrl = getStrapiMedia(data.img_instruction.url) || "";
@@ -52,7 +50,7 @@ export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
           {/* Icon over image bottom-right */}
           <div className="absolute bottom-4 right-4">
             <div className="w-10 h-10 rounded-xl bg-black/60 backdrop-blur-sm border border-[#94CE00]/30 flex items-center justify-center">
-              <Icon className="w-5 h-5 text-[#94CE00]" />
+              <DynamicIcon iconName={data.icon} size={20} className="text-[#94CE00]" fallback={Sparkles} />
             </div>
           </div>
         </div>

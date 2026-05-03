@@ -6,6 +6,7 @@ import { getTranslation } from "../../../lib/i18n";
 import { getStrapiMedia } from "../../../services/strapi.service";
 import { VideoPlayer } from "../../elements/VideoPlayer";
 import { ButtonCTA } from "../../elements/ButtonCTA";
+import { DynamicIcon } from "../../elements/DynamicIcon";
 
 interface CaptureSectionProps {
   data: SectionCtaOne;
@@ -59,11 +60,15 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
             {/* Feature list */}
             <ul className="space-y-4 mb-10">
               {data.itens?.map((item, i) => {
-                const Icon = fallbackIcons[i % fallbackIcons.length];
                 return (
                   <li key={item.id || i} className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-xl bg-[#94CE00]/10 border border-[#94CE00]/30 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-[#94CE00]" />
+                      <DynamicIcon 
+                        iconName={item.icon} 
+                        size={20} 
+                        className="text-[#94CE00]" 
+                        fallback={fallbackIcons[i % fallbackIcons.length]} 
+                      />
                     </div>
                     <p className="text-zinc-700 font-medium">{getTranslation(item.item, language)}</p>
                   </li>
