@@ -12,7 +12,8 @@ export {
   Wind,
   Target,
   CircleDot,
-  Activity
+  Activity,
+  Medal
 } from 'lucide-react';
 
 // Next.js Components

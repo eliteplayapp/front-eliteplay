@@ -1,5 +1,6 @@
 import { getPaginaInicial } from "../global/services/strapi.service";
 import BannerOne from "../sections/banner_one";
+import SportsCarroucel from "../sections/sports_carroucel";
 
 export default async function Home({
   searchParams,
@@ -17,7 +18,7 @@ export default async function Home({
   return (
     <div className="min-h-screen bg-black">
       <BannerOne data={pageData.banner_home_page} language={language} />
-      
+      <SportsCarroucel language={language} />
       {/* Aqui entrarão as outras seções conforme forem criadas */}
     </div>
   );

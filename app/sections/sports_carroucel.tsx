@@ -7,42 +7,22 @@ import {
   Target, 
   Activity, 
   CircleDot,
-  useSearchParams
+  Wind,
+  Medal
 } from '../global/lib/libraries';
 import { getTranslation } from '../global/lib/i18n';
 
-// Ícone de Raquete Customizado (Inspirado no código fornecido)
-const RacketIcon = (props: any) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="10" cy="10" r="7" />
-    <path d="M15 15l7 7" />
-    <path d="M7 10l6 0" />
-    <path d="M10 7l0 6" />
-  </svg>
-);
-
-// Mapeamento de strings para componentes de ícones
+// Mapeamento de strings para componentes de ícones do Lucide
 const iconMap: Record<string, any> = {
   trophy: Trophy,
-  racket: RacketIcon,
   target: Target,
   volleyball: Volleyball,
-  basketball: Activity,
-  circle: CircleDot,
+  activity: Activity,
+  ball: CircleDot,
+  wind: Wind,
+  medal: Medal
 };
 
-// Dados mockados seguindo o padrão solicitado
 const sportsData = [
   {
     icon: "trophy",
@@ -53,7 +33,7 @@ const sportsData = [
     }
   },
   {
-    icon: "racket",
+    icon: "target",
     sport: {
       language_pt: "Padel",
       language_es: "Pádel",
@@ -61,7 +41,7 @@ const sportsData = [
     }
   },
   {
-    icon: "racket",
+    icon: "activity",
     sport: {
       language_pt: "Tênis",
       language_es: "Tenis",
@@ -69,7 +49,7 @@ const sportsData = [
     }
   },
   {
-    icon: "target",
+    icon: "wind",
     sport: {
       language_pt: "Beach Tennis",
       language_es: "Tenis de Playa",
@@ -85,7 +65,7 @@ const sportsData = [
     }
   },
   {
-    icon: "basketball",
+    icon: "ball",
     sport: {
       language_pt: "Basquete",
       language_es: "Baloncesto",
@@ -94,15 +74,12 @@ const sportsData = [
   },
 ];
 
-export function SportsCarousel() {
-  const searchParams = useSearchParams();
-  const lang = searchParams.get("lang") || "pt-br";
-
+export default function SportsCarousel({ language }: { language: string }) {
   // Duplicando os itens para o efeito de scroll infinito (3x para garantir fluidez)
   const duplicatedSports = [...sportsData, ...sportsData, ...sportsData];
 
   return (
-    <section className="bg-black py-4 md:py-10 border-t border-b border-[#76b900]/20 overflow-hidden relative">
+    <section className="bg-black py-3 md:py-6 border-t border-b border-[#76b900]/15 overflow-hidden relative">
       {/* Efeito de desfoque nas bordas para profundidade */}
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
@@ -126,7 +103,7 @@ export function SportsCarousel() {
             const Icon = iconMap[item.icon] || Trophy;
             const sportName = getTranslation(
               { id: index, ...item.sport }, 
-              lang
+              language
             );
 
             return (
@@ -136,19 +113,18 @@ export function SportsCarousel() {
               >
                 <div className="p-2 rounded-full bg-[#76b900]/5 group-hover:bg-[#76b900]/20 transition-all duration-300">
                   <Icon 
-                    className="w-5 h-5 md:w-7 md:h-7 text-[#76b900] group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" 
+                    className="w-5 h-5 md:w-6 md:h-6 text-[#76b900] group-hover:scale-110 transition-all duration-300" 
                     strokeWidth={1.5} 
                   />
                 </div>
                 
-                <span className="text-white/70 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase group-hover:text-[#76b900] transition-colors duration-300">
+                <span className="text-white/70 text-[10px] md:text-sm font-semibold tracking-[0.18em] uppercase group-hover:text-[#76b900] transition-colors duration-300">
                   {sportName}
                 </span>
 
-                <div className="flex gap-1 ml-4 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="flex gap-1 ml-4 opacity-15 group-hover:opacity-100 transition-opacity duration-500">
                    <div className="w-1 h-1 rounded-full bg-[#76b900]" />
                    <div className="w-1 h-1 rounded-full bg-[#76b900]/50" />
-                   <div className="w-1 h-1 rounded-full bg-[#76b900]/20" />
                 </div>
               </div>
             );
