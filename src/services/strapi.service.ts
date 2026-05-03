@@ -63,7 +63,8 @@ export async function getInformacoesGlobais(): Promise<GlobalModel> {
         'header.button_cta_header.text_button',
         'footer.description',
         'footer.links.title',
-        'footer.contato'
+        'footer.contato',
+        'footer.redes_sociais'
       ],
     }, {
       next: { revalidate: 60 }

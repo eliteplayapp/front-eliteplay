@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/sections/global/header";
+import Footer from "../components/sections/global/Footer";
 import { getInformacoesGlobais, getStrapiMedia } from "../services/strapi.service";
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default async function RootLayout({
         <main>
           {children}
         </main>
+        <Footer data={informacoesGlobais}/>
       </body>
     </html>
   );
