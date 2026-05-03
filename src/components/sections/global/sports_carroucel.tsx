@@ -93,22 +93,22 @@ export default function SportsCarousel({ language }: { language: string }) {
             return (
               <div
                 key={`${item.icon}-${index}`}
-                className="flex items-center gap-4 group cursor-default"
+                className="flex items-center gap-4"
               >
-                <div className="p-2 rounded-full bg-[#76b900]/5 group-hover:bg-[#76b900]/20 transition-all duration-300">
+                <div className="p-2 rounded-full bg-[#76b900]/5">
                   <DynamicIcon 
                     iconName={item.icon} 
                     size={20} 
-                    className="text-[#76b900] group-hover:scale-110 transition-all duration-300" 
+                    className="text-[#76b900]" 
                     fallback={Trophy} 
                   />
                 </div>
 
-                <span className="text-white/70 text-[10px] md:text-sm font-semibold tracking-[0.18em] uppercase group-hover:text-[#76b900] transition-colors duration-300">
+                <span className="text-white/70 text-[10px] md:text-sm font-semibold tracking-[0.18em] uppercase">
                   {sportName}
                 </span>
 
-                <div className="flex gap-1 ml-4 opacity-15 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="flex gap-1 ml-4 opacity-15">
                   <div className="w-1 h-1 rounded-full bg-[#76b900]" />
                   <div className="w-1 h-1 rounded-full bg-[#76b900]/50" />
                 </div>
