@@ -1,11 +1,12 @@
 import { getTranslation } from "../../../lib/i18n";
 
-export default function ArenasPage({
+export default async function ArenasPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const language = (searchParams.lang as string) || "es";
+  const params = await searchParams;
+  const language = (params.lang as string) || "es";
 
   return (
     <div className="min-h-screen pt-32 px-6 md:px-24">
