@@ -51,7 +51,6 @@ export interface StrapiFooter {
   description: InputLanguages;
   links?: MenuFooter[];
   contato?: ContatoFooter;
-  redes_sociais?: RedesSociais[];
 }
 
 // ─── Modelo Raiz do Single Type Global ───────────────────────────────────────
@@ -64,6 +63,7 @@ export interface GlobalModel {
   publishedAt: string;
   meta_description: string;
   logo_global: StrapiMedia;
+  redes_sociais?: RedesSociais[];
   header: StrapiHeader;
   footer: StrapiFooter;
 }

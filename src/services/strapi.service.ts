@@ -64,7 +64,7 @@ export async function getInformacoesGlobais(): Promise<GlobalModel> {
         'footer.description',
         'footer.links.title',
         'footer.contato',
-        'footer.redes_sociais'
+        'redes_sociais'
       ],
     }, {
       next: { revalidate: 60 }
