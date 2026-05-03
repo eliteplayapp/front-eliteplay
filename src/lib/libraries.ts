@@ -2,24 +2,7 @@
 export { motion, AnimatePresence } from 'framer-motion';
 
 // Lucide Icons
-export { 
-  Menu, 
-  X, 
-  Globe, 
-  ChevronDown,
-  Trophy,
-  Volleyball,
-  Wind,
-  Target,
-  CircleDot,
-  Activity,
-  Medal,
-  Hand,
-  Zap,
-  Sparkles,
-  Smartphone,
-  ArrowRight
-} from 'lucide-react';
+export * from 'lucide-react';
 
 // Next.js Components
 export { default as Image } from 'next/image';

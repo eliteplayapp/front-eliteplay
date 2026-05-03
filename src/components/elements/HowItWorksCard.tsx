@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, Image, Hand, Zap, Sparkles, Smartphone } from "../../lib/libraries";
+import { motion, Image, Sparkles } from "../../lib/libraries";
+import * as Icons from "../../lib/libraries";
 import { InstructionItem } from "../../types/strapi.home.model";
 import { getTranslation } from "../../lib/i18n";
 import { getStrapiMedia } from "../../services/strapi.service";
@@ -11,15 +12,9 @@ interface HowItWorksCardProps {
   index: number;
 }
 
-const iconMap: { [key: string]: any } = {
-  hand: Hand,
-  zap: Zap,
-  sparkles: Sparkles,
-  smartphone: Smartphone,
-};
-
 export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
-  const Icon = iconMap[data.icon.toLowerCase()] || Sparkles;
+  const iconName = data.icon.charAt(0).toUpperCase() + data.icon.slice(1);
+  const Icon = (Icons as any)[iconName] || Sparkles;
   const title = getTranslation(data.title_card, language);
   const description = getTranslation(data.subtitle_card, language);
   const imageUrl = getStrapiMedia(data.img_instruction.url) || "";
