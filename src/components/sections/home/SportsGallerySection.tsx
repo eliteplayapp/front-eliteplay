@@ -35,12 +35,12 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
   const ActiveIcon = (iconFormatted && (Icons as any)[iconFormatted]) || Icons.Sparkles;
 
   return (
-    <section id="sports-gallery" className="pt-24 pb-12 md:pt-32 md:pb-16 bg-black relative overflow-hidden">
+    <section id="sports-gallery" className="pt-16 pb-8 md:pt-20 md:pb-12 bg-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black opacity-40"></div>
 
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
-        <div className="text-left md:text-center mb-12">
+        <div className="text-left md:text-center mb-8">
           {badge && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -71,7 +71,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8 md:mb-12"
+          className="mb-6 md:mb-10"
         >
           {/* Mobile Select (Custom Dropdown) */}
           <div className="md:hidden relative w-full z-50">
