@@ -2,30 +2,15 @@
 
 import {
   motion,
-  Trophy,
-  Volleyball,
-  Target,
-  Activity,
-  CircleDot,
-  Wind,
-  Medal
+  Trophy
 } from '../../../lib/libraries';
+import * as Icons from '../../../lib/libraries';
 import { getTranslation } from '../../../lib/i18n';
 
-// Mapeamento de strings para componentes de ícones do Lucide
-const iconMap: Record<string, any> = {
-  trophy: Trophy,
-  target: Target,
-  volleyball: Volleyball,
-  activity: Activity,
-  ball: CircleDot,
-  wind: Wind,
-  medal: Medal
-};
 
 const sportsData = [
   {
-    icon: "trophy",
+    icon: "Trophy",
     sport: {
       language_pt: "Futebol",
       language_es: "Fútbol",
@@ -33,7 +18,7 @@ const sportsData = [
     }
   },
   {
-    icon: "target",
+    icon: "Target",
     sport: {
       language_pt: "Padel",
       language_es: "Pádel",
@@ -41,7 +26,7 @@ const sportsData = [
     }
   },
   {
-    icon: "activity",
+    icon: "Activity",
     sport: {
       language_pt: "Tênis",
       language_es: "Tenis",
@@ -49,7 +34,7 @@ const sportsData = [
     }
   },
   {
-    icon: "wind",
+    icon: "Wind",
     sport: {
       language_pt: "Beach Tennis",
       language_es: "Tenis de Playa",
@@ -57,7 +42,7 @@ const sportsData = [
     }
   },
   {
-    icon: "volleyball",
+    icon: "Volleyball",
     sport: {
       language_pt: "Vôlei",
       language_es: "Vóleibol",
@@ -65,7 +50,7 @@ const sportsData = [
     }
   },
   {
-    icon: "ball",
+    icon: "CircleDot",
     sport: {
       language_pt: "Basquete",
       language_es: "Baloncesto",
@@ -75,8 +60,8 @@ const sportsData = [
 ];
 
 export default function SportsCarousel({ language }: { language: string }) {
-  // Duplicando os itens para o efeito de scroll infinito (3x para garantir fluidez)
-  const duplicatedSports = [...sportsData, ...sportsData, ...sportsData];
+  // Dulicando os itens para o efeito de scroll infinito
+  const duplicatedSports = [...sportsData, ...sportsData];
 
   return (
     <section className="bg-black py-3 md:py-6 border-t border-b border-[#76b900]/15 overflow-hidden relative">
@@ -100,7 +85,7 @@ export default function SportsCarousel({ language }: { language: string }) {
           }}
         >
           {duplicatedSports.map((item, index) => {
-            const Icon = iconMap[item.icon] || Trophy;
+            const Icon = (Icons as any)[item.icon] || Trophy;
             const sportName = getTranslation(
               { id: index, ...item.sport },
               language
