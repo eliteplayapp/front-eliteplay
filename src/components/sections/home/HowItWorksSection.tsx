@@ -22,7 +22,7 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
   const callout = getTranslation(data.tooltip_two, language);
 
   return (
-    <section id="how-it-works" className="py-24 md:py-36 bg-black relative overflow-hidden">
+    <section id="how-it-works" className="pt-16 md:pt-24 pb-24 md:pb-36 bg-black relative overflow-hidden">
       {/* Background radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -42,7 +42,7 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
         }}
       />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-20">
@@ -74,7 +74,7 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light"
+            className="text-zinc-400 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-light"
           >
             {subtitle}
           </motion.p>
