@@ -1,4 +1,5 @@
 import BannerTwo from "../../../components/sections/arenas/banner_two";
+import SportsCarroucel from "../../../components/sections/global/sports_carroucel";
 import { getPaginaArenas } from "@/src/services/strapi.service";
 
 export default async function ArenasPage({
@@ -17,6 +18,8 @@ export default async function ArenasPage({
   return (
     <div className="min-h-screen bg-black">
       <BannerTwo data={pageData.banner} language={language} />
+      <SportsCarroucel language={language} />
+
     </div>
   );
 }
