@@ -1,4 +1,5 @@
 import BannerTwo from "../../../components/sections/arenas/banner_two";
+import ProcessSection from "../../../components/sections/arenas/ProcessSection";
 import SportsCarroucel from "../../../components/sections/global/sports_carroucel";
 import { getPaginaArenas } from "@/src/services/strapi.service";
 
@@ -19,7 +20,7 @@ export default async function ArenasPage({
     <div className="min-h-screen bg-black">
       <BannerTwo data={pageData.banner} language={language} />
       <SportsCarroucel language={language} />
-
+      <ProcessSection data={pageData.section_installation} language={language} />
     </div>
   );
 }
