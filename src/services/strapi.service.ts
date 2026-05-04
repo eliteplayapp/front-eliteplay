@@ -1,6 +1,7 @@
 import qs from 'qs';
 import { HomePageModel } from '@/src/types/strapi.home.model';
 import { GlobalModel } from '@/src/types/strapi.global.model';
+import { ArenasPageModel } from '@/src/types/strapi.arena.model';
 
 /**
  * Retorna o token da API configurado no ambiente ou o token padrão do projeto.
@@ -180,4 +181,101 @@ export function getStrapiMedia(url: string | null | undefined) {
   }
 
   return getStrapiURL(url);
+}
+
+/**
+ * Busca a Página de Arenas com todos os componentes e mídias populados
+ */
+export async function getPaginaArenas(): Promise<ArenasPageModel | null> {
+  try {
+    const data = await fetchAPI('/pagina-de-arena', {
+      populate: {
+        banner: {
+          populate: {
+            image: { populate: '*' },
+            tooltip_one: { populate: '*' },
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            button_cta_banner: {
+              populate: ['text_button']
+            }
+          }
+        },
+        section_installation: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            cards: {
+              populate: ['title', 'subtitle']
+            },
+            image: { populate: '*' }
+          }
+        },
+        section_comparative: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            cards: {
+              populate: {
+                image: { populate: '*' },
+                title: { populate: '*' },
+                itens: {
+                  populate: ['item']
+                }
+              }
+            }
+          }
+        },
+        section_differential: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            cards: {
+              populate: ['title', 'subtitle']
+            }
+          }
+        },
+        section_impact: {
+          populate: {
+            image: { populate: '*' },
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            button_section_impact: {
+              populate: ['text_button']
+            },
+            cards: {
+              populate: ['metric', 'category', 'outcome']
+            }
+          }
+        },
+        section_partners: {
+          populate: {
+            tooltip: { populate: '*' },
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            itens: {
+              populate: ['item', 'subitem']
+            }
+          }
+        },
+        section_faq: {
+          populate: {
+            title: { populate: '*' },
+            subtitle: { populate: '*' },
+            itens: {
+              populate: ['question', 'answer']
+            }
+          }
+        }
+      }
+    }, {
+      next: { revalidate: 60 }
+    });
+    return data?.data;
+  } catch (error) {
+    console.error("Erro ao carregar a página de arenas:", error);
+    return null;
+  }
 }
