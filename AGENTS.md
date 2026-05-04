@@ -78,17 +78,25 @@ Utilize a função `generateSitemaps` para gerenciar grandes volumes de páginas
 
 - **Integração:** Consumo via REST ou GraphQL.
 - **Estratégia:** Iniciar com Mock Data dentro de contextos para simular o Strapi, facilitando o desenvolvimento paralelo.
-- **Internacionalização (i18n):**
-    - 3 Idiomas: Português-BR (padrão), Espanhol, Inglês.
-    - **Estratégia Simplificada:** Cada seção/componente gerencia suas próprias traduções (mockadas localmente).
+    - **Internacionalização (i18n):**
+        - 3 Idiomas: Português-BR (`pt-br`, padrão), Espanhol (`es`), Inglês (`en`).
+        - **Estratégia Padrão:** Cada campo translatável é um objeto do tipo `InputLanguages`. Utilize a função utilitária `getTranslation` para obter o texto correto.
     ```tsx
-    const translations: any = {
-      "pt-br": { forArenas: "Para Arenas", howItWorks: "Como Funciona", app: "O App", becomePartner: "Seja um Parceiro" },
-      "es": { forArenas: "Para Arenas", howItWorks: "Cómo Funciona", app: "La App", becomePartner: "Hazte Socio" },
-      "en": { forArenas: "For Arenas", howItWorks: "How It Works", app: "The App", becomePartner: "Become a Partner" },
+    // Exemplo de Mock Data seguindo o padrão Strapi
+    const mockData = {
+      title: {
+        id: 1,
+        language_pt: "Para Arenas",
+        language_es: "Para Arenas",
+        language_en: "For Arenas"
+      }
     };
+
+    // Uso no componente
+    const title = getTranslation(data.title, language);
     ```
-    - **Navegação:** O idioma é controlado via parâmetro de URL `?lang=...`. A troca de idioma deve forçar o recarregamento da página para atualização de dados.
+    - **Navegação:** O idioma é controlado via parâmetro de URL `?lang=...` (pt-br, es, en). O valor do idioma deve ser extraído nos Server Components via `searchParams` e repassado para os componentes filhos.
+
 
 ---
 
