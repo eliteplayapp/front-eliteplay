@@ -3,6 +3,7 @@ import ProcessSection from "../../../components/sections/arenas/ProcessSection";
 import ComparisonSection from "../../../components/sections/arenas/ComparisonSection";
 import BenefitsSection from "../../../components/sections/arenas/BenefitsSection";
 import ImpactSection from "../../../components/sections/arenas/ImpactSection";
+import LeadFormSection from "../../../components/sections/arenas/LeadFormSection";
 import SportsCarroucel from "../../../components/sections/global/sports_carroucel";
 import { getPaginaArenas } from "@/src/services/strapi.service";
 
@@ -27,6 +28,7 @@ export default async function ArenasPage({
       <ComparisonSection data={pageData.section_comparative} language={language} />
       <BenefitsSection data={pageData.section_differential} language={language} />
       <ImpactSection data={pageData.section_impact} language={language} />
+      <LeadFormSection data={pageData.section_partners} language={language} />
     </div>
   );
 }
