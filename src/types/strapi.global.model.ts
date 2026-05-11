@@ -61,7 +61,6 @@ export interface GlobalModel {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  meta_description: string;
   logo_global: StrapiMedia;
   redes_sociais?: RedesSociais[];
   header: StrapiHeader;

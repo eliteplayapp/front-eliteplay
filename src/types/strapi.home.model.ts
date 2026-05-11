@@ -181,6 +181,7 @@ export interface HomePageModel {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  meta_description: InputLanguages;
   banner_home_page: BannerHomePage;
   section_instructions: SectionInstructions;
   section_cta: SectionCtaOne;

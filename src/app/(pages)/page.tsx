@@ -6,6 +6,25 @@ import CaptureSection from "../../components/sections/home/CaptureSection";
 import ArenaDifferentiatorSection from "../../components/sections/home/ArenaDifferentiatorSection";
 import FinalCTASection from "../../components/sections/home/FinalCTASection";
 import { getPaginaInicial } from "@/src/services/strapi.service";
+import { Metadata } from "next";
+import { getTranslation } from "@/src/lib/i18n";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const language = (params.lang as string) || "es";
+  const pageData = await getPaginaInicial();
+
+  return {
+    title: {
+      absolute: "ElitePlay",
+    },
+    description: getTranslation(pageData?.meta_description, language),
+  };
+}
 
 export default async function Home({
   searchParams,

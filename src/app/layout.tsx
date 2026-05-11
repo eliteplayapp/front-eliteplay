@@ -16,8 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ElitePlay",
-  description: "A plataforma de entretenimento para arenas e espaços de lazer.",
+  title: {
+    template: "ElitePlay | %s",
+    default: "ElitePlay",
+  },
 };
 
 export default async function RootLayout({

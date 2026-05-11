@@ -84,6 +84,7 @@ export async function getPaginaInicial(): Promise<HomePageModel | null> {
   try {
     const data = await fetchAPI('/pagina-inicial', {
       populate: {
+        meta_description: { populate: '*' },
         // Banner
         banner_home_page: {
           populate: ['imgs_banner', 'description_banner', 'logo_banner']
@@ -190,6 +191,7 @@ export async function getPaginaArenas(): Promise<ArenasPageModel | null> {
   try {
     const data = await fetchAPI('/pagina-de-arena', {
       populate: {
+        meta_description: { populate: '*' },
         banner: {
           populate: {
             image: { populate: '*' },

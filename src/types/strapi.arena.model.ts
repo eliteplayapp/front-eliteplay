@@ -150,6 +150,7 @@ export interface ArenasPageModel {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  meta_description: InputLanguages;
   banner: BannerArenas;
   section_installation: SectionInstallation;
   section_comparative: SectionComparative;
