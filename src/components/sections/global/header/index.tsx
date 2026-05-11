@@ -31,7 +31,7 @@ function HeaderContent({
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const language = (searchParams.get("lang") || "pt-br") as string;
+  const language = (searchParams.get("lang") || "es") as string;
 
   const menuItems = headerData?.menu_header || [];
   const ctaButton = headerData?.button_cta_header;

@@ -41,7 +41,7 @@ export default function LanguageSelector({ variant = 'desktop' }: LanguageSelect
   const languages = [
     { code: 'pt-br', label: 'Português', short: 'PT' },
     { code: 'es', label: 'Español', short: 'ES' },
-    { code: 'en', label: 'English', short: 'EN' },
+    // { code: 'en', label: 'English', short: 'EN' },
   ];
 
   const currentLang = languages.find(l => l.code === language) || languages[1];
