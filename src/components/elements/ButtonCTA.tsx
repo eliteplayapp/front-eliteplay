@@ -9,9 +9,17 @@ interface ButtonCTAProps {
   iconName?: string;
   className?: string;
   variant?: "dark" | "primary" | "light";
+  size?: "sm" | "md" | "lg";
 }
 
-export function ButtonCTA({ link, label, iconName, className, variant = "dark" }: ButtonCTAProps) {
+export function ButtonCTA({ 
+  link, 
+  label, 
+  iconName, 
+  className, 
+  variant = "dark",
+  size = "md" 
+}: ButtonCTAProps) {
   // Define variant styles
   const variantStyles = {
     dark: "bg-zinc-900 text-primary border-zinc-800 hover:bg-zinc-800",
@@ -19,17 +27,25 @@ export function ButtonCTA({ link, label, iconName, className, variant = "dark" }
     light: "bg-white text-zinc-900 border-zinc-200 hover:bg-zinc-100",
   };
 
+  const sizeStyles = {
+    sm: "px-4 py-2 text-xs",
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-4 text-base",
+  };
+
   const currentStyle = variantStyles[variant];
+  const currentSize = sizeStyles[size];
 
   return (
     <motion.a
       href={link || "#"}
-      className={`inline-flex items-center gap-2 border px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all cursor-pointer shadow-xl ${currentStyle} ${className || ""}`}
+      className={`inline-flex items-center gap-2 border rounded-xl font-bold uppercase tracking-widest transition-all cursor-pointer shadow-xl ${currentStyle} ${currentSize} ${className || ""}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <DynamicIcon iconName={iconName} size={20} fallback={() => null} />
+      <DynamicIcon iconName={iconName} size={size === "sm" ? 16 : 20} fallback={() => null} />
       {label}
     </motion.a>
   );
 }
+

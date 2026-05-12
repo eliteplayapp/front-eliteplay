@@ -13,6 +13,7 @@ import {
 } from '../../../../lib/libraries';
 import LanguageSelector from './LanguageSelector';
 import { getTranslation } from "../../../../lib/i18n";
+import { ButtonCTA } from "../../../elements/ButtonCTA";
 import type { StrapiHeader } from "../../../../types/strapi.global.model";
 
 interface HeaderProps {
@@ -101,26 +102,25 @@ function HeaderContent({
             <LanguageSelector variant="desktop" />
 
             {ctaButton && (
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href={ctaButton.link || "/arenas"}
-                  className="bg-primary text-black px-6 py-2 rounded-lg font-bold hover:bg-[#7ab300] hover:shadow-[0_0_20px_rgba(148,206,0,0.5)] transition-all duration-300"
-                >
-                  {getTranslation(ctaButton.text_button, language)}
-                </Link>
-              </motion.div>
+              <ButtonCTA
+                link={ctaButton.link || "/arenas"}
+                label={getTranslation(ctaButton.text_button, language)}
+                variant="primary"
+                size="sm"
+              />
             )}
           </div>
 
           {/* Mobile Menu Button and CTA */}
           <div className="md:hidden flex items-center gap-4 z-50">
             {ctaButton && (
-              <Link
-                href={ctaButton.link || "/arenas"}
-                className="bg-primary text-black px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase tracking-wider"
-              >
-                {getTranslation(ctaButton.text_button, language)}
-              </Link>
+              <ButtonCTA
+                link={ctaButton.link || "/arenas"}
+                label={getTranslation(ctaButton.text_button, language)}
+                variant="primary"
+                size="sm"
+                className="!py-1.5 !px-3 !rounded-lg"
+              />
             )}
             <button
               className="text-white"
