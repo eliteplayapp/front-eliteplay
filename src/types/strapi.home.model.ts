@@ -1,12 +1,15 @@
 /**
  * Interface para textos multi-idioma (Padrão ElitePlay)
+ * Agora aceita string direta (JSONs por idioma) ou objeto multi-idioma (Strapi legado)
  */
-export interface InputLanguages {
-  id: number;
+export interface InputLanguagesObject {
+  id?: number;
   language_pt: string;
   language_es?: string | null;
   language_en?: string | null;
 }
+
+export type InputLanguages = string | InputLanguagesObject;
 
 /**
  * Formatos de mídia do Strapi

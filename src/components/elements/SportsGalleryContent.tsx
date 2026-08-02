@@ -1,8 +1,7 @@
 "use client";
 
 import { SectionCtaOne } from "../../types/strapi.home.model";
-import { getTranslation } from "../../lib/i18n";
-import { getStrapiMedia } from "../../services/strapi.service";
+import { getMediaUrl, toStr } from "../../services/content.service";
 import { VideoPlayer } from "./VideoPlayer";
 
 interface SportsGalleryContentProps {
@@ -11,8 +10,8 @@ interface SportsGalleryContentProps {
 }
 
 export function SportsGalleryContent({ sport, language }: SportsGalleryContentProps) {
-  const title = getTranslation(sport.title, language);
-  const subtitle = getTranslation(sport.subtitle, language);
+  const title = toStr(sport.title);
+  const subtitle = toStr(sport.subtitle);
   
   return (
     <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
@@ -27,13 +26,13 @@ export function SportsGalleryContent({ sport, language }: SportsGalleryContentPr
           {subtitle}
         </p>
         <ul className="space-y-5">
-          {sport.itens?.map((item, idx) => (
+          {sport.itens?.map((item: any, idx: number) => (
             <li 
               key={item.id || idx} 
               className="flex items-center gap-4 text-white uppercase font-black tracking-wider text-sm"
             >
               <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(148,206,0,0.8)]"></div>
-              {getTranslation(item.item, language)}
+              {toStr(item.item)}
             </li>
           ))}
         </ul>
@@ -41,7 +40,7 @@ export function SportsGalleryContent({ sport, language }: SportsGalleryContentPr
       <div className="relative h-full flex items-center justify-center">
         <VideoPlayer
           variant="gallery"
-          thumbnailUrl={getStrapiMedia(sport.video.conteudo.url) || ""}
+          thumbnailUrl={getMediaUrl(sport.video.conteudo.url) || ""}
           videoUrl={sport.video.link || ""}
           alt={title}
         />

@@ -1,0 +1,486 @@
+{
+  "global": {
+    "id": 1,
+    "logo_global": {
+      "id": 1,
+      "url": "/img/logo-compact-dark.png",
+      "alternativeText": "ElitePlay Logo"
+    },
+    "redes_sociais": [
+      {
+        "link_instagram": "#",
+        "link_facebook": "#",
+        "link_twiter": "#",
+        "link_linkedin": "#"
+      }
+    ],
+    "header": {
+      "id": 1,
+      "menu_header": [
+        {
+          "id": 1,
+          "link": "/#how-it-works",
+          "text_button": "How It Works"
+        },
+        {
+          "id": 2,
+          "link": "/arenas",
+          "text_button": "For Arenas"
+        }
+      ],
+      "button_cta_header": {
+        "id": 1,
+        "link": "/arenas",
+        "text_button": "I'm an Arena"
+      }
+    },
+    "footer": {
+      "id": 1,
+      "description": "Revolutionizing the sports experience with smart cameras and instant replays.",
+      "links": [
+        {
+          "id": 1,
+          "link": "/#how-it-works",
+          "title": "How It Works"
+        },
+        {
+          "id": 2,
+          "link": "/arenas",
+          "title": "For Arenas"
+        }
+      ],
+      "contato": {
+        "id": 1,
+        "email": "contact@eliteplayapp.com",
+        "telefone": "+55 (11) 99999-9999"
+      }
+    }
+  },
+  "home": {
+    "id": 1,
+    "meta_description": "ElitePlay - Your best sports moments recorded and shared in seconds with smart cameras.",
+    "banner_home_page": {
+      "id": 1,
+      "description_banner": "YOUR BEST PLAYS RECORDED AND SHARED IN SECONDS",
+      "imgs_banner": [
+        {
+          "id": 1,
+          "url": "/img/image_banner.png",
+          "alternativeText": "ElitePlay Banner"
+        }
+      ],
+      "logo_banner": {
+        "id": 1,
+        "url": "/img/logo-compact-dark.png",
+        "alternativeText": "ElitePlay Logo Banner"
+      }
+    },
+    "section_instructions": {
+      "id": 1,
+      "tooltip_one": "STEP BY STEP",
+      "title": "HOW ELITEPLAY WORKS",
+      "subtitle": "See how simple it is to transform your arena's experience",
+      "tooltip_two": "All of this in less than 30 seconds!",
+      "instructions": [
+        {
+          "id": 1,
+          "icon": "Trophy",
+          "title_card": "PLAY YOUR MATCH",
+          "subtitle_card": "Step onto the court and play normally. Our smart cameras record everything.",
+          "img_instruction": {
+            "id": 1,
+            "url": "/img/passo1.jpg"
+          }
+        },
+        {
+          "id": 2,
+          "icon": "Video",
+          "title_card": "REQUEST REPLAY",
+          "subtitle_card": "Press the court button or use the app to save that incredible play.",
+          "img_instruction": {
+            "id": 2,
+            "url": "/img/passo2.png"
+          }
+        },
+        {
+          "id": 3,
+          "icon": "Smartphone",
+          "title_card": "RECEIVE ON YOUR PHONE",
+          "subtitle_card": "The video is processed instantly and sent straight to your mobile device.",
+          "img_instruction": {
+            "id": 3,
+            "url": "/img/passo4.png"
+          }
+        },
+        {
+          "id": 4,
+          "icon": "Share2",
+          "title_card": "SHARE THE MOMENT",
+          "subtitle_card": "Post on social media, show your friends, and relive your best highlights.",
+          "img_instruction": {
+            "id": 4,
+            "url": "/img/beach-tennis.png"
+          }
+        }
+      ]
+    },
+    "section_cta": {
+      "id": 1,
+      "icon_tab": "Zap",
+      "tooltip": "SMART RECORDING",
+      "title": "NEVER MISS AN INCREDIBLE PLAY AGAIN",
+      "subtitle": "High-definition cameras strategically placed in your arena to capture every detail with professional quality.",
+      "itens": [
+        {
+          "id": 1,
+          "icon": "Check",
+          "item": "Simplified installation"
+        },
+        {
+          "id": 2,
+          "icon": "Check",
+          "item": "Instant HD replays"
+        },
+        {
+          "id": 3,
+          "icon": "Check",
+          "item": "Automatic recording via button or app"
+        },
+        {
+          "id": 4,
+          "icon": "Check",
+          "item": "Full social media integration"
+        }
+      ],
+      "button": {
+        "id": 1,
+        "link": "/arenas",
+        "text_button": "Learn more"
+      },
+      "video": {
+        "id": 1,
+        "link": "",
+        "conteudo": {
+          "id": 1,
+          "url": "/img/image_banner.png"
+        }
+      }
+    },
+    "section_sports": {
+      "id": 1,
+      "tooltip": "SPORTS",
+      "title": "FOR ALL ARENA SPORTS",
+      "sports": [
+        {
+          "id": 1,
+          "icon_tab": "Target",
+          "tooltip": "PADEL",
+          "title": "HIGH PERFORMANCE PADEL",
+          "subtitle": "Record your best smashes, wall exits, and match points in real time.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "High-resolution panoramic cameras"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Quick replay after key points"
+            }
+          ],
+          "video": {
+            "id": 1,
+            "link": "",
+            "conteudo": {
+              "id": 1,
+              "url": "/img/passo1.jpg"
+            }
+          }
+        },
+        {
+          "id": 2,
+          "icon_tab": "Wind",
+          "tooltip": "BEACH TENNIS",
+          "title": "BEACH TENNIS IN THE SPOTLIGHT",
+          "subtitle": "Capture the excitement of every drop shot, lob, and attack on the sand with professional quality.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Sun and dust resistant"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Perfect full-court angle"
+            }
+          ],
+          "video": {
+            "id": 2,
+            "link": "",
+            "conteudo": {
+              "id": 2,
+              "url": "/img/beach-tennis.png"
+            }
+          }
+        }
+      ]
+    },
+    "section_cta_simple": {
+      "id": 1,
+      "tooltip": "KEY FEATURES",
+      "title": "WHY ARENAS CHOOSE ELITEPLAY",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "TrendingUp",
+          "icon_tooltip": "REVENUE",
+          "text_tooltip_one": "EXCLUSIVE FEATURE",
+          "title_card": "Increase Revenue",
+          "subtitle_card": "Generate new revenue streams through subscriptions and in-arena media."
+        },
+        {
+          "id": 2,
+          "icon": "Users",
+          "icon_tooltip": "LOYALTY",
+          "text_tooltip_one": "ENGAGEMENT",
+          "title_card": "Build Player Loyalty",
+          "subtitle_card": "Players return more often to locations where their best plays are saved."
+        },
+        {
+          "id": 3,
+          "icon": "Zap",
+          "icon_tooltip": "TECHNOLOGY",
+          "text_tooltip_one": "AUTOMATION",
+          "title_card": "100% Automated",
+          "subtitle_card": "No operator needed. The system runs autonomously 24/7."
+        }
+      ],
+      "button_section_cta_simple": {
+        "id": 1,
+        "link": "/arenas",
+        "text_button": "Get it for my arena"
+      }
+    },
+    "section_download_app": {
+      "id": 1,
+      "title": "DOWNLOAD THE ELITEPLAY APP",
+      "subtitle": "Available for iOS and Android. Start recording your plays today.",
+      "link_google_play": "#",
+      "link_apple_store": "#"
+    }
+  },
+  "arenas": {
+    "id": 1,
+    "meta_description": "ElitePlay for Arenas - Turn your sports venue into a technological hub with instant replay cameras.",
+    "banner": {
+      "id": 1,
+      "tooltip_one": "FOR OWNERS & MANAGERS",
+      "title": "TRANSFORM YOUR ARENA INTO A TECH HUB",
+      "subtitle": "Boost revenue, increase customer retention, and stand out from competitors with the #1 replay system.",
+      "image": {
+        "id": 1,
+        "url": "/img/beach-tennis.png",
+        "alternativeText": "Arena with ElitePlay"
+      },
+      "button_cta_banner": {
+        "id": 1,
+        "link": "#lead-form",
+        "text_button": "Request Proposal"
+      },
+      "tooltip_two": "No initial installation cost"
+    },
+    "section_installation": {
+      "id": 1,
+      "tooltip": "SIMPLE PROCESS",
+      "title": "4-STEP INSTALLATION",
+      "subtitle": "Our team handles everything so you can get started quickly.",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "MapPin",
+          "title": "1. Technical Inspection",
+          "subtitle": "We inspect your arena to find optimal camera placement."
+        },
+        {
+          "id": 2,
+          "icon": "Wrench",
+          "title": "2. Kit Installation",
+          "subtitle": "We install HD cameras and quick-trigger buttons."
+        },
+        {
+          "id": 3,
+          "icon": "Cpu",
+          "title": "3. Configuration",
+          "subtitle": "We connect the system to our cloud for automated processing."
+        },
+        {
+          "id": 4,
+          "icon": "CheckCircle",
+          "title": "4. Ready to Use",
+          "subtitle": "Your venue can immediately offer instant replays to players."
+        }
+      ],
+      "image": {
+        "id": 1,
+        "url": "/img/passo2.png",
+        "alternativeText": "Installation"
+      }
+    },
+    "section_comparative": {
+      "id": 1,
+      "tooltip": "COMPARISON",
+      "title": "WHY PARTNER WITH ELITEPLAY",
+      "cards": [
+        {
+          "id": 1,
+          "image": {
+            "id": 1,
+            "url": "/img/passo1.jpg"
+          },
+          "title": "Traditional Arena",
+          "itens": [
+            {
+              "id": 1,
+              "item": "No tech differentiation"
+            },
+            {
+              "id": 2,
+              "item": "Players record on phone tripods"
+            },
+            {
+              "id": 3,
+              "item": "Lower social media engagement"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "image": {
+            "id": 2,
+            "url": "/img/passo4.png"
+          },
+          "title": "ElitePlay Arena",
+          "itens": [
+            {
+              "id": 1,
+              "item": "High-precision professional cameras"
+            },
+            {
+              "id": 2,
+              "item": "Button-triggered replays in seconds"
+            },
+            {
+              "id": 3,
+              "item": "Organic social exposure for your venue"
+            }
+          ]
+        }
+      ]
+    },
+    "section_differential": {
+      "id": 1,
+      "tooltip": "EXCLUSIVE FEATURES",
+      "title": "TECHNOLOGY BUILT FOR ARENAS",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "Shield",
+          "title": "Durable Equipment",
+          "subtitle": "Weather, sun, and dust-resistant hardware."
+        },
+        {
+          "id": 2,
+          "icon": "Wifi",
+          "title": "Stable Connection",
+          "subtitle": "Fast and secure replay transfers directly to the cloud."
+        },
+        {
+          "id": 3,
+          "icon": "BarChart3",
+          "title": "Management Dashboard",
+          "subtitle": "Track usage metrics and player engagements at your venue."
+        }
+      ]
+    },
+    "section_impact": {
+      "id": 1,
+      "image": {
+        "id": 1,
+        "url": "/img/passo4.png",
+        "alternativeText": "ElitePlay Impact"
+      },
+      "tooltip": "PROVEN RESULTS",
+      "title": "REVOLUTIONARY IMPACT ON YOUR ARENA",
+      "subtitle": "Real metrics from partner arenas using ElitePlay.",
+      "button_section_impact": {
+        "id": 1,
+        "link": "#lead-form",
+        "text_button": "I want these results"
+      },
+      "cards": [
+        {
+          "id": 1,
+          "metric": "+35%",
+          "category": "BOOKED HOURS",
+          "outcome": "Average increase in weekly court bookings"
+        },
+        {
+          "id": 2,
+          "metric": "+80%",
+          "category": "SOCIAL ENGAGEMENT",
+          "outcome": "Posts by players tagging the arena"
+        },
+        {
+          "id": 3,
+          "metric": "94%",
+          "category": "CUSTOMER RETENTION",
+          "outcome": "Players prefer courts equipped with ElitePlay"
+        }
+      ]
+    },
+    "section_partners": {
+      "id": 1,
+      "tooltip": "BECOME A PARTNER",
+      "title": "READY TO ELEVATE YOUR ARENA?",
+      "subtitle": "Fill out the form and our team will contact you within 24 hours.",
+      "itens": [
+        {
+          "id": 1,
+          "icon": "Check",
+          "item": "Hassle-free installation",
+          "subitem": "Specialized team handles setup completely."
+        },
+        {
+          "id": 2,
+          "icon": "Check",
+          "item": "24/7 Support",
+          "subitem": "Continuous maintenance and technical assistance."
+        }
+      ]
+    },
+    "section_faq": {
+      "id": 1,
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "subtitle": "Get answers about how ElitePlay works in sports arenas.",
+      "itens": [
+        {
+          "id": 1,
+          "question": "What infrastructure is required to install in my arena?",
+          "answer": "Only a power outlet and internet connection. All remaining hardware is provided and installed by ElitePlay."
+        },
+        {
+          "id": 2,
+          "question": "How long does installation take?",
+          "answer": "Standard installation takes about 1 day per court without disrupting scheduled games."
+        },
+        {
+          "id": 3,
+          "question": "How do players access their videos?",
+          "answer": "Players download the ElitePlay app, sign up, and find their saved videos filtered by date, time, and court."
+        }
+      ]
+    }
+  }
+}

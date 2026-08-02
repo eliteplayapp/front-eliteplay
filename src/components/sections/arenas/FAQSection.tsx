@@ -7,7 +7,7 @@ import {
   Plus,
   Minus,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
+import { toStr } from "@/src/services/content.service";
 import type { SectionFaq } from "../../../types/strapi.arena.model";
 
 interface FAQSectionProps {
@@ -20,8 +20,8 @@ export default function FAQSection({ data, language }: FAQSectionProps) {
 
   if (!data) return null;
 
-  const title = getTranslation(data.title, language);
-  const subtitle = getTranslation(data.subtitle || undefined, language);
+  const title = toStr(data.title);
+  const subtitle = toStr(data.subtitle);
 
   return (
     <section className="py-24 bg-zinc-900/20 relative border-t border-white/5">
@@ -46,9 +46,9 @@ export default function FAQSection({ data, language }: FAQSectionProps) {
 
         {/* FAQ List */}
         <div className="max-w-4xl mx-auto space-y-4">
-          {data.itens?.map((faq, index) => {
-            const question = getTranslation(faq.question, language);
-            const answer = getTranslation(faq.answer, language);
+          {data.itens?.map((faq: any, index: number) => {
+            const question = faq.question;
+            const answer = faq.answer;
             const isOpen = openFaq === index;
 
             return (

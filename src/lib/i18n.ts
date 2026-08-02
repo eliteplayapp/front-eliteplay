@@ -2,15 +2,23 @@ import { InputLanguages } from "../types/strapi.home.model";
 
 /**
  * Retorna a tradução correta com base no idioma selecionado.
- * @param input Objeto contendo as traduções (InputLanguages)
+ * Suporta tanto texto direto (string dos arquivos JSON locais) quanto objetos legados (InputLanguages).
+ * @param input Texto direto (string) ou objeto contendo traduções (InputLanguages)
  * @param lang Código do idioma ('pt-br', 'es', 'en')
- * @returns Texto traduzido ou o padrão (es)
+ * @returns Texto traduzido
  */
-export function getTranslation(input: InputLanguages | undefined, lang: string): string {
+export function getTranslation(input: string | InputLanguages | any | undefined, lang: string = "es"): string {
   if (!input) return "";
 
-  switch (lang) {
+  if (typeof input === "string") {
+    return input;
+  }
+
+  const normalizedLang = (lang || "es").toLowerCase();
+
+  switch (normalizedLang) {
     case "pt-br":
+    case "pt":
       return input.language_pt || input.language_es || "";
     case "en":
       return input.language_en || input.language_es || input.language_pt || "";

@@ -1,12 +1,12 @@
 "use client";
 
-import { motion, Bell, Play, Share2, Download, Smartphone } from "../../../lib/libraries";
+import { motion, Bell, Play, Share2, Download } from "../../../lib/libraries";
 import { SectionCtaOne } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "../../../services/strapi.service";
+import { toStr } from "@/src/services/content.service";
 import { VideoPlayer } from "../../elements/VideoPlayer";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import { DynamicIcon } from "../../elements/DynamicIcon";
+import { getMediaUrl } from "../../../services/content.service";
 
 interface CaptureSectionProps {
   data: SectionCtaOne;
@@ -18,7 +18,9 @@ const fallbackIcons = [Bell, Play, Share2, Download];
 export default function CaptureSection({ data, language }: CaptureSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
+  const subtitle = toStr(data.subtitle);
 
   return (
     <section id="capture" className="relative py-16 md:py-24 bg-white overflow-hidden scroll-mt-20">
@@ -49,17 +51,17 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
               className="text-4xl md:text-6xl font-black text-black italic tracking-tight mb-6 leading-tight uppercase"
               style={{ transform: 'skewX(-3deg)' }}
             >
-              {getTranslation(data.title, language)}
+              {title}
             </h2>
 
             {/* Subtitle */}
             <p className="text-zinc-600 text-lg md:text-xl mb-10 max-w-3xl leading-relaxed font-light">
-              {getTranslation(data.subtitle, language)}
+              {subtitle}
             </p>
 
             {/* Feature list */}
             <ul className="space-y-4 mb-10">
-              {data.itens?.map((item, i) => {
+              {data.itens?.map((item: any, i: number) => {
                 return (
                   <li key={item.id || i} className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
@@ -70,18 +72,20 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
                         fallback={fallbackIcons[i % fallbackIcons.length]} 
                       />
                     </div>
-                    <p className="text-zinc-700 font-medium">{getTranslation(item.item, language)}</p>
+                    <p className="text-zinc-700 font-medium">{toStr(item.item)}</p>
                   </li>
                 );
               })}
             </ul>
 
             {/* CTA */}
-            <ButtonCTA 
-              link={data.button.link}
-              label={getTranslation(data.button.text_button, language)}
-              iconName={data.button.icon}
-            />
+            {data.button && (
+              <ButtonCTA 
+                link={data.button.link}
+                label={toStr(data.button.text_button)}
+                iconName={data.button.icon}
+              />
+            )}
           </motion.div>
 
           {/* Video — right */}
@@ -96,9 +100,9 @@ export default function CaptureSection({ data, language }: CaptureSectionProps) 
 
             <VideoPlayer
               variant="capture"
-              thumbnailUrl={getStrapiMedia(data.video.conteudo.url) || ""}
-              videoUrl={data.video.link || ""}
-              alt={getTranslation(data.button.text_button, language)}
+              thumbnailUrl={getMediaUrl(data.video?.conteudo?.url) || ""}
+              videoUrl={data.video?.link || ""}
+              alt={toStr(data.button?.text_button)}
             />
           </motion.div>
 

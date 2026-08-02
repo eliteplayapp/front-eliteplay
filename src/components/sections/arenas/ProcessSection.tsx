@@ -4,8 +4,7 @@ import {
   motion,
   Image,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "@/src/services/strapi.service";
+import { getMediaUrl, toStr } from "@/src/services/content.service";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
@@ -20,10 +19,10 @@ interface ProcessSectionProps {
 export default function ProcessSection({ data, language }: ProcessSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
-  const subtitle = getTranslation(data.subtitle || undefined, language);
-  const bgImage = getStrapiMedia(data.image?.url);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
+  const subtitle = toStr(data.subtitle);
+  const bgImage = getMediaUrl(data.image?.url);
 
   return (
     <SectionContainer className="bg-white">
@@ -58,9 +57,9 @@ export default function ProcessSection({ data, language }: ProcessSectionProps) 
 
         {/* Scrolling Steps */}
         <div className="w-full lg:w-1/2 space-y-8 pb-12 lg:pb-32">
-          {data.cards?.map((step, index) => {
-            const stepTitle = getTranslation(step.title, language);
-            const stepSubtitle = getTranslation(step.subtitle, language);
+          {data.cards?.map((step: any, index: number) => {
+            const stepTitle = step.title;
+            const stepSubtitle = step.subtitle;
             const stepNumber = (index + 1).toString().padStart(2, '0');
 
             return (

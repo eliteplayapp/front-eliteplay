@@ -8,10 +8,11 @@ import {
 } from "../../../lib/libraries";
 import * as Icons from "../../../lib/libraries";
 import { SectionSports } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
 import { GalleryTabButton } from "../../elements/GalleryTabButton";
 import { SportsGalleryContent } from "../../elements/SportsGalleryContent";
 import { DynamicIcon } from "../../elements/DynamicIcon";
+
+import { toStr } from "@/src/services/content.service";
 
 interface SportsGallerySectionProps {
   data: SectionSports;
@@ -24,8 +25,8 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
 
   if (!data || !data.sports || data.sports.length === 0) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
 
   const activeSport = data.sports[activeTabIndex];
   return (
@@ -75,7 +76,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
             >
               <div className="flex items-center gap-3">
                 <DynamicIcon iconName={activeSport.icon_tab} size={20} className="text-primary" />
-                <span>{getTranslation(activeSport.tooltip, language)}</span>
+                <span>{toStr(activeSport.tooltip)}</span>
               </div>
               <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isSelectOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -93,7 +94,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
                       key={sport.id || index}
                       variant="mobile"
                       iconName={sport.icon_tab}
-                      label={getTranslation(sport.tooltip, language)}
+                      label={toStr(sport.tooltip)}
                       isActive={activeTabIndex === index}
                       onClick={() => {
                         setActiveTabIndex(index);
@@ -112,7 +113,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
               <GalleryTabButton
                 key={sport.id || index}
                 iconName={sport.icon_tab}
-                label={getTranslation(sport.tooltip, language)}
+                label={toStr(sport.tooltip)}
                 isActive={activeTabIndex === index}
                 onClick={() => setActiveTabIndex(index)}
               />

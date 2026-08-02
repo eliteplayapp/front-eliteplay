@@ -2,7 +2,7 @@
 
 import { motion } from "../../../lib/libraries";
 import { SectionDownloadApp } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
+import { toStr } from "@/src/services/content.service";
 
 interface FinalCTASectionProps {
   data: SectionDownloadApp;
@@ -42,11 +42,11 @@ export default function FinalCTASection({ data, language }: FinalCTASectionProps
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-4 italic" style={{ transform: 'skewX(-3deg)' }}>
               <span className="text-primary drop-shadow-[0_0_30px_color-mix(in_srgb,var(--primary)_60%,transparent)]">
-                {getTranslation(data.title, language)}
+                {toStr(data.title)}
               </span>
             </h2>
             <h3 className="text-2xl md:text-4xl font-bold text-white/80 mb-8 italic" style={{ transform: 'skewX(-3deg)' }}>
-              {getTranslation(data.subtitle, language)}
+              {toStr(data.subtitle)}
             </h3>
           </motion.div>
 

@@ -11,13 +11,13 @@ import {
   Send,
   CheckCircle2,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
 import { SectionContainer } from "../../elements/SectionContainer";
 import { FormField } from "../../elements/FormField";
 import { fadeInUp, scaleIn } from "../../../lib/animations";
+import { toStr } from "../../../services/content.service";
 import type { SectionPartners } from "../../../types/strapi.arena.model";
 
 interface LeadFormSectionProps {
@@ -37,9 +37,9 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
 
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
-  const description = getTranslation(data.subtitle || undefined, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
+  const description = toStr(data.subtitle);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,7 +79,7 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
 
           {/* Features List from Strapi */}
           <div className="space-y-6">
-            {data.itens?.map((item, index) => (
+            {data.itens?.map((item: any, index: number) => (
               <motion.div 
                 key={item.id || index} 
                 className="flex items-center gap-4 text-zinc-300"
@@ -91,10 +91,10 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
                 </div>
                 <div>
                   <p className="font-bold text-lg leading-tight uppercase">
-                    {getTranslation(item.item, language)}
+                    {item.item}
                   </p>
                   <p className="text-sm text-zinc-500 font-light mt-1">
-                    {getTranslation(item.subitem, language)}
+                    {item.subitem}
                   </p>
                 </div>
               </motion.div>

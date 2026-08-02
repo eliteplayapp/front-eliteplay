@@ -6,9 +6,8 @@ import ImpactSection from "../../../components/sections/arenas/ImpactSection";
 import LeadFormSection from "../../../components/sections/arenas/LeadFormSection";
 import FAQSection from "../../../components/sections/arenas/FAQSection";
 import SportsCarroucel from "../../../components/sections/global/sports_carroucel";
-import { getPaginaArenas } from "@/src/services/strapi.service";
+import { getPaginaArenas } from "@/src/services/content.service";
 import { Metadata } from "next";
-import { getTranslation } from "@/src/lib/i18n";
 
 export async function generateMetadata({
   searchParams,
@@ -17,11 +16,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const language = (params.lang as string) || "es";
-  const pageData = await getPaginaArenas();
+  const pageData = await getPaginaArenas(language);
 
   return {
     title: "Arenas",
-    description: getTranslation(pageData?.meta_description, language),
+    description: pageData?.meta_description || "",
   };
 }
 
@@ -32,7 +31,7 @@ export default async function ArenasPage({
 }) {
   const params = await searchParams;
   const language = (params.lang as string) || "es";
-  const pageData = await getPaginaArenas();
+  const pageData = await getPaginaArenas(language);
 
   if (!pageData) {
     return <div className="min-h-screen flex items-center justify-center text-white">Erro ao carregar dados da página.</div>;

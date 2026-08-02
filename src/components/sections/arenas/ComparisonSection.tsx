@@ -6,8 +6,7 @@ import {
   X,
   Check,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "@/src/services/strapi.service";
+import { getMediaUrl, toStr } from "@/src/services/content.service";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
 import { SectionContainer } from "../../elements/SectionContainer";
@@ -22,8 +21,8 @@ interface ComparisonSectionProps {
 export default function ComparisonSection({ data, language }: ComparisonSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
 
   return (
     <SectionContainer className="bg-zinc-950 border-y border-white/5 scroll-mt-20">
@@ -57,10 +56,10 @@ export default function ComparisonSection({ data, language }: ComparisonSectionP
         </div>
 
         {/* Cards Mapping */}
-        {data.cards?.map((card, index) => {
+        {data.cards?.map((card: any, index: number) => {
           const isElite = index === 1; // Assuming second card is Elite Play
-          const cardTitle = getTranslation(card.title, language);
-          const cardImage = getStrapiMedia(card.image?.url);
+          const cardTitle = card.title;
+          const cardImage = getMediaUrl(card.image?.url);
           const animationVariant = isElite ? fadeInLeft : fadeInRight;
 
           return (
@@ -111,7 +110,7 @@ export default function ComparisonSection({ data, language }: ComparisonSectionP
                   </div>
 
                   <ul className="space-y-5">
-                    {card.itens?.map((item, itemIdx) => (
+                    {card.itens?.map((item: any, itemIdx: number) => (
                       <motion.li
                         key={item.id || itemIdx}
                         initial={{ opacity: 0, x: isElite ? 10 : -10 }}
@@ -127,7 +126,7 @@ export default function ComparisonSection({ data, language }: ComparisonSectionP
                         ) : (
                           <X className="w-4 h-4 text-zinc-600 shrink-0" />
                         )}
-                        <span>{getTranslation(item.item, language)}</span>
+                        <span>{item.item}</span>
                       </motion.li>
                     ))}
                   </ul>

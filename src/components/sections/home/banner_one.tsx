@@ -7,9 +7,8 @@ import {
   Image,
   ChevronDown
 } from '../../../lib/libraries';
-import { getTranslation } from "../../../lib/i18n";
 import type { BannerHomePage } from "../../../types/strapi.home.model";
-import { getStrapiMedia } from '@/src/services/strapi.service';
+import { getMediaUrl, toStr } from '@/src/services/content.service';
 
 interface BannerOneProps {
   data: BannerHomePage;
@@ -50,7 +49,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
             }}
           >
             <Image
-              src={getStrapiMedia(currentImage.url)!}
+              src={getMediaUrl(currentImage.url)!}
               alt={currentImage.alternativeText || "Sports action"}
               fill
               priority
@@ -78,7 +77,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
             className="mb-8"
           >
             <Image
-              src={getStrapiMedia(data.logo_banner.url)!}
+              src={getMediaUrl(data.logo_banner.url)!}
               alt="Elite Play Banner"
               width={600}
               height={200}
@@ -89,7 +88,7 @@ export default function BannerOne({ data, language }: BannerOneProps) {
           </motion.div>
 
           <p className="text-base md:text-lg lg:text-xl text-white font-light leading-relaxed px-6 tracking-[0.2em] uppercase text-center max-w-4xl">
-            {getTranslation(data?.description_banner, language)}
+            {toStr(data?.description_banner)}
           </p>
         </motion.div>
       </div>

@@ -5,9 +5,8 @@ import SportsGallerySection from "../../components/sections/home/SportsGallerySe
 import CaptureSection from "../../components/sections/home/CaptureSection";
 import ArenaDifferentiatorSection from "../../components/sections/home/ArenaDifferentiatorSection";
 import FinalCTASection from "../../components/sections/home/FinalCTASection";
-import { getPaginaInicial } from "@/src/services/strapi.service";
+import { getPaginaInicial } from "@/src/services/content.service";
 import { Metadata } from "next";
-import { getTranslation } from "@/src/lib/i18n";
 
 export async function generateMetadata({
   searchParams,
@@ -16,13 +15,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
   const language = (params.lang as string) || "es";
-  const pageData = await getPaginaInicial();
+  const pageData = await getPaginaInicial(language);
 
   return {
     title: {
       absolute: "ElitePlay",
     },
-    description: getTranslation(pageData?.meta_description, language),
+    description: pageData?.meta_description || "",
   };
 }
 
@@ -33,7 +32,7 @@ export default async function Home({
 }) {
   const params = await searchParams;
   const language = (params.lang as string) || "es";
-  const pageData = await getPaginaInicial();
+  const pageData = await getPaginaInicial(language);
 
   if (!pageData) {
     return <div className="min-h-screen flex items-center justify-center text-white">Erro ao carregar dados da página.</div>;

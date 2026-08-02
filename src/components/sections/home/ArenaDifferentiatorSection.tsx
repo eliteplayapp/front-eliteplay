@@ -2,9 +2,9 @@
 
 import { motion, X, Zap, ArrowRight } from "../../../lib/libraries";
 import { SectionCtaSimple } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import { DynamicIcon } from "../../elements/DynamicIcon";
+import { toStr } from "@/src/services/content.service";
 
 interface ArenaDifferentiatorSectionProps {
   data: SectionCtaSimple;
@@ -14,8 +14,8 @@ interface ArenaDifferentiatorSectionProps {
 export default function ArenaDifferentiatorSection({ data, language }: ArenaDifferentiatorSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
 
   return (
     <section id="arena-differentiator" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
@@ -53,7 +53,7 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
 
         {/* Comparison Cards */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
-          {data.cards?.map((card, index) => {
+          {data.cards?.map((card: any, index: number) => {
             // Usually index 0 is common arena, index 1 is Elite Play
             const isElite = index === 1;
             
@@ -79,18 +79,18 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
                     />
                   </div>
                   <span className={`font-black uppercase tracking-widest text-sm ${isElite ? 'text-primary' : 'text-zinc-400'}`}>
-                    {getTranslation(card.text_tooltip_one, language)}
+                    {card.text_tooltip_one}
                   </span>
                 </div>
 
                 <p className={`text-3xl md:text-4xl font-black leading-snug italic ${isElite ? 'text-white' : 'text-zinc-300'}`} style={{ transform: 'skewX(-2deg)' }}>
-                  {getTranslation(card.title_card, language)}
+                  {card.title_card}
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto">
                   <div className={`w-3 h-3 rounded-full ${isElite ? 'bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--primary)_80%,transparent)]' : 'bg-zinc-600'}`} />
                   <span className={`${isElite ? 'text-primary/80' : 'text-zinc-500'} text-sm font-medium`}>
-                    {getTranslation(card.subtitle_card, language)}
+                    {card.subtitle_card}
                   </span>
                 </div>
               </motion.div>
@@ -108,7 +108,7 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
         >
           <ButtonCTA 
             link={data.button_section_cta_simple.link || "/arenas"}
-            label={getTranslation(data.button_section_cta_simple.text_button, language)}
+            label={toStr(data.button_section_cta_simple.text_button)}
             iconName={data.button_section_cta_simple.icon || "ArrowRight"}
             className="px-12 py-5 text-lg"
             variant="primary"

@@ -6,7 +6,8 @@ import {
 } from "../../../lib/libraries";
 import { HowItWorksCard } from "../../elements/HowItWorksCard";
 import { SectionInstructions } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
+
+import { toStr } from "@/src/services/content.service";
 
 interface HowItWorksSectionProps {
   data: SectionInstructions;
@@ -16,10 +17,10 @@ interface HowItWorksSectionProps {
 export default function HowItWorksSection({ data, language }: HowItWorksSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip_one, language);
-  const title = getTranslation(data.title, language);
-  const subtitle = getTranslation(data.subtitle, language);
-  const callout = getTranslation(data.tooltip_two, language);
+  const badge = toStr(data.tooltip_one);
+  const title = toStr(data.title);
+  const subtitle = toStr(data.subtitle);
+  const callout = toStr(data.tooltip_two);
 
   return (
     <section id="how-it-works" className="pt-16 md:pt-24 pb-24 md:pb-36 bg-black relative overflow-hidden">
