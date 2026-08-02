@@ -6,7 +6,6 @@ import { toStr } from "@/src/services/content.service";
 
 interface FinalCTASectionProps {
   data: SectionDownloadApp;
-  language: string;
 }
 
 const buttonTranslations: Record<string, { apple: string; google: string }> = {
@@ -15,10 +14,10 @@ const buttonTranslations: Record<string, { apple: string; google: string }> = {
   "es": { apple: "Descárgalo en la", google: "Disponible en" },
 };
 
-export default function FinalCTASection({ data, language }: FinalCTASectionProps) {
+export default function FinalCTASection({ data }: FinalCTASectionProps) {
   if (!data) return null;
 
-  const t = buttonTranslations[language] || buttonTranslations["pt-br"];
+  const t = buttonTranslations["pt-br"];
 
   return (
     <section id="app" className="pt-16 pb-24 md:py-32 bg-black relative overflow-hidden border-t border-primary/20">

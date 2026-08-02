@@ -12,10 +12,9 @@ import { getMediaUrl, toStr } from '@/src/services/content.service';
 
 interface BannerOneProps {
   data: BannerHomePage;
-  language: string;
 }
 
-export default function BannerOne({ data, language }: BannerOneProps) {
+export default function BannerOne({ data }: BannerOneProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = data?.imgs_banner || [];

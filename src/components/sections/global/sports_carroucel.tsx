@@ -16,10 +16,9 @@ const sportsData = [
   { icon: "CircleDot", sport: { "pt-br": "Basquete",     "es": "Baloncesto",    "en": "Basketball" } },
 ];
 
-export default function SportsCarousel({ language }: { language: string }) {
+export default function SportsCarousel() {
   // Duplicando os itens para o efeito de scroll infinito
   const duplicatedSports = [...sportsData, ...sportsData];
-  const langKey = language as keyof typeof sportsData[0]['sport'];
 
   return (
     <section className="bg-black py-3 md:py-6 border-t border-b border-[#76b900]/15 overflow-hidden relative">
@@ -43,7 +42,7 @@ export default function SportsCarousel({ language }: { language: string }) {
           }}
         >
           {duplicatedSports.map((item, index) => {
-            const sportName = item.sport[langKey] || item.sport["es"];
+            const sportName = item.sport["es"];
 
             return (
               <div

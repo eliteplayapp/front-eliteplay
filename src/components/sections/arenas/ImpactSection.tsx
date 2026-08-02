@@ -11,10 +11,9 @@ import type { SectionImpact } from "../../../types/strapi.arena.model";
 
 interface ImpactSectionProps {
   data: SectionImpact;
-  language: string;
 }
 
-export default function ImpactSection({ data, language }: ImpactSectionProps) {
+export default function ImpactSection({ data }: ImpactSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);

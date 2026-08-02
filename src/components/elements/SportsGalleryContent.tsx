@@ -6,10 +6,9 @@ import { VideoPlayer } from "./VideoPlayer";
 
 interface SportsGalleryContentProps {
   sport: SectionCtaOne;
-  language: string;
 }
 
-export function SportsGalleryContent({ sport, language }: SportsGalleryContentProps) {
+export function SportsGalleryContent({ sport }: SportsGalleryContentProps) {
   const title = toStr(sport.title);
   const subtitle = toStr(sport.subtitle);
   

@@ -7,11 +7,10 @@ import { DynamicIcon } from "./DynamicIcon";
 
 interface HowItWorksCardProps {
   data: InstructionItem;
-  language: string;
   index: number;
 }
 
-export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
+export function HowItWorksCard({ data, index }: HowItWorksCardProps) {
   const title = typeof data.title_card === 'string' ? data.title_card : (data.title_card as any)?.language_pt || "";
   const description = typeof data.subtitle_card === 'string' ? data.subtitle_card : (data.subtitle_card as any)?.language_pt || "";
   const imageUrl = getMediaUrl(data.img_instruction.url) || "";

@@ -13,10 +13,9 @@ import type { SectionInstallation } from "../../../types/strapi.arena.model";
 
 interface ProcessSectionProps {
   data: SectionInstallation;
-  language: string;
 }
 
-export default function ProcessSection({ data, language }: ProcessSectionProps) {
+export default function ProcessSection({ data }: ProcessSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);

@@ -22,10 +22,9 @@ import type { SectionPartners } from "../../../types/strapi.arena.model";
 
 interface LeadFormSectionProps {
   data: SectionPartners;
-  language: string;
 }
 
-export default function LeadFormSection({ data, language }: LeadFormSectionProps) {
+export default function LeadFormSection({ data }: LeadFormSectionProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({

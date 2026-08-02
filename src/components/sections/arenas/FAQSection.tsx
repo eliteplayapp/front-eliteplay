@@ -12,10 +12,9 @@ import type { SectionFaq } from "../../../types/strapi.arena.model";
 
 interface FAQSectionProps {
   data: SectionFaq;
-  language: string;
 }
 
-export default function FAQSection({ data, language }: FAQSectionProps) {
+export default function FAQSection({ data }: FAQSectionProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!data) return null;

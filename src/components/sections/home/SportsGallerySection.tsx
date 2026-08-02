@@ -16,10 +16,9 @@ import { toStr } from "@/src/services/content.service";
 
 interface SportsGallerySectionProps {
   data: SectionSports;
-  language: string;
 }
 
-export default function SportsGallerySection({ data, language }: SportsGallerySectionProps) {
+export default function SportsGallerySection({ data }: SportsGallerySectionProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
 
@@ -132,7 +131,7 @@ export default function SportsGallerySection({ data, language }: SportsGallerySe
               transition={{ duration: 0.3 }}
               className="h-full"
             >
-              <SportsGalleryContent sport={activeSport} language={language} />
+              <SportsGalleryContent sport={activeSport} />
             </motion.div>
           </AnimatePresence>
         </div>

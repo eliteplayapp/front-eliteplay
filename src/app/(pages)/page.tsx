@@ -40,13 +40,13 @@ export default async function Home({
 
   return (
     <div className="min-h-screen bg-black">
-      <BannerOne data={pageData.banner_home_page} language={language} />
-      <SportsCarroucel language={language} />
-      <HowItWorksSection data={pageData.section_instructions} language={language} />
-      <CaptureSection data={pageData.section_cta} language={language} />
-      <SportsGallerySection data={pageData.section_sports} language={language} />
-      <ArenaDifferentiatorSection data={pageData.section_cta_simple} language={language} />
-      <FinalCTASection data={pageData.section_download_app} language={language} />
+      <BannerOne data={pageData.banner_home_page} />
+      <SportsCarroucel />
+      <HowItWorksSection data={pageData.section_instructions} />
+      <CaptureSection data={pageData.section_cta} />
+      <SportsGallerySection data={pageData.section_sports} />
+      <ArenaDifferentiatorSection data={pageData.section_cta_simple} />
+      <FinalCTASection data={pageData.section_download_app} />
     </div>
   );
 }

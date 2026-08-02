@@ -11,10 +11,9 @@ import { toStr } from "@/src/services/content.service";
 
 interface HowItWorksSectionProps {
   data: SectionInstructions;
-  language: string;
 }
 
-export default function HowItWorksSection({ data, language }: HowItWorksSectionProps) {
+export default function HowItWorksSection({ data }: HowItWorksSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip_one);
@@ -87,7 +86,6 @@ export default function HowItWorksSection({ data, language }: HowItWorksSectionP
             <div key={step.id || index} className="relative h-full">
               <HowItWorksCard
                 data={step}
-                language={language}
                 index={index}
               />
 

@@ -39,14 +39,14 @@ export default async function ArenasPage({
 
   return (
     <div className="min-h-screen bg-black">
-      <BannerTwo data={pageData.banner} language={language} />
-      <SportsCarroucel language={language} />
-      <ProcessSection data={pageData.section_installation} language={language} />
-      <ComparisonSection data={pageData.section_comparative} language={language} />
-      <BenefitsSection data={pageData.section_differential} language={language} />
-      <ImpactSection data={pageData.section_impact} language={language} />
-      <LeadFormSection data={pageData.section_partners} language={language} />
-      <FAQSection data={pageData.section_faq} language={language} />
+      <BannerTwo data={pageData.banner} />
+      <SportsCarroucel />
+      <ProcessSection data={pageData.section_installation} />
+      <ComparisonSection data={pageData.section_comparative} />
+      <BenefitsSection data={pageData.section_differential} />
+      <ImpactSection data={pageData.section_impact} />
+      <LeadFormSection data={pageData.section_partners} />
+      <FAQSection data={pageData.section_faq} />
     </div>
   );
 }

@@ -15,10 +15,9 @@ import type { SectionComparative } from "../../../types/strapi.arena.model";
 
 interface ComparisonSectionProps {
   data: SectionComparative;
-  language: string;
 }
 
-export default function ComparisonSection({ data, language }: ComparisonSectionProps) {
+export default function ComparisonSection({ data }: ComparisonSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);

@@ -8,10 +8,9 @@ import { toStr } from "@/src/services/content.service";
 
 interface ArenaDifferentiatorSectionProps {
   data: SectionCtaSimple;
-  language: string;
 }
 
-export default function ArenaDifferentiatorSection({ data, language }: ArenaDifferentiatorSectionProps) {
+export default function ArenaDifferentiatorSection({ data }: ArenaDifferentiatorSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);

@@ -11,10 +11,9 @@ import type { BannerArenas } from "../../../types/strapi.arena.model";
 
 interface BannerTwoProps {
   data: BannerArenas;
-  language: string;
 }
 
-export default function BannerTwo({ data, language }: BannerTwoProps) {
+export default function BannerTwo({ data }: BannerTwoProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip_one);

@@ -10,12 +10,11 @@ import { getMediaUrl } from "../../../services/content.service";
 
 interface CaptureSectionProps {
   data: SectionCtaOne;
-  language: string;
 }
 
 const fallbackIcons = [Bell, Play, Share2, Download];
 
-export default function CaptureSection({ data, language }: CaptureSectionProps) {
+export default function CaptureSection({ data }: CaptureSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);

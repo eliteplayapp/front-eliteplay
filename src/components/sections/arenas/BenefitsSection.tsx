@@ -13,10 +13,9 @@ import type { SectionDifferential } from "../../../types/strapi.arena.model";
 
 interface BenefitsSectionProps {
   data: SectionDifferential;
-  language: string;
 }
 
-export default function BenefitsSection({ data, language }: BenefitsSectionProps) {
+export default function BenefitsSection({ data }: BenefitsSectionProps) {
   if (!data) return null;
 
   const badge = toStr(data.tooltip);
