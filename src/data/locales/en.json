@@ -154,7 +154,7 @@
       ],
       "button": {
         "id": 1,
-        "link": "#download-app",
+        "link": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
         "text_button": "Download the app"
       },
       "carousel_app": {
@@ -308,8 +308,8 @@
       "id": 1,
       "title": "DOWNLOAD THE ELITEPLAY APP",
       "subtitle": "Available for iOS and Android. Download now and never miss a point.",
-      "link_google_play": "#",
-      "link_apple_store": "#"
+      "link_google_play": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
+      "link_apple_store": "https://apps.apple.com/br/app/elite-play/id6774013843"
     }
   },
   "arenas": {

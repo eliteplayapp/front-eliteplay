@@ -154,7 +154,7 @@
       ],
       "button": {
         "id": 1,
-        "link": "#download-app",
+        "link": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
         "text_button": "Baixar aplicativo"
       },
       "carousel_app": {
@@ -308,8 +308,8 @@
       "id": 1,
       "title": "BAIXE O APP ELITEPLAY",
       "subtitle": "Disponível para iOS e Android. Baixe agora e não perca nenhum ponto.",
-      "link_google_play": "#",
-      "link_apple_store": "#"
+      "link_google_play": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
+      "link_apple_store": "https://apps.apple.com/br/app/elite-play/id6774013843"
     }
   },
   "arenas": {

@@ -36,9 +36,13 @@ export function ButtonCTA({
   const currentStyle = variantStyles[variant];
   const currentSize = sizeStyles[size];
 
+  const isExternal = link?.startsWith("http");
+
   return (
     <motion.a
       href={link || "#"}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center gap-2 border rounded-xl font-bold uppercase tracking-widest transition-all cursor-pointer shadow-xl ${currentStyle} ${currentSize} ${className || ""}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
