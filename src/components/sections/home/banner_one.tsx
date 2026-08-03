@@ -45,7 +45,7 @@ export default function BannerOne({ data }: BannerOneProps) {
   }
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-start overflow-hidden bg-black">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] md:max-h-[90vh] flex items-center justify-start overflow-hidden bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentImageIndex}

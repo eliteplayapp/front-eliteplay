@@ -214,6 +214,33 @@
       "sports": [
         {
           "id": 1,
+          "icon_tab": "Trophy",
+          "tooltip": "FÚTBOL",
+          "title": "FÚTBOL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada gol, asistencia y jugada clave de tus partidos de fútbol con cámaras de alta precisión en tiempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cobertura total del campo con cámaras panorámicas"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de goles y jugadas destacadas"
+            }
+          ],
+          "video": {
+            "id": 1,
+            "link": "",
+            "conteudo": {
+              "id": 1,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 2,
           "icon_tab": "Target",
           "tooltip": "PÁDEL",
           "title": "PÁDEL DE ALTO RENDIMIENTO",
@@ -240,7 +267,7 @@
           }
         },
         {
-          "id": 2,
+          "id": 3,
           "icon_tab": "Wind",
           "tooltip": "BEACH TENNIS",
           "title": "BEACH TENNIS EN EL FOCO",
