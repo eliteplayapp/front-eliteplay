@@ -130,6 +130,23 @@ export interface SectionInstructions {
 }
 
 /**
+ * Imagem de carrossel do app
+ */
+export interface CarouselAppImage {
+  id: number;
+  url: string;
+  alternativeText?: string | null;
+}
+
+/**
+ * Carrossel de screenshots do app
+ */
+export interface CarouselApp {
+  id: number;
+  imgs: CarouselAppImage[];
+}
+
+/**
  * Seção de CTA Padrão (Cta_one)
  */
 export interface SectionCtaOne {
@@ -140,7 +157,8 @@ export interface SectionCtaOne {
   subtitle: InputLanguages;
   itens: ItemCta[];
   button?: ButtonInfo;
-  video: VideoItem;
+  video?: VideoItem | null;
+  carousel_app?: CarouselApp | null;
 }
 
 /**
