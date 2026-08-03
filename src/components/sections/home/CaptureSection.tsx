@@ -1,46 +1,29 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, Bell, Play, Share2, Download, Smartphone, Layers, History, Sparkles, CheckCircle2 } from "../../../lib/libraries";
+import { motion, AnimatePresence, Bell, Play, Share2, Download, Smartphone, Sparkles, CheckCircle2 } from "../../../lib/libraries";
 import { SectionCtaOne } from "../../../types/strapi.home.model";
 import { toStr } from "@/src/services/content.service";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { getMediaUrl } from "../../../services/content.service";
 
+import enLocale from "@/src/data/locales/en.json";
+
 interface CaptureSectionProps {
   data: SectionCtaOne;
 }
 
-const fallbackIcons = [Bell, Play, Share2, Download];
+interface SlideItem {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+  desc: string;
+  icon: string;
+}
 
-/** Fallback screenshots with titles & descriptions for tabs */
-const FALLBACK_SLIDES = [
-  {
-    id: 1,
-    url: "/img/app-screenshot-1.png",
-    alternativeText: "Reproductor de jogadas",
-    title: "Reproductor de Jogadas",
-    desc: "Assista suas melhores jogadas em alta definição logo após o término da partida.",
-    icon: Play,
-  },
-  {
-    id: 2,
-    url: "/img/app-screenshot-2.png",
-    alternativeText: "Cortes recentes",
-    title: "Cortes Recentes",
-    desc: "Acesse rapidamente a lista dos lances mais marcantes das suas últimas partidas.",
-    icon: Layers,
-  },
-  {
-    id: 3,
-    url: "/img/app-screenshot-3.png",
-    alternativeText: "Histórico por quadra",
-    title: "Histórico por Quadra",
-    desc: "Filtre e organize todo o seu histórico de vídeos por data, horário e quadra.",
-    icon: History,
-  },
-];
+const fallbackIcons = [Play, Share2, Download, Bell];
 
 export default function CaptureSection({ data }: CaptureSectionProps) {
   if (!data) return null;
@@ -49,30 +32,44 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
   const title = toStr(data.title);
   const subtitle = toStr(data.subtitle);
 
-  /* ─── Carousel / Tab state ─── */
-  const rawImgs = data.carousel_app?.imgs ?? [];
-  const slides = rawImgs.length > 0
-    ? rawImgs.map((img, i) => ({
-        id: img.id,
-        src: img.url.startsWith("http") ? img.url : getMediaUrl(img.url) || img.url,
-        alt: img.alternativeText ?? "",
-        title: FALLBACK_SLIDES[i % FALLBACK_SLIDES.length].title,
-        desc: FALLBACK_SLIDES[i % FALLBACK_SLIDES.length].desc,
-        icon: FALLBACK_SLIDES[i % FALLBACK_SLIDES.length].icon,
-      }))
-    : FALLBACK_SLIDES.map((s) => ({ ...s, src: s.url, alt: s.alternativeText }));
+  /* ─── All Carousel App data sourced directly from JSON / Props ─── */
+  const fallbackCarousel = (enLocale.home.section_cta as any).carousel_app;
+  const carouselData = data.carousel_app ?? fallbackCarousel;
+
+  const badgeLive = toStr(carouselData?.badge_live) || toStr(fallbackCarousel?.badge_live);
+  const labelApp = toStr(carouselData?.label_app) || toStr(fallbackCarousel?.label_app);
+  const subtitleApp = toStr(carouselData?.subtitle_app) || toStr(fallbackCarousel?.subtitle_app);
+  const footerText = toStr(carouselData?.footer_text) || toStr(fallbackCarousel?.footer_text);
+
+  const rawImgs = carouselData?.imgs && carouselData.imgs.length > 0
+    ? carouselData.imgs
+    : (fallbackCarousel?.imgs ?? []);
+
+  const slides: SlideItem[] = rawImgs.map((img: any, i: number) => {
+    const fallbackImg = fallbackCarousel?.imgs?.[i % (fallbackCarousel?.imgs?.length || 1)];
+    return {
+      id: img.id || i + 1,
+      src: img.url ? (img.url.startsWith("http") ? img.url : getMediaUrl(img.url) || img.url) : "",
+      alt: toStr(img.alternativeText) || toStr(fallbackImg?.alternativeText) || "",
+      title: toStr(img.title) || toStr(fallbackImg?.title) || "",
+      desc: toStr(img.desc) || toStr(fallbackImg?.desc) || "",
+      icon: img.icon || fallbackImg?.icon || "Play",
+    };
+  });
 
   const [current, setCurrent] = useState(0);
 
   const goTo = useCallback(
     (index: number) => {
+      if (slides.length === 0) return;
       setCurrent((index + slides.length) % slides.length);
     },
     [slides.length]
   );
 
-  /* Auto-switch tabs every 5s */
+  /* Auto-switch active slide every 5 seconds */
   useEffect(() => {
+    if (slides.length === 0) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
@@ -88,7 +85,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* ── Left Column: Section Details ── */}
+          {/* ── Left Column: Text & Features from JSON ── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -133,7 +130,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
               ))}
             </ul>
 
-            {/* CTA */}
+            {/* CTA Button */}
             {data.button && (
               <ButtonCTA
                 link={data.button.link}
@@ -143,7 +140,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
             )}
           </motion.div>
 
-          {/* ── Right Column: Interactive App Showcase Dashboard ── */}
+          {/* ── Right Column: Interactive App Showcase Dashboard (100% JSON data-driven) ── */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -154,7 +151,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
             {/* Dashboard Container Card */}
             <div className="relative w-full rounded-3xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 shadow-2xl overflow-hidden">
               
-              {/* Subtle ambient light gradient inside card */}
+              {/* Internal glow accents */}
               <div className="absolute top-0 right-0 w-72 h-72 bg-primary/15 rounded-full blur-[90px] pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
 
@@ -165,23 +162,24 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                     <Smartphone size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider">App ElitePlay</h4>
-                    <p className="text-xs text-zinc-400">Explore os recursos do aplicativo</p>
+                    {labelApp && <h4 className="text-sm font-bold text-white uppercase tracking-wider">{labelApp}</h4>}
+                    {subtitleApp && <p className="text-xs text-zinc-400">{subtitleApp}</p>}
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
-                  <Sparkles size={12} />
-                  <span>Ao vivo</span>
-                </div>
+                {badgeLive && (
+                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
+                    <Sparkles size={12} />
+                    <span>{badgeLive}</span>
+                  </div>
+                )}
               </div>
 
-              {/* Dashboard Main Grid: Interactive Tabs (Left) + Phone Screen (Right) */}
+              {/* Dashboard Main Grid */}
               <div className="grid sm:grid-cols-12 gap-6 items-center">
 
                 {/* Left Tabs List (5 cols) */}
                 <div className="sm:col-span-6 flex flex-col gap-3">
                   {slides.map((slide, idx) => {
-                    const IconComponent = slide.icon;
                     const isActive = idx === current;
                     return (
                       <button
@@ -209,29 +207,39 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                               : "bg-zinc-800 text-zinc-400 group-hover:text-white"
                           }`}
                         >
-                          <IconComponent size={18} />
+                          <DynamicIcon
+                            iconName={slide.icon}
+                            size={18}
+                            fallback={fallbackIcons[idx % fallbackIcons.length]}
+                          />
                         </div>
 
                         <div>
-                          <h5 className={`text-sm font-bold leading-tight mb-1 ${isActive ? "text-white" : "text-zinc-300"}`}>
-                            {slide.title}
-                          </h5>
-                          <p className="text-xs text-zinc-400 leading-relaxed font-normal">
-                            {slide.desc}
-                          </p>
+                          {slide.title && (
+                            <h5 className={`text-sm font-bold leading-tight mb-1 ${isActive ? "text-white" : "text-zinc-300"}`}>
+                              {slide.title}
+                            </h5>
+                          )}
+                          {slide.desc && (
+                            <p className="text-xs text-zinc-400 leading-relaxed font-normal">
+                              {slide.desc}
+                            </p>
+                          )}
                         </div>
                       </button>
                     );
                   })}
 
-                  {/* Feature Check Pill at bottom of tabs */}
-                  <div className="mt-2 p-3.5 rounded-2xl bg-zinc-950/60 border border-zinc-800/60 flex items-center gap-3 text-xs text-zinc-300">
-                    <CheckCircle2 size={16} className="text-primary shrink-0" />
-                    <span>Disponível para iOS e Android com sincronização instantânea.</span>
-                  </div>
+                  {/* Feature Check Pill from JSON */}
+                  {footerText && (
+                    <div className="mt-2 p-3.5 rounded-2xl bg-zinc-950/60 border border-zinc-800/60 flex items-center gap-3 text-xs text-zinc-300">
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      <span>{footerText}</span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Right Phone Mockup (6 cols centered) */}
+                {/* Right Phone Mockup */}
                 <div className="sm:col-span-6 flex flex-col items-center justify-center relative">
 
                   {/* Phone frame */}
@@ -250,17 +258,19 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                     {/* Animated screen image */}
                     <div className="absolute inset-0 overflow-hidden">
                       <AnimatePresence mode="wait">
-                        <motion.img
-                          key={current}
-                          src={slides[current].src}
-                          alt={slides[current].alt}
-                          initial={{ opacity: 0, scale: 1.04 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.96 }}
-                          transition={{ duration: 0.35 }}
-                          className="w-full h-full object-cover"
-                          draggable={false}
-                        />
+                        {slides[current]?.src && (
+                          <motion.img
+                            key={current}
+                            src={slides[current].src}
+                            alt={slides[current].alt}
+                            initial={{ opacity: 0, scale: 1.04 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.96 }}
+                            transition={{ duration: 0.35 }}
+                            className="w-full h-full object-cover"
+                            draggable={false}
+                          />
+                        )}
                       </AnimatePresence>
                     </div>
 
@@ -271,15 +281,17 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                   </div>
 
                   {/* Floating Action Badge on phone bottom right */}
-                  <motion.div
-                    key={current}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="absolute -bottom-2 right-0 sm:-right-2 z-20 bg-primary text-black font-black text-[11px] px-3.5 py-1.5 rounded-full shadow-xl uppercase tracking-wider flex items-center gap-1.5"
-                  >
-                    <Sparkles size={12} />
-                    {slides[current].title}
-                  </motion.div>
+                  {slides[current]?.title && (
+                    <motion.div
+                      key={current}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute -bottom-2 right-0 sm:-right-2 z-20 bg-primary text-black font-black text-[11px] px-3.5 py-1.5 rounded-full shadow-xl uppercase tracking-wider flex items-center gap-1.5"
+                    >
+                      <Sparkles size={12} />
+                      {slides[current].title}
+                    </motion.div>
+                  )}
 
                 </div>
 

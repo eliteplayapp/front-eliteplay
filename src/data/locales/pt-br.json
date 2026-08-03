@@ -4,7 +4,7 @@
     "logo_global": {
       "id": 1,
       "url": "/img/logo-compact-dark.png",
-      "alternativeText": "ElitePlay Logo"
+      "alternativeText": "Logo ElitePlay"
     },
     "redes_sociais": [
       {
@@ -36,7 +36,7 @@
     },
     "footer": {
       "id": 1,
-      "description": "Revolucionando a experiência do esporte com câmeras inteligentes e replay automático.",
+      "description": "Cada jogada, imortal. Revolucionando a experiência esportiva com câmeras inteligentes e replays instantâneos.",
       "links": [
         {
           "id": 1,
@@ -51,17 +51,17 @@
       ],
       "contato": {
         "id": 1,
-        "email": "contato@eliteplayapp.com",
+        "email": "contact@eliteplayapp.com",
         "telefone": "+55 (11) 99999-9999"
       }
     }
   },
   "home": {
     "id": 1,
-    "meta_description": "ElitePlay - Suas melhores jogadas gravadas e compartilhadas em segundos com câmeras inteligentes.",
+    "meta_description": "ElitePlay - Cada jogada, imortal. Suas melhores jogadas gravadas e compartilhadas em segundos com câmeras inteligentes.",
     "banner_home_page": {
       "id": 1,
-      "description_banner": "SUAS MELHORES JOGADAS GRAVADAS E COMPARTILHADAS EM SEGUNDOS",
+      "description_banner": "CADA JOGADA, IMORTAL. VIVA. GUARDE. COMPARTILHE.",
       "imgs_banner": [
         {
           "id": 1,
@@ -72,13 +72,13 @@
       "logo_banner": {
         "id": 1,
         "url": "/img/logo-compact-dark.png",
-        "alternativeText": "ElitePlay Logo Banner"
+        "alternativeText": "Logo ElitePlay Banner"
       }
     },
     "section_instructions": {
       "id": 1,
       "tooltip_one": "PASSO A PASSO",
-      "title": "COMO FUNCIONA O ELITEPLAY",
+      "title": "COMO O ELITEPLAY FUNCIONA",
       "subtitle": "Veja como é simples transformar a experiência da sua arena",
       "tooltip_two": "Tudo isso em menos de 30 segundos!",
       "instructions": [
@@ -95,8 +95,8 @@
         {
           "id": 2,
           "icon": "Video",
-          "title_card": "SOLICITE O REPLAY",
-          "subtitle_card": "Aperte o botão na quadra ou peça pelo app para salvar o lance incrível.",
+          "title_card": "PEÇA O REPLAY",
+          "subtitle_card": "Aperte a botoeira da quadra ou use o app para guardar aquela jogada incrível.",
           "img_instruction": {
             "id": 2,
             "url": "/img/passo2.png"
@@ -105,8 +105,8 @@
         {
           "id": 3,
           "icon": "Smartphone",
-          "title_card": "RECEBA NO CELULAR",
-          "subtitle_card": "O vídeo é processado instantaneamente e enviado direto para seu celular.",
+          "title_card": "RECEBA NO SEU CELULAR",
+          "subtitle_card": "O vídeo é processado na hora e enviado direto para o seu celular.",
           "img_instruction": {
             "id": 3,
             "url": "/img/passo4.png"
@@ -116,7 +116,7 @@
           "id": 4,
           "icon": "Share2",
           "title_card": "COMPARTILHE O MOMENTO",
-          "subtitle_card": "Poste nas redes sociais, mostre para os amigos e reviva os melhores lances.",
+          "subtitle_card": "Guarde, reviva e compartilhe cada ponto. Poste nas redes, mostre para os amigos e relembre suas melhores jogadas.",
           "img_instruction": {
             "id": 4,
             "url": "/img/beach-tennis.png"
@@ -128,8 +128,8 @@
       "id": 1,
       "icon_tab": "Zap",
       "tooltip": "GRAVAÇÃO INTELIGENTE",
-      "title": "NUNCA MAIS PERCA UM LANCE INCRÍVEL",
-      "subtitle": "Câmeras de alta definição instaladas estrategicamente na sua arena para capturar cada detalhe com qualidade profissional.",
+      "title": "NUNCA MAIS PERCA UMA JOGADA INCRÍVEL",
+      "subtitle": "Câmeras em alta definição, posicionadas estrategicamente na sua arena, para capturar cada detalhe com qualidade profissional.",
       "itens": [
         {
           "id": 1,
@@ -139,17 +139,17 @@
         {
           "id": 2,
           "icon": "Check",
-          "item": "Replay instantâneo em HD"
+          "item": "Replays instantâneos em HD"
         },
         {
           "id": 3,
           "icon": "Check",
-          "item": "Gravação automática por botão ou app"
+          "item": "Gravação automática por botoeira ou app"
         },
         {
           "id": 4,
           "icon": "Check",
-          "item": "Integração total com redes sociais"
+          "item": "Integração completa com redes sociais"
         }
       ],
       "button": {
@@ -168,25 +168,25 @@
     },
     "section_sports": {
       "id": 1,
-      "tooltip": "MODALIDADES",
+      "tooltip": "ESPORTES",
       "title": "PARA TODOS OS ESPORTES DE ARENA",
       "sports": [
         {
           "id": 1,
           "icon_tab": "Target",
-          "tooltip": "PÁDEL",
-          "title": "PÁDEL DE ALTA PERFORMANCE",
-          "subtitle": "Grave seus melhores smashes, saídas de parede e pontos decisivos com gravação em tempo real.",
+          "tooltip": "PADEL",
+          "title": "PADEL DE ALTA PERFORMANCE",
+          "subtitle": "Capture suas melhores jogadas de padel: smashes, saídas de parede e match points em tempo real.",
           "itens": [
             {
               "id": 1,
               "icon": "Check",
-              "item": "Câmeras panorâmicas em alta resolução"
+              "item": "Câmeras panorâmicas de alta resolução"
             },
             {
               "id": 2,
               "icon": "Check",
-              "item": "Replay rápido após pontos importantes"
+              "item": "Replay rápido após pontos decisivos"
             }
           ],
           "video": {
@@ -203,17 +203,17 @@
           "icon_tab": "Wind",
           "tooltip": "BEACH TENNIS",
           "title": "BEACH TENNIS EM DESTAQUE",
-          "subtitle": "Capture a emoção de cada curtadinha, lob e ataque na areia com qualidade profissional.",
+          "subtitle": "Capture a emoção de cada largadinha, lob e ataque na areia com qualidade profissional.",
           "itens": [
             {
               "id": 1,
               "icon": "Check",
-              "item": "Resistência a sol e poeira"
+              "item": "Resistente a sol e areia"
             },
             {
               "id": 2,
               "icon": "Check",
-              "item": "Ângulo perfeito de toda a quadra"
+              "item": "Ângulo perfeito de quadra completa"
             }
           ],
           "video": {
@@ -229,7 +229,7 @@
     },
     "section_cta_simple": {
       "id": 1,
-      "tooltip": "DIFERENCIAIS",
+      "tooltip": "PRINCIPAIS DIFERENCIAIS",
       "title": "POR QUE AS ARENAS ESCOLHEM O ELITEPLAY",
       "cards": [
         {
@@ -237,16 +237,16 @@
           "icon": "TrendingUp",
           "icon_tooltip": "RECEITA",
           "text_tooltip_one": "RECURSO EXCLUSIVO",
-          "title_card": "Aumente o Faturamento",
-          "subtitle_card": "Gere novas fontes de receita com assinaturas e mídia na arena."
+          "title_card": "Aumente sua Receita",
+          "subtitle_card": "Gere novas fontes de receita com assinaturas e mídia dentro da arena."
         },
         {
           "id": 2,
           "icon": "Users",
-          "icon_tooltip": "FIDELIDADE",
+          "icon_tooltip": "FIDELIZAÇÃO",
           "text_tooltip_one": "ENGAJAMENTO",
-          "title_card": "Fidelize seus Atletas",
-          "subtitle_card": "Jogadores voltam mais vezes onde seus melhores lances ficam gravados."
+          "title_card": "Fidelize seus Jogadores",
+          "subtitle_card": "Jogadores voltam mais vezes para reviver as jogadas que marcaram o dia."
         },
         {
           "id": 3,
@@ -254,31 +254,31 @@
           "icon_tooltip": "TECNOLOGIA",
           "text_tooltip_one": "AUTOMAÇÃO",
           "title_card": "100% Automatizado",
-          "subtitle_card": "Sem necessidade de operador. O sistema funciona sozinho 24/7."
+          "subtitle_card": "Não precisa de operador. O sistema funciona sozinho, 24 horas por dia, 7 dias por semana."
         }
       ],
       "button_section_cta_simple": {
         "id": 1,
         "link": "/arenas",
-        "text_button": "Quero na minha arena"
+        "text_button": "Quero para minha arena"
       }
     },
     "section_download_app": {
       "id": 1,
       "title": "BAIXE O APP ELITEPLAY",
-      "subtitle": "Disponível para iOS e Android. Comece a gravar suas jogadas hoje mesmo.",
+      "subtitle": "Disponível para iOS e Android. Baixe agora e não perca nenhum ponto.",
       "link_google_play": "#",
       "link_apple_store": "#"
     }
   },
   "arenas": {
     "id": 1,
-    "meta_description": "ElitePlay para Arenas - Transforme sua arena em um hub tecnológico com câmeras de replay.",
+    "meta_description": "ElitePlay para Arenas - Transforme seu espaço esportivo em um hub tecnológico com câmeras de replay instantâneo.",
     "banner": {
       "id": 1,
-      "tooltip_one": "PARA PROPRIETÁRIOS E GESTORES",
-      "title": "TRANSFORME SUA ARENA EM UM HUB TECNOLÓGICO",
-      "subtitle": "Aumente a receita, fidelize clientes e destaque sua arena da concorrência com o sistema de replay #1.",
+      "tooltip_one": "PARA DONOS E GESTORES",
+      "title": "LEVE SUA QUADRA AO PRÓXIMO NÍVEL",
+      "subtitle": "Aumente a receita, fidelize os jogadores e se destaque da concorrência com o sistema de replay número 1.",
       "image": {
         "id": 1,
         "url": "/img/beach-tennis.png",
@@ -289,7 +289,7 @@
         "link": "#lead-form",
         "text_button": "Solicitar Proposta"
       },
-      "tooltip_two": "Sem custo de instalação inicial"
+      "tooltip_two": "Sem custo inicial de instalação"
     },
     "section_installation": {
       "id": 1,
@@ -301,25 +301,25 @@
           "id": 1,
           "icon": "MapPin",
           "title": "1. Vistoria Técnica",
-          "subtitle": "Analisamos sua arena para definir o melhor posicionamento das câmeras."
+          "subtitle": "Inspecionamos sua arena para encontrar o posicionamento ideal das câmeras."
         },
         {
           "id": 2,
           "icon": "Wrench",
           "title": "2. Instalação do Kit",
-          "subtitle": "Instalamos câmeras de alta definição e botões acionadores rápidos."
+          "subtitle": "Instalamos câmeras HD e botoeiras de acionamento rápido."
         },
         {
           "id": 3,
           "icon": "Cpu",
           "title": "3. Configuração",
-          "subtitle": "Conectamos o sistema à nuvem com processamento automatizado."
+          "subtitle": "Conectamos o sistema à nossa nuvem para processamento automatizado."
         },
         {
           "id": 4,
           "icon": "CheckCircle",
           "title": "4. Pronto para Usar",
-          "subtitle": "Sua arena já pode oferecer replays instantâneos para os atletas."
+          "subtitle": "Sua arena já pode oferecer replays instantâneos aos jogadores."
         }
       ],
       "image": {
@@ -347,7 +347,7 @@
             },
             {
               "id": 2,
-              "item": "Atletas gravam com celular no tripé"
+              "item": "Jogadores gravam com tripé de celular"
             },
             {
               "id": 3,
@@ -369,11 +369,11 @@
             },
             {
               "id": 2,
-              "item": "Replay acionado por botão em segundos"
+              "item": "Replay em segundos, acionado por botoeira"
             },
             {
               "id": 3,
-              "item": "Divulgação espontânea da marca da sua arena"
+              "item": "Marketing orgânico: cada jogada compartilhada é publicidade gratuita"
             }
           ]
         }
@@ -382,25 +382,25 @@
     "section_differential": {
       "id": 1,
       "tooltip": "RECURSOS EXCLUSIVOS",
-      "title": "TECNOLOGIA DESENVOLVIDA PARA ARENAS",
+      "title": "TECNOLOGIA FEITA PARA ARENAS",
       "cards": [
         {
           "id": 1,
           "icon": "Shield",
-          "title": "Equipamentos Resistentes",
-          "subtitle": "Câmeras preparadas para variações climáticas, sol e poeira."
+          "title": "Equipamento Durável",
+          "subtitle": "Hardware resistente ao clima, ao sol e à poeira."
         },
         {
           "id": 2,
           "icon": "Wifi",
           "title": "Conexão Estável",
-          "subtitle": "Transmissão rápida e segura dos replays diretamente para a nuvem."
+          "subtitle": "Transferência de replays rápida e segura direto para a nuvem."
         },
         {
           "id": 3,
           "icon": "BarChart3",
           "title": "Painel de Gestão",
-          "subtitle": "Acompanhe métricas de uso e acessos dos atletas na sua arena."
+          "subtitle": "Acompanhe métricas de uso e engajamento dos jogadores na sua arena."
         }
       ]
     },
@@ -413,7 +413,7 @@
       },
       "tooltip": "RESULTADOS COMPROVADOS",
       "title": "IMPACTO REVOLUCIONÁRIO NA SUA ARENA",
-      "subtitle": "Métricas reais de arenas parceiras que integraram o ElitePlay.",
+      "subtitle": "Números reais de arenas parceiras que usam o ElitePlay.",
       "button_section_impact": {
         "id": 1,
         "link": "#lead-form",
@@ -423,27 +423,27 @@
         {
           "id": 1,
           "metric": "+35%",
-          "category": "HORÁRIOS RESERVADOS",
-          "outcome": "Aumento médio de horários locados por semana"
+          "category": "HORAS RESERVADAS",
+          "outcome": "Aumento médio nas reservas semanais de quadra"
         },
         {
           "id": 2,
           "metric": "+80%",
           "category": "ENGAJAMENTO NAS REDES",
-          "outcome": "Postagens de atletas marcando a arena"
+          "outcome": "Publicações de jogadores marcando a arena"
         },
         {
           "id": 3,
           "metric": "94%",
           "category": "RETENÇÃO DE CLIENTES",
-          "outcome": "Atletas preferem quadras com câmeras ElitePlay"
+          "outcome": "Jogadores preferem quadras equipadas com ElitePlay"
         }
       ]
     },
     "section_partners": {
       "id": 1,
       "tooltip": "SEJA PARCEIRO",
-      "title": "PRONTO PARA ELEVAR O NÍVEL DA SUA ARENA?",
+      "title": "PRONTO PARA ELEVAR SUA ARENA?",
       "subtitle": "Preencha o formulário e nossa equipe entrará em contato em até 24 horas.",
       "itens": [
         {
@@ -456,29 +456,29 @@
           "id": 2,
           "icon": "Check",
           "item": "Suporte 24/7",
-          "subitem": "Manutenção e suporte técnico contínuo."
+          "subitem": "Manutenção e assistência técnica contínuas."
         }
       ]
     },
     "section_faq": {
       "id": 1,
       "title": "PERGUNTAS FREQUENTES",
-      "subtitle": "Tire suas dúvidas sobre o funcionamento do ElitePlay nas arenas.",
+      "subtitle": "Tire suas dúvidas sobre como o ElitePlay funciona em arenas esportivas.",
       "itens": [
         {
           "id": 1,
-          "question": "Qual a infraestrutura necessária para instalar na minha arena?",
-          "answer": "Apenas ponto de energia e sinal de internet. Todo o restante do equipamento é fornecido e instalado pela ElitePlay."
+          "question": "Qual infraestrutura é necessária para instalar na minha arena?",
+          "answer": "Apenas uma tomada de energia e conexão com a internet. Todo o restante do equipamento é fornecido e instalado pela ElitePlay."
         },
         {
           "id": 2,
-          "question": "Quanto tempo demora a instalação?",
-          "answer": "A instalação padrão leva cerca de 1 dia por quadra, sem atrapalhar os jogos agendados."
+          "question": "Quanto tempo leva a instalação?",
+          "answer": "A instalação padrão leva cerca de 1 dia por quadra, sem interromper os jogos agendados."
         },
         {
           "id": 3,
-          "question": "Como os atletas acessam os vídeos?",
-          "answer": "Os atletas baixam o aplicativo ElitePlay, criam a conta e encontram os vídeos salvos por data, hora e quadra."
+          "question": "Como os jogadores acessam seus vídeos?",
+          "answer": "Os jogadores baixam o app ElitePlay, se cadastram e encontram seus vídeos salvos, filtrados por data, horário e quadra."
         }
       ]
     }

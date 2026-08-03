@@ -136,6 +136,9 @@ export interface CarouselAppImage {
   id: number;
   url: string;
   alternativeText?: string | null;
+  title?: InputLanguages;
+  desc?: InputLanguages;
+  icon?: string;
 }
 
 /**
@@ -143,6 +146,10 @@ export interface CarouselAppImage {
  */
 export interface CarouselApp {
   id: number;
+  badge_live?: InputLanguages;
+  label_app?: InputLanguages;
+  subtitle_app?: InputLanguages;
+  footer_text?: InputLanguages;
   imgs: CarouselAppImage[];
 }
 

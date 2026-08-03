@@ -36,7 +36,7 @@
     },
     "footer": {
       "id": 1,
-      "description": "Revolutionizing the sports experience with smart cameras and instant replays.",
+      "description": "Every play, immortal. Revolutionizing the sports experience with smart cameras and instant replays.",
       "links": [
         {
           "id": 1,
@@ -58,10 +58,10 @@
   },
   "home": {
     "id": 1,
-    "meta_description": "ElitePlay - Your best sports moments recorded and shared in seconds with smart cameras.",
+    "meta_description": "ElitePlay - Every play, immortal. Your best sports moments recorded and shared in seconds with smart cameras.",
     "banner_home_page": {
       "id": 1,
-      "description_banner": "YOUR BEST PLAYS RECORDED AND SHARED IN SECONDS",
+      "description_banner": "EVERY PLAY, IMMORTAL. LIVE IT. SAVE IT. SHARE IT.",
       "imgs_banner": [
         {
           "id": 1,
@@ -95,7 +95,7 @@
         {
           "id": 2,
           "icon": "Video",
-          "title_card": "REQUEST REPLAY",
+          "title_card": "REQUEST THE REPLAY",
           "subtitle_card": "Press the court button or use the app to save that incredible play.",
           "img_instruction": {
             "id": 2,
@@ -105,8 +105,8 @@
         {
           "id": 3,
           "icon": "Smartphone",
-          "title_card": "RECEIVE ON YOUR PHONE",
-          "subtitle_card": "The video is processed instantly and sent straight to your mobile device.",
+          "title_card": "RECEIVE IT ON YOUR PHONE",
+          "subtitle_card": "The video is processed instantly and sent straight to your phone.",
           "img_instruction": {
             "id": 3,
             "url": "/img/passo4.png"
@@ -116,7 +116,7 @@
           "id": 4,
           "icon": "Share2",
           "title_card": "SHARE THE MOMENT",
-          "subtitle_card": "Post on social media, show your friends, and relive your best highlights.",
+          "subtitle_card": "Save it, relive it, and share every point. Post it on social media, show your friends, and relive your best highlights.",
           "img_instruction": {
             "id": 4,
             "url": "/img/beach-tennis.png"
@@ -126,44 +126,69 @@
     },
     "section_cta": {
       "id": 1,
-      "icon_tab": "Zap",
-      "tooltip": "SMART RECORDING",
+      "icon_tab": "Smartphone",
+      "tooltip": "APP ELITEPLAY",
       "title": "NEVER MISS AN INCREDIBLE PLAY AGAIN",
-      "subtitle": "High-definition cameras strategically placed in your arena to capture every detail with professional quality.",
+      "subtitle": "All your best plays, right in your pocket. The ElitePlay app turns every match into a collection of unforgettable moments — access your highlights anytime and share them effortlessly.",
       "itens": [
         {
           "id": 1,
           "icon": "Check",
-          "item": "Simplified installation"
+          "item": "Receive the video on your phone right after the play"
         },
         {
           "id": 2,
           "icon": "Check",
-          "item": "Instant HD replays"
+          "item": "Full library: filter by date, time, and court"
         },
         {
           "id": 3,
           "icon": "Check",
-          "item": "Automatic recording via button or app"
+          "item": "Download and share with a single tap"
         },
         {
           "id": 4,
           "icon": "Check",
-          "item": "Full social media integration"
+          "item": "Recent clips history always at hand"
         }
       ],
       "button": {
         "id": 1,
-        "link": "/arenas",
-        "text_button": "Learn more"
+        "link": "#download-app",
+        "text_button": "Download the app"
       },
-      "video": {
+      "carousel_app": {
         "id": 1,
-        "link": "",
-        "conteudo": {
-          "id": 1,
-          "url": "/img/image_banner.png"
-        }
+        "badge_live": "Live",
+        "label_app": "ElitePlay App",
+        "subtitle_app": "Explore the app features",
+        "footer_text": "Available for iOS and Android with instant synchronization.",
+        "imgs": [
+          {
+            "id": 1,
+            "url": "/img/app-screenshot-1.png",
+            "alternativeText": "Play replay player in the ElitePlay app",
+            "title": "Instant Play Player",
+            "desc": "Watch your best highlights in HD right after the match finishes.",
+            "icon": "Play"
+          },
+          {
+            "id": 2,
+            "url": "/img/app-screenshot-2.png",
+            "alternativeText": "Recent clips list in the ElitePlay app",
+            "title": "Recent Clips",
+            "desc": "Quickly access the list of top moments from your latest games.",
+            "icon": "Layers"
+          },
+          {
+            "id": 3,
+            "url": "/img/app-screenshot-3.png",
+            "alternativeText": "Play history by court in the ElitePlay app",
+            "title": "History by Court",
+            "desc": "Filter and organize your entire video history by date, time, and court.",
+            "icon": "History"
+          }
+        ]
       }
     },
     "section_sports": {
@@ -175,8 +200,8 @@
           "id": 1,
           "icon_tab": "Target",
           "tooltip": "PADEL",
-          "title": "HIGH PERFORMANCE PADEL",
-          "subtitle": "Record your best smashes, wall exits, and match points in real time.",
+          "title": "HIGH-PERFORMANCE PADEL",
+          "subtitle": "Capture your best padel plays: smashes, wall exits, and match points in real time.",
           "itens": [
             {
               "id": 1,
@@ -208,7 +233,7 @@
             {
               "id": 1,
               "icon": "Check",
-              "item": "Sun and dust resistant"
+              "item": "Sun and sand resistant"
             },
             {
               "id": 2,
@@ -246,7 +271,7 @@
           "icon_tooltip": "LOYALTY",
           "text_tooltip_one": "ENGAGEMENT",
           "title_card": "Build Player Loyalty",
-          "subtitle_card": "Players return more often to locations where their best plays are saved."
+          "subtitle_card": "Players come back more often because they want to relive their best plays."
         },
         {
           "id": 3,
@@ -266,7 +291,7 @@
     "section_download_app": {
       "id": 1,
       "title": "DOWNLOAD THE ELITEPLAY APP",
-      "subtitle": "Available for iOS and Android. Start recording your plays today.",
+      "subtitle": "Available for iOS and Android. Download now and never miss a point.",
       "link_google_play": "#",
       "link_apple_store": "#"
     }
@@ -277,8 +302,8 @@
     "banner": {
       "id": 1,
       "tooltip_one": "FOR OWNERS & MANAGERS",
-      "title": "TRANSFORM YOUR ARENA INTO A TECH HUB",
-      "subtitle": "Boost revenue, increase customer retention, and stand out from competitors with the #1 replay system.",
+      "title": "TAKE YOUR COURT TO THE NEXT LEVEL",
+      "subtitle": "Boost revenue, increase customer retention, and stand out from the competition with the #1 replay system.",
       "image": {
         "id": 1,
         "url": "/img/beach-tennis.png",
@@ -287,9 +312,9 @@
       "button_cta_banner": {
         "id": 1,
         "link": "#lead-form",
-        "text_button": "Request Proposal"
+        "text_button": "Request a Proposal"
       },
-      "tooltip_two": "No initial installation cost"
+      "tooltip_two": "No upfront installation cost"
     },
     "section_installation": {
       "id": 1,
@@ -301,7 +326,7 @@
           "id": 1,
           "icon": "MapPin",
           "title": "1. Technical Inspection",
-          "subtitle": "We inspect your arena to find optimal camera placement."
+          "subtitle": "We inspect your arena to find the optimal camera placement."
         },
         {
           "id": 2,
@@ -373,7 +398,7 @@
             },
             {
               "id": 3,
-              "item": "Organic social exposure for your venue"
+              "item": "Organic marketing: every shared play is free advertising"
             }
           ]
         }
@@ -394,13 +419,13 @@
           "id": 2,
           "icon": "Wifi",
           "title": "Stable Connection",
-          "subtitle": "Fast and secure replay transfers directly to the cloud."
+          "subtitle": "Fast and secure replay transfers straight to the cloud."
         },
         {
           "id": 3,
           "icon": "BarChart3",
           "title": "Management Dashboard",
-          "subtitle": "Track usage metrics and player engagements at your venue."
+          "subtitle": "Track usage metrics and player engagement at your venue."
         }
       ]
     },
@@ -450,7 +475,7 @@
           "id": 1,
           "icon": "Check",
           "item": "Hassle-free installation",
-          "subitem": "Specialized team handles setup completely."
+          "subitem": "Specialized team handles the setup completely."
         },
         {
           "id": 2,
