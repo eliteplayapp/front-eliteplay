@@ -86,7 +86,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
       <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-4 items-center">
 
           {/* ── Left Column: Text & Features from JSON ── */}
           <motion.div
@@ -270,7 +270,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.96 }}
                             transition={{ duration: 0.35 }}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                             draggable={false}
                           />
                         )}
