@@ -39,8 +39,8 @@ export function SportsGalleryContent({ sport }: SportsGalleryContentProps) {
       <div className="relative h-full flex items-center justify-center">
         <VideoPlayer
           variant="gallery"
-          thumbnailUrl={getMediaUrl(sport.video.conteudo.url) || ""}
-          videoUrl={sport.video.link || ""}
+          thumbnailUrl={getMediaUrl(sport.video?.conteudo?.url) || ""}
+          videoUrl={sport.video?.link || ""}
           alt={title}
         />
         
