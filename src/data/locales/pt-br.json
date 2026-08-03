@@ -154,7 +154,7 @@
       ],
       "button": {
         "id": 1,
-        "link": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
+        "link": "#app",
         "text_button": "Baixar aplicativo"
       },
       "carousel_app": {
