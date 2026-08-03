@@ -3,14 +3,17 @@
 import { SectionCtaOne } from "../../types/strapi.home.model";
 import { getMediaUrl, toStr } from "../../services/content.service";
 import { VideoPlayer } from "./VideoPlayer";
+import imagesData from "../../data/images.json";
 
 interface SportsGalleryContentProps {
   sport: SectionCtaOne;
+  index?: number;
 }
 
-export function SportsGalleryContent({ sport }: SportsGalleryContentProps) {
+export function SportsGalleryContent({ sport, index = 0 }: SportsGalleryContentProps) {
   const title = toStr(sport.title);
   const subtitle = toStr(sport.subtitle);
+  const defaultImg = imagesData.home.sports[index % imagesData.home.sports.length] || "/img/passo1.jpg";
   
   return (
     <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
@@ -39,7 +42,7 @@ export function SportsGalleryContent({ sport }: SportsGalleryContentProps) {
       <div className="relative h-full flex items-center justify-center">
         <VideoPlayer
           variant="gallery"
-          thumbnailUrl={getMediaUrl(sport.video?.conteudo?.url) || ""}
+          thumbnailUrl={getMediaUrl(sport.video?.conteudo?.url) || defaultImg}
           videoUrl={sport.video?.link || ""}
           alt={title}
         />

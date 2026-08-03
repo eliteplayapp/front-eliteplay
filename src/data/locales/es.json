@@ -3,7 +3,7 @@
     "id": 1,
     "logo_global": {
       "id": 1,
-      "url": "/img/logo-compact-dark.png",
+      "url": "",
       "alternativeText": "Logo ElitePlay"
     },
     "redes_sociais": [
@@ -65,13 +65,13 @@
       "imgs_banner": [
         {
           "id": 1,
-          "url": "/img/image_banner.png",
+          "url": "",
           "alternativeText": "Banner ElitePlay"
         }
       ],
       "logo_banner": {
         "id": 1,
-        "url": "/img/logo-compact-dark.png",
+        "url": "",
         "alternativeText": "Logo ElitePlay Banner"
       }
     },
@@ -89,7 +89,7 @@
           "subtitle_card": "Entra a la cancha y juega con normalidad. Nuestras cámaras inteligentes lo graban todo.",
           "img_instruction": {
             "id": 1,
-            "url": "/img/passo1.jpg"
+            "url": ""
           }
         },
         {
@@ -99,7 +99,7 @@
           "subtitle_card": "Presiona la botonera de la cancha o usa la app para guardar esa jugada increíble.",
           "img_instruction": {
             "id": 2,
-            "url": "/img/passo2.png"
+            "url": ""
           }
         },
         {
@@ -109,7 +109,7 @@
           "subtitle_card": "El video se procesa al instante y se envía directo a tu teléfono.",
           "img_instruction": {
             "id": 3,
-            "url": "/img/passo4.png"
+            "url": ""
           }
         },
         {
@@ -119,7 +119,7 @@
           "subtitle_card": "Guarda, revive y comparte cada punto. Publícalo en redes, muéstraselo a tus amigos y revive tus mejores jugadas.",
           "img_instruction": {
             "id": 4,
-            "url": "/img/beach-tennis.png"
+            "url": ""
           }
         }
       ]
@@ -166,27 +166,43 @@
         "imgs": [
           {
             "id": 1,
-            "url": "/img/app-screenshot-1.png",
+            "url": "",
             "alternativeText": "Reproductor de jugada en la app ElitePlay",
-            "title": "Reproductor de Jugadas",
-            "desc": "Accede a tus mejores jugadas en alta definición apenas termina el partido.",
+            "title": "Tus Mejores Jugadas",
+            "desc": "Captura tus mejores jugadas de pádel",
             "icon": "Play"
           },
           {
             "id": 2,
-            "url": "/img/app-screenshot-2.png",
+            "url": "",
             "alternativeText": "Lista de cortes recientes en la app ElitePlay",
-            "title": "Cortes Recientes",
-            "desc": "Explora rápidamente los momentos más destacados de tus últimos partidos.",
+            "title": "Revive Cada Punto",
+            "desc": "Guarda, revive y comparte cada punto",
             "icon": "Layers"
           },
           {
             "id": 3,
-            "url": "/img/app-screenshot-3.png",
+            "url": "",
             "alternativeText": "Historial de jugadas por cancha en la app ElitePlay",
-            "title": "Historial por Cancha",
-            "desc": "Filtra y organiza tu historial de videos por fecha, horario y cancha.",
+            "title": "Momentos Inolvidables",
+            "desc": "Convierte cada partido en una colección de momentos inolvidables",
             "icon": "History"
+          },
+          {
+            "id": 4,
+            "url": "",
+            "alternativeText": "Acceso a jugadas destacadas en la app ElitePlay",
+            "title": "Acceso Total",
+            "desc": "Accede a tus mejores jugadas cuando quieras y compártelas fácilmente",
+            "icon": "Smartphone"
+          },
+          {
+            "id": 5,
+            "url": "",
+            "alternativeText": "Descarga la app ElitePlay",
+            "title": "Descarga Ahora",
+            "desc": "Descarga ahora y no pierdas ningún punto",
+            "icon": "Download"
           }
         ]
       }
@@ -219,7 +235,7 @@
             "link": "",
             "conteudo": {
               "id": 1,
-              "url": "/img/passo1.jpg"
+              "url": ""
             }
           }
         },
@@ -246,7 +262,7 @@
             "link": "",
             "conteudo": {
               "id": 2,
-              "url": "/img/beach-tennis.png"
+              "url": ""
             }
           }
         }
@@ -306,7 +322,7 @@
       "subtitle": "Aumenta tus ingresos, fideliza a tus clientes y destácate de la competencia con el sistema de replay N°1.",
       "image": {
         "id": 1,
-        "url": "/img/beach-tennis.png",
+        "url": "",
         "alternativeText": "Arena con ElitePlay"
       },
       "button_cta_banner": {
@@ -349,7 +365,7 @@
       ],
       "image": {
         "id": 1,
-        "url": "/img/passo2.png",
+        "url": "",
         "alternativeText": "Instalación"
       }
     },
@@ -362,7 +378,7 @@
           "id": 1,
           "image": {
             "id": 1,
-            "url": "/img/passo1.jpg"
+            "url": ""
           },
           "title": "Cancha Tradicional",
           "itens": [
@@ -384,7 +400,7 @@
           "id": 2,
           "image": {
             "id": 2,
-            "url": "/img/passo4.png"
+            "url": ""
           },
           "title": "Cancha ElitePlay",
           "itens": [
@@ -433,7 +449,7 @@
       "id": 1,
       "image": {
         "id": 1,
-        "url": "/img/passo4.png",
+        "url": "",
         "alternativeText": "Impacto ElitePlay"
       },
       "tooltip": "RESULTADOS COMPROBADOS",

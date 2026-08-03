@@ -1,0 +1,42 @@
+{
+  "global": {
+    "logo": "/img/logo-compact-dark.png",
+    "favicon": "/img/favicon.ico"
+  },
+  "home": {
+    "banner": "/img/image_banner.png",
+    "how_it_works": [
+      "/img/passo1.jpg",
+      "/img/passo2.png",
+      "/img/passo4.png",
+      "/img/beach-tennis.png"
+    ],
+    "section_cta": {
+      "carousel_app": [
+        "/img/app_1.png",
+        "/img/app_2.png",
+        "/img/app_3.png",
+        "/img/app_4.png",
+        "/img/app_5.png"
+      ]
+    },
+    "carousel_app": [
+      "/img/app_1.png",
+      "/img/app_2.png",
+      "/img/app_3.png"
+    ],
+    "sports": [
+      "/img/passo1.jpg",
+      "/img/beach-tennis.png"
+    ]
+  },
+  "arenas": {
+    "banner": "/img/beach-tennis.png",
+    "installation": "/img/passo2.png",
+    "steps": [
+      "/img/passo1.jpg",
+      "/img/passo4.png"
+    ],
+    "impact": "/img/passo4.png"
+  }
+}

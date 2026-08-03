@@ -9,6 +9,7 @@ import {
 } from '../../../lib/libraries';
 import type { BannerHomePage } from "../../../types/strapi.home.model";
 import { getMediaUrl, toStr } from '@/src/services/content.service';
+import imagesData from "@/src/data/images.json";
 
 interface BannerOneProps {
   data: BannerHomePage;
@@ -30,35 +31,34 @@ export default function BannerOne({ data }: BannerOneProps) {
   }, []);
 
   const currentImage = images[currentImageIndex];
-
+  const bgImageUrl = getMediaUrl(currentImage?.url) || imagesData.home.banner;
+  const logoBannerUrl = getMediaUrl(data?.logo_banner?.url) || imagesData.global.logo;
 
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black">
       <AnimatePresence>
-        {currentImage && (
-          <motion.div
-            key={currentImage.id}
-            className="absolute inset-0 z-0"
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: 2, ease: "easeInOut" },
-              scale: { duration: 7, ease: "linear" }
-            }}
-          >
-            <Image
-              src={getMediaUrl(currentImage.url)!}
-              alt={currentImage.alternativeText || "Sports action"}
-              fill
-              priority
-              className="object-cover"
-              unoptimized
-            />
-            {/* Dark overlay with gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90" />
-          </motion.div>
-        )}
+        <motion.div
+          key={currentImageIndex}
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 1, scale: 1.1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            opacity: { duration: 2, ease: "easeInOut" },
+            scale: { duration: 7, ease: "linear" }
+          }}
+        >
+          <Image
+            src={bgImageUrl}
+            alt={currentImage?.alternativeText || "Sports action"}
+            fill
+            priority
+            className="object-cover"
+            unoptimized
+          />
+          {/* Dark overlay with gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/90" />
+        </motion.div>
       </AnimatePresence>
       {/* Content */}
       <div className="relative z-10 max-w-[1920px] w-full mx-auto px-6 md:px-24 text-center">
@@ -76,7 +76,7 @@ export default function BannerOne({ data }: BannerOneProps) {
             className="mb-8"
           >
             <Image
-              src={getMediaUrl(data.logo_banner.url)!}
+              src={logoBannerUrl}
               alt="Elite Play Banner"
               width={600}
               height={200}

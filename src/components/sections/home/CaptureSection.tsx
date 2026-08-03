@@ -9,6 +9,7 @@ import { DynamicIcon } from "../../elements/DynamicIcon";
 import { getMediaUrl } from "../../../services/content.service";
 
 import enLocale from "@/src/data/locales/en.json";
+import imagesData from "@/src/data/images.json";
 
 interface CaptureSectionProps {
   data: SectionCtaOne;
@@ -47,9 +48,11 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
 
   const slides: SlideItem[] = rawImgs.map((img: any, i: number) => {
     const fallbackImg = fallbackCarousel?.imgs?.[i % (fallbackCarousel?.imgs?.length || 1)];
+    const sectionCtaImgs = imagesData.home.section_cta?.carousel_app || imagesData.home.carousel_app || [];
+    const defaultImgUrl = sectionCtaImgs[i % (sectionCtaImgs.length || 1)] || "/img/app_1.png";
     return {
       id: img.id || i + 1,
-      src: img.url ? (img.url.startsWith("http") ? img.url : getMediaUrl(img.url) || img.url) : "",
+      src: img.url ? (img.url.startsWith("http") ? img.url : getMediaUrl(img.url) || defaultImgUrl) : defaultImgUrl,
       alt: toStr(img.alternativeText) || toStr(fallbackImg?.alternativeText) || "",
       title: toStr(img.title) || toStr(fallbackImg?.title) || "",
       desc: toStr(img.desc) || toStr(fallbackImg?.desc) || "",
@@ -246,7 +249,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
                   <div
                     className="relative z-10 rounded-[2.6rem] overflow-hidden shadow-2xl ring-4 ring-zinc-800 bg-black"
                     style={{
-                      width: "min(100%, 250px)",
+                      width: "min(100%, 300px)",
                       aspectRatio: "9 / 19.5",
                     }}
                   >
