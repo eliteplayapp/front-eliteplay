@@ -18,20 +18,29 @@ interface BannerOneProps {
 export default function BannerOne({ data }: BannerOneProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = data?.imgs_banner || [];
+  const fallbackBanners = Array.isArray(imagesData.home.banner)
+    ? imagesData.home.banner
+    : [imagesData.home.banner || "/img/image_banner.png"];
+
+  const validPropsImages = (data?.imgs_banner || []).filter((img) => img.url && img.url.trim() !== "");
+
+  const imageList: Array<{ url: string; alternativeText?: string | null }> =
+    validPropsImages.length > 0
+      ? validPropsImages
+      : fallbackBanners.map((url) => ({ url, alternativeText: "Banner ElitePlay" }));
 
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (imageList.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      setCurrentImageIndex((prev) => (prev + 1) % imageList.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [imageList.length]);
 
-  const currentImage = images[currentImageIndex];
-  const bgImageUrl = getMediaUrl(currentImage?.url) || imagesData.home.banner || "/img/banner-img.jpg";
+  const currentImage = imageList[currentImageIndex];
+  const bgImageUrl = getMediaUrl(currentImage?.url) || "/img/image_banner.png";
   const logoBannerUrl = getMediaUrl(data?.logo_banner?.url) || imagesData.global.logo;
 
   const rawDescription = toStr(data?.description_banner);
