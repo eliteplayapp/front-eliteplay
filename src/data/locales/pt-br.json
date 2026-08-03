@@ -129,7 +129,7 @@
       "icon_tab": "Smartphone",
       "tooltip": "APP ELITEPLAY",
       "title": "NUNCA MAIS PERCA UMA JOGADA INCRÍVEL",
-      "subtitle": "Suas melhores jogadas na palma da sua mão. O app ElitePlay transforma cada partida em uma coleção de momentos inesquecíveis — acesse seus destaques a qualquer momento e compartilhe facilmente.",
+      "subtitle": "Suas melhores jogadas na palma da sua mão. O app ElitePlay transforma cada partida em uma coleção de momentos inesquecíveis: acesse suas melhores jogadas quando quiser e compartilhe facilmente.",
       "itens": [
         {
           "id": 1,
@@ -166,27 +166,43 @@
         "imgs": [
           {
             "id": 1,
-            "url": "/img/app-screenshot-1.png",
-            "alternativeText": "Player de reprodução no app ElitePlay",
-            "title": "Player de Jogadas Instantâneo",
-            "desc": "Assista aos seus melhores momentos em HD assim que a partida termina.",
+            "url": "",
+            "alternativeText": "Player de reprodução de jogadas no app ElitePlay",
+            "title": "Suas Melhores Jogadas",
+            "desc": "Capture suas melhores jogadas de padel",
             "icon": "Play"
           },
           {
             "id": 2,
-            "url": "/img/app-screenshot-2.png",
+            "url": "",
             "alternativeText": "Lista de lances recentes no app ElitePlay",
-            "title": "Lances Recentes",
-            "desc": "Acesso rápido à lista dos melhores momentos dos seus últimos jogos.",
+            "title": "Reviva Cada Ponto",
+            "desc": "Guarde, reviva e compartilhe cada ponto",
             "icon": "Layers"
           },
           {
             "id": 3,
-            "url": "/img/app-screenshot-3.png",
-            "alternativeText": "Histórico por quadra no app ElitePlay",
-            "title": "Histórico por Quadra",
-            "desc": "Filtre e organize todo o seu histórico de vídeos por data, horário e quadra.",
+            "url": "",
+            "alternativeText": "Histórico de jogadas por quadra no app ElitePlay",
+            "title": "Momentos Inesquecíveis",
+            "desc": "Transforme cada partida em uma coleção de momentos inesquecíveis",
             "icon": "History"
+          },
+          {
+            "id": 4,
+            "url": "",
+            "alternativeText": "Acesso a jogadas destacadas no app ElitePlay",
+            "title": "Acesso Total",
+            "desc": "Acesse suas melhores jogadas quando quiser e compartilhe facilmente",
+            "icon": "Smartphone"
+          },
+          {
+            "id": 5,
+            "url": "",
+            "alternativeText": "Baixe o app ElitePlay",
+            "title": "Baixe Agora",
+            "desc": "Baixe agora e não perca nenhum ponto",
+            "icon": "Download"
           }
         ]
       }

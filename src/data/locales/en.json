@@ -127,9 +127,9 @@
     "section_cta": {
       "id": 1,
       "icon_tab": "Smartphone",
-      "tooltip": "APP ELITEPLAY",
+      "tooltip": "ELITEPLAY APP",
       "title": "NEVER MISS AN INCREDIBLE PLAY AGAIN",
-      "subtitle": "All your best plays, right in your pocket. The ElitePlay app turns every match into a collection of unforgettable moments — access your highlights anytime and share them effortlessly.",
+      "subtitle": "All your best plays, right in your pocket. The ElitePlay app turns every match into a collection of unforgettable moments: access your highlights anytime and share them easily.",
       "itens": [
         {
           "id": 1,
@@ -166,27 +166,43 @@
         "imgs": [
           {
             "id": 1,
-            "url": "/img/app-screenshot-1.png",
+            "url": "",
             "alternativeText": "Play replay player in the ElitePlay app",
-            "title": "Instant Play Player",
-            "desc": "Watch your best highlights in HD right after the match finishes.",
+            "title": "Your Best Plays",
+            "desc": "Capture your best padel plays",
             "icon": "Play"
           },
           {
             "id": 2,
-            "url": "/img/app-screenshot-2.png",
+            "url": "",
             "alternativeText": "Recent clips list in the ElitePlay app",
-            "title": "Recent Clips",
-            "desc": "Quickly access the list of top moments from your latest games.",
+            "title": "Relive Every Point",
+            "desc": "Save, relive, and share every point",
             "icon": "Layers"
           },
           {
             "id": 3,
-            "url": "/img/app-screenshot-3.png",
+            "url": "",
             "alternativeText": "Play history by court in the ElitePlay app",
-            "title": "History by Court",
-            "desc": "Filter and organize your entire video history by date, time, and court.",
+            "title": "Unforgettable Moments",
+            "desc": "Turn every match into a collection of unforgettable moments",
             "icon": "History"
+          },
+          {
+            "id": 4,
+            "url": "",
+            "alternativeText": "Access highlight plays in the ElitePlay app",
+            "title": "Full Access",
+            "desc": "Access your best plays anytime and share them easily",
+            "icon": "Smartphone"
+          },
+          {
+            "id": 5,
+            "url": "",
+            "alternativeText": "Download the ElitePlay app",
+            "title": "Download Now",
+            "desc": "Download now and never miss a point",
+            "icon": "Download"
           }
         ]
       }
