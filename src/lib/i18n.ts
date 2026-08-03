@@ -27,3 +27,38 @@ export function getTranslation(input: string | InputLanguages | any | undefined,
       return input.language_es || input.language_pt || "";
   }
 }
+
+/**
+ * Formata um link interno preservando o parâmetro de idioma (`lang`).
+ * @param href URL ou caminho relativo de destino
+ * @param lang Código do idioma atual
+ */
+export function formatLocalizedLink(href: string, lang?: string | null): string {
+  if (!href || !lang) return href || "#";
+
+  // Não altera links externos ou links apenas de âncora (#secao)
+  if (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:") ||
+    href.startsWith("#")
+  ) {
+    return href;
+  }
+
+  // Separa o caminho/query da âncora (#hash)
+  const [baseAndQuery, hash] = href.split("#");
+  const hashPart = hash !== undefined ? `#${hash}` : "";
+
+  // Se já possui o parâmetro lang, retorna como está
+  if (baseAndQuery.includes("lang=")) {
+    return href;
+  }
+
+  const separator = baseAndQuery.includes("?") ? "&" : "?";
+  const formattedBase = `${baseAndQuery || "/"}${separator}lang=${lang}`;
+
+  return `${formattedBase}${hashPart}`;
+}
+

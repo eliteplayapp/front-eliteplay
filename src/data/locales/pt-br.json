@@ -126,44 +126,69 @@
     },
     "section_cta": {
       "id": 1,
-      "icon_tab": "Zap",
-      "tooltip": "GRAVAÇÃO INTELIGENTE",
+      "icon_tab": "Smartphone",
+      "tooltip": "APP ELITEPLAY",
       "title": "NUNCA MAIS PERCA UMA JOGADA INCRÍVEL",
-      "subtitle": "Câmeras em alta definição, posicionadas estrategicamente na sua arena, para capturar cada detalhe com qualidade profissional.",
+      "subtitle": "Suas melhores jogadas na palma da sua mão. O app ElitePlay transforma cada partida em uma coleção de momentos inesquecíveis — acesse seus destaques a qualquer momento e compartilhe facilmente.",
       "itens": [
         {
           "id": 1,
           "icon": "Check",
-          "item": "Instalação simplificada"
+          "item": "Receba o vídeo no seu celular logo após a jogada"
         },
         {
           "id": 2,
           "icon": "Check",
-          "item": "Replays instantâneos em HD"
+          "item": "Biblioteca completa: filtre por data, horário e quadra"
         },
         {
           "id": 3,
           "icon": "Check",
-          "item": "Gravação automática por botoeira ou app"
+          "item": "Baixe e compartilhe com apenas um toque"
         },
         {
           "id": 4,
           "icon": "Check",
-          "item": "Integração completa com redes sociais"
+          "item": "Histórico de lances recentes sempre à mão"
         }
       ],
       "button": {
         "id": 1,
-        "link": "/arenas",
-        "text_button": "Saiba mais"
+        "link": "#download-app",
+        "text_button": "Baixar aplicativo"
       },
-      "video": {
+      "carousel_app": {
         "id": 1,
-        "link": "",
-        "conteudo": {
-          "id": 1,
-          "url": "/img/image_banner.png"
-        }
+        "badge_live": "Ao Vivo",
+        "label_app": "ElitePlay App",
+        "subtitle_app": "Explore as funções do app",
+        "footer_text": "Disponível para iOS e Android com sincronização instantânea.",
+        "imgs": [
+          {
+            "id": 1,
+            "url": "/img/app-screenshot-1.png",
+            "alternativeText": "Player de reprodução no app ElitePlay",
+            "title": "Player de Jogadas Instantâneo",
+            "desc": "Assista aos seus melhores momentos em HD assim que a partida termina.",
+            "icon": "Play"
+          },
+          {
+            "id": 2,
+            "url": "/img/app-screenshot-2.png",
+            "alternativeText": "Lista de lances recentes no app ElitePlay",
+            "title": "Lances Recentes",
+            "desc": "Acesso rápido à lista dos melhores momentos dos seus últimos jogos.",
+            "icon": "Layers"
+          },
+          {
+            "id": 3,
+            "url": "/img/app-screenshot-3.png",
+            "alternativeText": "Histórico por quadra no app ElitePlay",
+            "title": "Histórico por Quadra",
+            "desc": "Filtre e organize todo o seu histórico de vídeos por data, horário e quadra.",
+            "icon": "History"
+          }
+        ]
       }
     },
     "section_sports": {

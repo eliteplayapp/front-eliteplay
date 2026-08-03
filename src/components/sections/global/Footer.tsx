@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { motion, Link, Image, useSearchParams } from "../../../lib/libraries";
 import { GlobalModel } from "../../../types/strapi.global.model";
 import { getMediaUrl, getDictionary } from "../../../services/content.service";
+import { formatLocalizedLink } from "../../../lib/i18n";
 
 interface FooterProps {
   data?: GlobalModel;
@@ -25,7 +26,7 @@ function FooterContent({ data: _data }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <Link href={`/?lang=${language}`} className="inline-block mb-4">
+            <Link href={formatLocalizedLink("/", language)} className="inline-block mb-4">
               <Image
                 src={getMediaUrl(logo_global?.url) || "/img/logo-compact-dark.png"}
                 alt="Elite Play Logo"
@@ -103,7 +104,7 @@ function FooterContent({ data: _data }: FooterProps) {
                 {footer.links.map((linkItem: any) => (
                   <li key={linkItem.id}>
                     <Link
-                      href={`${linkItem.link}?lang=${language}`}
+                      href={formatLocalizedLink(linkItem.link, language)}
                       className="text-white/70 hover:text-primary transition-colors"
                     >
                       {typeof linkItem.title === 'string' ? linkItem.title : linkItem.title?.language_pt || ""}

@@ -14,6 +14,7 @@ import {
 import LanguageSelector from './LanguageSelector';
 import { ButtonCTA } from "../../../elements/ButtonCTA";
 import { getDictionary } from "@/src/services/content.service";
+import { formatLocalizedLink } from "@/src/lib/i18n";
 
 interface HeaderProps {
   logoUrl?: string | null;
@@ -67,7 +68,7 @@ function HeaderContent({
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center z-50">
+          <Link href={formatLocalizedLink("/", language)} className="flex items-center z-50">
             <Image
               src={logoUrl || "/img/logo-compact-dark.png"}
               alt={logoAlt}
@@ -84,7 +85,7 @@ function HeaderContent({
             {menuItems.map((item) => (
               <Link
                 key={item.id}
-                href={item.link!}
+                href={formatLocalizedLink(item.link!, language)}
                 className={`text-sm transition-all duration-300 ${pathname === item.link ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 {item.text_button}
@@ -98,7 +99,7 @@ function HeaderContent({
 
             {ctaButton && (
               <ButtonCTA
-                link={ctaButton.link || "/arenas"}
+                link={formatLocalizedLink(ctaButton.link || "/arenas", language)}
                 label={ctaButton.text_button}
                 variant="primary"
                 size="sm"
@@ -110,7 +111,7 @@ function HeaderContent({
           <div className="md:hidden flex items-center gap-4 z-50">
             {ctaButton && (
               <ButtonCTA
-                link={ctaButton.link || "/arenas"}
+                link={formatLocalizedLink(ctaButton.link || "/arenas", language)}
                 label={ctaButton.text_button}
                 variant="primary"
                 size="sm"
@@ -142,7 +143,7 @@ function HeaderContent({
               {menuItems.map((item) => (
                 <Link
                   key={item.id}
-                  href={item.link!}
+                  href={formatLocalizedLink(item.link!, language)}
                   onClick={closeMobileMenu}
                   className={`text-xl transition-colors ${pathname === item.link ? 'text-primary' : 'text-white'}`}
                 >
