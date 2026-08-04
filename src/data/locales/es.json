@@ -214,33 +214,6 @@
       "sports": [
         {
           "id": 1,
-          "icon_tab": "Trophy",
-          "tooltip": "FÚTBOL",
-          "title": "FÚTBOL DE ALTO RENDIMIENTO",
-          "subtitle": "Captura cada gol, asistencia y jugada clave de tus partidos de fútbol con cámaras de alta precisión en tiempo real.",
-          "itens": [
-            {
-              "id": 1,
-              "icon": "Check",
-              "item": "Cobertura total del campo con cámaras panorámicas"
-            },
-            {
-              "id": 2,
-              "icon": "Check",
-              "item": "Replay instantáneo de goles y jugadas destacadas"
-            }
-          ],
-          "video": {
-            "id": 1,
-            "link": "",
-            "conteudo": {
-              "id": 1,
-              "url": ""
-            }
-          }
-        },
-        {
-          "id": 2,
           "icon_tab": "Target",
           "tooltip": "PÁDEL",
           "title": "PÁDEL DE ALTO RENDIMIENTO",
@@ -267,21 +240,21 @@
           }
         },
         {
-          "id": 3,
-          "icon_tab": "Wind",
-          "tooltip": "BEACH TENNIS",
-          "title": "BEACH TENNIS EN EL FOCO",
-          "subtitle": "Captura la emoción de cada dejada, globo y ataque en la arena con calidad profesional.",
+          "id": 2,
+          "icon_tab": "Baseline",
+          "tooltip": "TENIS",
+          "title": "TENIS DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada saque, volea y match point con cámaras de alta precisión en tiempo real.",
           "itens": [
             {
               "id": 1,
               "icon": "Check",
-              "item": "Resistente al sol y a la arena"
+              "item": "Cámaras de alta definición cubriendo toda la cancha"
             },
             {
               "id": 2,
               "icon": "Check",
-              "item": "Ángulo perfecto de cancha completa"
+              "item": "Replay instantáneo de los puntos más emocionantes"
             }
           ],
           "video": {
@@ -294,7 +267,7 @@
           }
         },
         {
-          "id": 4,
+          "id": 3,
           "icon_tab": "Volleyball",
           "tooltip": "VÓLEIBOL",
           "title": "VÓLEIBOL DE ALTO RENDIMIENTO",
@@ -312,10 +285,64 @@
             }
           ],
           "video": {
+            "id": 3,
+            "link": "",
+            "conteudo": {
+              "id": 3,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 4,
+          "icon_tab": "Footprints",
+          "tooltip": "FÚTBOL",
+          "title": "FÚTBOL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada gol, asistencia y jugada clave de tus partidos de fútbol con cámaras de alta precisión en tiempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cobertura total del campo con cámaras panorámicas"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de goles y jugadas destacadas"
+            }
+          ],
+          "video": {
             "id": 4,
             "link": "",
             "conteudo": {
               "id": 4,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 5,
+          "icon_tab": "CircleDot",
+          "tooltip": "BÁSQUET",
+          "title": "BÁSQUET DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada bandeja, volcada y triple con precisión de transmisión profesional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Múltiples ángulos para cubrir toda la cancha"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay inmediato de las jugadas más espectaculares"
+            }
+          ],
+          "video": {
+            "id": 5,
+            "link": "",
+            "conteudo": {
+              "id": 5,
               "url": ""
             }
           }

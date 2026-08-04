@@ -235,26 +235,26 @@
             "link": "",
             "conteudo": {
               "id": 1,
-              "url": "/img/passo1.jpg"
+              "url": ""
             }
           }
         },
         {
           "id": 2,
-          "icon_tab": "Wind",
-          "tooltip": "BEACH TENNIS",
-          "title": "BEACH TENNIS IN THE SPOTLIGHT",
-          "subtitle": "Capture the excitement of every drop shot, lob, and attack on the sand with professional quality.",
+          "icon_tab": "Baseline",
+          "tooltip": "TENNIS",
+          "title": "HIGH-PERFORMANCE TENNIS",
+          "subtitle": "Capture every serve, volley, and match point with high-precision cameras in real time.",
           "itens": [
             {
               "id": 1,
               "icon": "Check",
-              "item": "Sun and sand resistant"
+              "item": "High-definition cameras covering the entire court"
             },
             {
               "id": 2,
               "icon": "Check",
-              "item": "Perfect full-court angle"
+              "item": "Instant replay of the most exciting points"
             }
           ],
           "video": {
@@ -262,7 +262,7 @@
             "link": "",
             "conteudo": {
               "id": 2,
-              "url": "/img/beach-tennis.png"
+              "url": ""
             }
           }
         },
@@ -289,7 +289,61 @@
             "link": "",
             "conteudo": {
               "id": 3,
-              "url": "/img/passo4.png"
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 4,
+          "icon_tab": "Footprints",
+          "tooltip": "FOOTBALL",
+          "title": "HIGH-PERFORMANCE FOOTBALL",
+          "subtitle": "Capture every goal, assist, and key play of your matches with high-precision cameras in real time.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Full field coverage with panoramic cameras"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Instant replay of goals and highlighted plays"
+            }
+          ],
+          "video": {
+            "id": 4,
+            "link": "",
+            "conteudo": {
+              "id": 4,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 5,
+          "icon_tab": "CircleDot",
+          "tooltip": "BASKETBALL",
+          "title": "HIGH-PERFORMANCE BASKETBALL",
+          "subtitle": "Capture every layup, dunk, and three-pointer with broadcast-quality precision.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Multiple angles to cover the entire court"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Immediate replay of the most spectacular plays"
+            }
+          ],
+          "video": {
+            "id": 5,
+            "link": "",
+            "conteudo": {
+              "id": 5,
+              "url": ""
             }
           }
         }

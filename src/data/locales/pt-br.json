@@ -235,26 +235,26 @@
             "link": "",
             "conteudo": {
               "id": 1,
-              "url": "/img/passo1.jpg"
+              "url": ""
             }
           }
         },
         {
           "id": 2,
-          "icon_tab": "Wind",
-          "tooltip": "BEACH TENNIS",
-          "title": "BEACH TENNIS EM DESTAQUE",
-          "subtitle": "Capture a emoção de cada largadinha, lob e ataque na areia com qualidade profissional.",
+          "icon_tab": "Baseline",
+          "tooltip": "TÊNIS",
+          "title": "TÊNIS DE ALTA PERFORMANCE",
+          "subtitle": "Capture cada saque, voleio e match point com câmeras de alta precisão em tempo real.",
           "itens": [
             {
               "id": 1,
               "icon": "Check",
-              "item": "Resistente a sol e areia"
+              "item": "Câmeras de alta definição cobrindo toda a quadra"
             },
             {
               "id": 2,
               "icon": "Check",
-              "item": "Ângulo perfeito de quadra completa"
+              "item": "Replay instantâneo dos pontos mais marcantes"
             }
           ],
           "video": {
@@ -262,7 +262,7 @@
             "link": "",
             "conteudo": {
               "id": 2,
-              "url": "/img/beach-tennis.png"
+              "url": ""
             }
           }
         },
@@ -289,7 +289,61 @@
             "link": "",
             "conteudo": {
               "id": 3,
-              "url": "/img/passo4.png"
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 4,
+          "icon_tab": "Footprints",
+          "tooltip": "FUTEBOL",
+          "title": "FUTEBOL DE ALTA PERFORMANCE",
+          "subtitle": "Capture cada gol, assistência e jogada decisiva dos seus jogos com câmeras de alta precisão em tempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cobertura total do campo com câmeras panorâmicas"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantâneo de gols e jogadas em destaque"
+            }
+          ],
+          "video": {
+            "id": 4,
+            "link": "",
+            "conteudo": {
+              "id": 4,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 5,
+          "icon_tab": "CircleDot",
+          "tooltip": "BASQUETE",
+          "title": "BASQUETE DE ALTA PERFORMANCE",
+          "subtitle": "Capture cada bandeja, enterrada e arremesso de três pontos com qualidade de transmissão profissional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Múltiplos ângulos para cobrir toda a quadra"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay imediato das jogadas mais espetaculares"
+            }
+          ],
+          "video": {
+            "id": 5,
+            "link": "",
+            "conteudo": {
+              "id": 5,
+              "url": ""
             }
           }
         }
