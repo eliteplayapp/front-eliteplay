@@ -7,6 +7,7 @@ import {
   Check,
 } from "../../../lib/libraries";
 import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
 import { SectionContainer } from "../../elements/SectionContainer";
@@ -58,7 +59,7 @@ export default function ComparisonSection({ data }: ComparisonSectionProps) {
         {data.cards?.map((card: any, index: number) => {
           const isElite = index === 1; // Assuming second card is Elite Play
           const cardTitle = card.title;
-          const cardImage = getMediaUrl(card.image?.url);
+          const cardImage = getMediaUrl(card.image?.url) || imagesData.arenas.comparative[index] || "";
           const animationVariant = isElite ? fadeInLeft : fadeInRight;
 
           return (
@@ -81,7 +82,7 @@ export default function ComparisonSection({ data }: ComparisonSectionProps) {
                       src={cardImage}
                       alt={card.image?.alternativeText || cardTitle}
                       fill
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full ${cardImage.startsWith('data:') ? 'object-contain p-6' : 'object-cover'}`}
                       unoptimized
                     />
                   )}
