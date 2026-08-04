@@ -5,6 +5,7 @@ import {
   Image,
 } from "../../../lib/libraries";
 import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
@@ -20,7 +21,7 @@ export default function ProcessSection({ data }: ProcessSectionProps) {
   const badge = toStr(data.tooltip);
   const title = toStr(data.title);
   const subtitle = toStr(data.subtitle);
-  const bgImage = getMediaUrl(data.image?.url);
+  const bgImage = getMediaUrl(data.image?.url) || imagesData.arenas.installation;
 
   return (
     // Usando <section> direto (sem SectionContainer) para evitar overflow-hidden
@@ -42,17 +43,13 @@ export default function ProcessSection({ data }: ProcessSectionProps) {
         <div className="flex flex-col lg:flex-row-reverse gap-16 items-start">
           {/* Sticky Visual Side — position:sticky requer que nenhum ancestral tenha overflow:hidden */}
           <div className="w-full lg:w-1/2 lg:sticky lg:top-32 shrink-0 h-64 md:h-[40vh] lg:h-[60vh] rounded-2xl lg:rounded-3xl overflow-hidden bg-zinc-100 border border-black/5 shadow-2xl relative">
-            {bgImage ? (
-              <Image
-                src={bgImage}
-                alt={data.image?.alternativeText || "Process Visual"}
-                fill
-                className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
-                unoptimized
-              />
-            ) : (
-              <div className="absolute inset-0 bg-zinc-200" />
-            )}
+            <Image
+              src={bgImage}
+              alt={data.image?.alternativeText || "Process Visual"}
+              fill
+              className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
+              unoptimized
+            />
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-black/20 to-black/70 z-10" />
 
             {/* Mensagem fixa sobre a imagem */}

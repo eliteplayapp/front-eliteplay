@@ -36,12 +36,12 @@
     ]
   },
   "arenas": {
-    "banner": "/img/beach-tennis.png",
-    "installation": "/img/passo2.png",
+    "banner": "/img/banner-one.jpg",
+    "installation": "/img/section_instructions_arena.jpg",
     "steps": [
       "/img/passo1.jpg",
       "/img/passo4.png"
     ],
-    "impact": "/img/passo4.png"
+    "impact": "/img/banner-arena.png"
   }
 }

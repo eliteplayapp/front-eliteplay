@@ -6,6 +6,7 @@ import {
   Image,
 } from "../../../lib/libraries";
 import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import type { BannerArenas } from "../../../types/strapi.arena.model";
 
@@ -22,14 +23,14 @@ export default function BannerTwo({ data }: BannerTwoProps) {
   const cta = toStr(data.button_cta_banner?.text_button);
   const socialProof = toStr(data.tooltip_two);
 
-  const bgImage = getMediaUrl(data.image?.url);
+  const bgImage = getMediaUrl(data.image?.url) || imagesData.arenas.banner;
 
   return (
     <section className="relative min-h-[100svh] md:min-h-[90vh] py-32 md:py-0 flex items-center justify-center overflow-hidden bg-black text-center">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
           <Image
-            src={bgImage!}
+            src={bgImage}
             alt={data.image?.alternativeText || "Arena esportiva"}
             fill
             priority

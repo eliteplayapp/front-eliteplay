@@ -6,6 +6,7 @@ import {
   Users,
 } from "../../../lib/libraries";
 import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import type { SectionImpact } from "../../../types/strapi.arena.model";
 
@@ -19,21 +20,19 @@ export default function ImpactSection({ data }: ImpactSectionProps) {
   const badge = toStr(data.tooltip);
   const title = toStr(data.title);
   const description = toStr(data.subtitle);
-  const bgImage = getMediaUrl(data.image?.url);
+  const bgImage = getMediaUrl(data.image?.url) || imagesData.arenas.impact;
 
   return (
     <section className="py-24 lg:py-40 bg-zinc-950 relative overflow-hidden">
       {/* Background Texture & Image */}
       <div className="absolute inset-0 z-0 opacity-20">
-        {bgImage && (
-          <Image
-            src={bgImage}
-            alt={data.image?.alternativeText || "Stadium Background"}
-            fill
-            className="w-full h-full object-cover"
-            unoptimized
-          />
-        )}
+        <Image
+          src={bgImage}
+          alt={data.image?.alternativeText || "Stadium Background"}
+          fill
+          className="w-full h-full object-cover"
+          unoptimized
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
       </div>
 
