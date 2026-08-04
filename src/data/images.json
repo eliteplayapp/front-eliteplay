@@ -31,8 +31,11 @@
       "/img/app_3.png"
     ],
     "sports": [
-      "/img/passo1.jpg",
-      "/img/beach-tennis.png"
+      "/img/padel.avif",
+      "/img/tenis.avif",
+      "/img/volei.avif",
+      "/img/futebol.avif",
+      "/img/basket.avif"
     ]
   },
   "arenas": {
