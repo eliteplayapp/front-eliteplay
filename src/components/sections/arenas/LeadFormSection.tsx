@@ -24,6 +24,9 @@ interface LeadFormSectionProps {
   data: SectionPartners;
 }
 
+// ⚠️ Troque pelo número de WhatsApp da ElitePlay (somente dígitos, com DDI)
+const WHATSAPP_NUMBER = '5511999999999';
+
 export default function LeadFormSection({ data }: LeadFormSectionProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,14 +47,23 @@ export default function LeadFormSection({ data }: LeadFormSectionProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulação de envio para o email
-    console.log('Dados do Lead:', formData);
-    
-    // Simular delay de rede
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    const message =
+      `🏟️ *Nova Solicitação de Proposta — ElitePlay*\n\n` +
+      `👤 *Nome:* ${formData.nome}\n` +
+      `📍 *Cidade:* ${formData.cidade}\n` +
+      `📧 *E-mail:* ${formData.email}\n` +
+      `📱 *Telefone:* ${formData.telefone}`;
+
+    const encoded = encodeURIComponent(message);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    // Pequeno delay para feedback visual antes de redirecionar
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     setIsSubmitted(true);
     setIsSubmitting(false);
+
+    window.open(url, '_blank');
   };
 
   return (
