@@ -265,6 +265,33 @@
               "url": "/img/beach-tennis.png"
             }
           }
+        },
+        {
+          "id": 3,
+          "icon_tab": "Volleyball",
+          "tooltip": "VÔLEI",
+          "title": "VÔLEI DE ALTA PERFORMANCE",
+          "subtitle": "Capture cada cortada, bloqueio e ace em tempo real com qualidade profissional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Gravação em alta definição para cada rally"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantâneo dos pontos mais marcantes"
+            }
+          ],
+          "video": {
+            "id": 3,
+            "link": "",
+            "conteudo": {
+              "id": 3,
+              "url": "/img/passo4.png"
+            }
+          }
         }
       ]
     },

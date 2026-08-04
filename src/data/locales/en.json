@@ -265,6 +265,33 @@
               "url": "/img/beach-tennis.png"
             }
           }
+        },
+        {
+          "id": 3,
+          "icon_tab": "Volleyball",
+          "tooltip": "VOLLEYBALL",
+          "title": "HIGH-PERFORMANCE VOLLEYBALL",
+          "subtitle": "Capture every spike, block, and ace in real time with professional quality.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "High-definition recording for every rally"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Instant replay of the most exciting points"
+            }
+          ],
+          "video": {
+            "id": 3,
+            "link": "",
+            "conteudo": {
+              "id": 3,
+              "url": "/img/passo4.png"
+            }
+          }
         }
       ]
     },

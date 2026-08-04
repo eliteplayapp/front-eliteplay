@@ -131,7 +131,7 @@ export default function SportsGallerySection({ data }: SportsGallerySectionProps
               transition={{ duration: 0.3 }}
               className="h-full"
             >
-              <SportsGalleryContent sport={activeSport} />
+              <SportsGalleryContent sport={activeSport} index={activeTabIndex} />
             </motion.div>
           </AnimatePresence>
         </div>

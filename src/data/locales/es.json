@@ -292,6 +292,33 @@
               "url": ""
             }
           }
+        },
+        {
+          "id": 4,
+          "icon_tab": "Volleyball",
+          "tooltip": "VÓLEIBOL",
+          "title": "VÓLEIBOL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada remate, bloqueo y ace en tiempo real con calidad profesional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Grabación de alta definición para cada rally"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de los puntos más destacados"
+            }
+          ],
+          "video": {
+            "id": 4,
+            "link": "",
+            "conteudo": {
+              "id": 4,
+              "url": ""
+            }
+          }
         }
       ]
     },
