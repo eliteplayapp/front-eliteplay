@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, X, Zap, ArrowRight } from "../../../lib/libraries";
+import { motion, X, Zap } from "../../../lib/libraries";
 import { SectionCtaSimple } from "../../../types/strapi.home.model";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import { DynamicIcon } from "../../elements/DynamicIcon";

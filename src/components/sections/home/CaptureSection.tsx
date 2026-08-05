@@ -48,7 +48,7 @@ export default function CaptureSection({ data }: CaptureSectionProps) {
 
   const slides: SlideItem[] = rawImgs.map((img: any, i: number) => {
     const fallbackImg = fallbackCarousel?.imgs?.[i % (fallbackCarousel?.imgs?.length || 1)];
-    const sectionCtaImgs = imagesData.home.section_cta?.carousel_app || imagesData.home.carousel_app || [];
+    const sectionCtaImgs = imagesData.home.section_cta?.carousel_app;
     const defaultImgUrl = sectionCtaImgs[i % (sectionCtaImgs.length || 1)] || "/img/app_1.png";
     return {
       id: img.id || i + 1,

@@ -6,7 +6,6 @@ import {
   AnimatePresence,
   ChevronDown
 } from "../../../lib/libraries";
-import * as Icons from "../../../lib/libraries";
 import { SectionSports } from "../../../types/strapi.home.model";
 import { GalleryTabButton } from "../../elements/GalleryTabButton";
 import { SportsGalleryContent } from "../../elements/SportsGalleryContent";
