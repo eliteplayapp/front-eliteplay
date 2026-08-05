@@ -44,7 +44,10 @@ export async function getPaginaArenas(lang: string = 'es'): Promise<any> {
   */
 export function getMediaUrl(url: string | null | undefined): string | null {
   if (!url) return null;
-  if (url.startsWith('http') || url.startsWith('//')) {
+  if (url.startsWith('http://')) {
+    return url.replace(/^http:\/\//, 'https://');
+  }
+  if (url.startsWith('https://') || url.startsWith('//')) {
     return url;
   }
   return url.startsWith('/') ? url : `/${url}`;
