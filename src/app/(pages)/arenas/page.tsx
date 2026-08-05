@@ -9,32 +9,25 @@ import SportsCarroucel from "../../../components/sections/global/sports_carrouce
 import { getPaginaArenas } from "@/src/services/content.service";
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}): Promise<Metadata> {
-  const params = await searchParams;
-  const language = (params.lang as string) || "es";
-  const pageData = await getPaginaArenas(language);
+export const dynamic = "force-static";
 
+export async function generateMetadata(): Promise<Metadata> {
+  const pageData = await getPaginaArenas("es");
   return {
     title: "Arenas",
     description: pageData?.meta_description || "",
   };
 }
 
-export default async function ArenasPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const params = await searchParams;
-  const language = (params.lang as string) || "es";
-  const pageData = await getPaginaArenas(language);
+export default async function ArenasPage() {
+  const pageData = await getPaginaArenas("es");
 
   if (!pageData) {
-    return <div className="min-h-screen flex items-center justify-center text-white">Erro ao carregar dados da página.</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white">
+        Erro ao carregar dados da página.
+      </div>
+    );
   }
 
   return (

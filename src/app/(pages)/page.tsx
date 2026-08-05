@@ -8,34 +8,25 @@ import FinalCTASection from "../../components/sections/home/FinalCTASection";
 import { getPaginaInicial } from "@/src/services/content.service";
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}): Promise<Metadata> {
-  const params = await searchParams;
-  const language = (params.lang as string) || "es";
-  const pageData = await getPaginaInicial(language);
+export const dynamic = "force-static";
 
+export async function generateMetadata(): Promise<Metadata> {
+  const pageData = await getPaginaInicial("es");
   return {
-    title: {
-      absolute: "ElitePlay",
-    },
+    title: { absolute: "ElitePlay" },
     description: pageData?.meta_description || "",
   };
 }
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const params = await searchParams;
-  const language = (params.lang as string) || "es";
-  const pageData = await getPaginaInicial(language);
+export default async function Home() {
+  const pageData = await getPaginaInicial("es");
 
   if (!pageData) {
-    return <div className="min-h-screen flex items-center justify-center text-white">Erro ao carregar dados da página.</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white">
+        Erro ao carregar dados da página.
+      </div>
+    );
   }
 
   return (
