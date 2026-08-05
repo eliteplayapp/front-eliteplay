@@ -1,22 +1,22 @@
 import { MetadataRoute } from 'next'
-import { getPaginaInicial, getPaginaArenas } from '@/src/services/content.service'
+
+export const dynamic = 'force-static';
 
 const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.eliteplayapp.com').replace(/\/$/, '');
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const languages = ['es', 'pt-br', 'en']
-  const [homeData, arenasData] = await Promise.all([getPaginaInicial('es'), getPaginaArenas('es')]);
 
   const routes = [
-    { path: '', data: homeData, priority: 1.0 },
-    { path: '/arenas', data: arenasData, priority: 0.8 }
+    { path: '', priority: 1.0 as const },
+    { path: '/arenas', priority: 0.8 as const },
   ]
 
-  return routes.flatMap(route => 
+  return routes.flatMap(route =>
     languages.map(lang => ({
       url: `${BASE_URL}${route.path}${lang === 'es' ? '' : `?lang=${lang}`}`,
-      lastModified: route.data?.updatedAt ? new Date(route.data.updatedAt) : new Date(),
-      changeFrequency: 'daily',
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
       priority: route.priority,
     }))
   )
