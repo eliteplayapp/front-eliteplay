@@ -5,37 +5,34 @@ import {
   Image,
   Users,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "@/src/services/strapi.service";
+import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import type { SectionImpact } from "../../../types/strapi.arena.model";
 
 interface ImpactSectionProps {
   data: SectionImpact;
-  language: string;
 }
 
-export default function ImpactSection({ data, language }: ImpactSectionProps) {
+export default function ImpactSection({ data }: ImpactSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
-  const description = getTranslation(data.subtitle, language);
-  const bgImage = getStrapiMedia(data.image?.url);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
+  const description = toStr(data.subtitle);
+  const bgImage = getMediaUrl(data.image?.url) || imagesData.arenas.impact;
 
   return (
     <section className="py-24 lg:py-40 bg-zinc-950 relative overflow-hidden">
       {/* Background Texture & Image */}
       <div className="absolute inset-0 z-0 opacity-20">
-        {bgImage && (
-          <Image
-            src={bgImage}
-            alt={data.image?.alternativeText || "Stadium Background"}
-            fill
-            className="w-full h-full object-cover"
-            unoptimized
-          />
-        )}
+        <Image
+          src={bgImage}
+          alt={data.image?.alternativeText || "Stadium Background"}
+          fill
+          className="w-full h-full object-cover"
+          unoptimized
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950" />
       </div>
 
@@ -73,7 +70,7 @@ export default function ImpactSection({ data, language }: ImpactSectionProps) {
             {data.button_section_impact && (
               <ButtonCTA
                 link={data.button_section_impact.link || "#contact"}
-                label={getTranslation(data.button_section_impact.text_button, language)}
+                label={toStr(data.button_section_impact.text_button)}
                 iconName="ArrowRight"
                 variant="primary"
                 className="italic"
@@ -83,10 +80,10 @@ export default function ImpactSection({ data, language }: ImpactSectionProps) {
 
           {/* Right Side: Metrics Grid */}
           <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
-            {data.cards?.map((card, index) => {
-              const metric = getTranslation(card.metric, language);
-              const category = getTranslation(card.category, language);
-              const outcome = getTranslation(card.outcome, language);
+            {data.cards?.map((card: any, index: number) => {
+              const metric = card.metric;
+              const category = card.category;
+              const outcome = card.outcome;
 
               // Apply different offsets to match the staggered design
               const offsetClass = index === 1 ? "sm:mt-12" : index === 2 ? "sm:-mt-6" : "";

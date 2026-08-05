@@ -5,33 +5,32 @@ import {
   ChevronDown,
   Image,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
-import { getStrapiMedia } from "@/src/services/strapi.service";
+import { getMediaUrl, toStr } from "@/src/services/content.service";
+import imagesData from "@/src/data/images.json";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import type { BannerArenas } from "../../../types/strapi.arena.model";
 
 interface BannerTwoProps {
   data: BannerArenas;
-  language: string;
 }
 
-export default function BannerTwo({ data, language }: BannerTwoProps) {
+export default function BannerTwo({ data }: BannerTwoProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip_one, language);
-  const title = getTranslation(data.title, language);
-  const description = getTranslation(data.subtitle || undefined, language);
-  const cta = getTranslation(data.button_cta_banner?.text_button, language);
-  const socialProof = getTranslation(data.tooltip_two, language);
+  const badge = toStr(data.tooltip_one);
+  const title = toStr(data.title);
+  const description = toStr(data.subtitle);
+  const cta = toStr(data.button_cta_banner?.text_button);
+  const socialProof = toStr(data.tooltip_two);
 
-  const bgImage = getStrapiMedia(data.image?.url);
+  const bgImage = getMediaUrl(data.image?.url) || imagesData.arenas.banner;
 
   return (
     <section className="relative min-h-[100svh] md:min-h-[90vh] py-32 md:py-0 flex items-center justify-center overflow-hidden bg-black text-center">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
           <Image
-            src={bgImage!}
+            src={bgImage}
             alt={data.image?.alternativeText || "Arena esportiva"}
             fill
             priority

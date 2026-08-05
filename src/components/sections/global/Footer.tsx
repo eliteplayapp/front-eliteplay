@@ -2,19 +2,21 @@
 
 import { Suspense } from "react";
 import { motion, Link, Image, useSearchParams } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
 import { GlobalModel } from "../../../types/strapi.global.model";
-import { getStrapiMedia } from "../../../services/strapi.service";
+import { getMediaUrl, getDictionary } from "../../../services/content.service";
+import { formatLocalizedLink } from "../../../lib/i18n";
 
 interface FooterProps {
-  data: GlobalModel;
+  data?: GlobalModel;
 }
 
-function FooterContent({ data }: FooterProps) {
+function FooterContent({ data: _data }: FooterProps) {
   const searchParams = useSearchParams();
   const language = searchParams.get('lang') || 'es';
   const currentYear = new Date().getFullYear();
-  const { footer, logo_global, redes_sociais } = data;
+  
+  const dict = getDictionary(language);
+  const { footer, logo_global, redes_sociais } = dict.global;
   const redes = redes_sociais?.[0];
 
   return (
@@ -24,9 +26,9 @@ function FooterContent({ data }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <Link href={`/?lang=${language}`} className="inline-block mb-4">
+            <Link href={formatLocalizedLink("/", language)} className="inline-block mb-4">
               <Image
-                src={getStrapiMedia(logo_global?.url) || "/img/logo-compact-dark.png"}
+                src={getMediaUrl(logo_global?.url) || "/img/logo-compact-dark.png"}
                 alt="Elite Play Logo"
                 width={160}
                 height={40}
@@ -35,7 +37,7 @@ function FooterContent({ data }: FooterProps) {
               />
             </Link>
             <p className="text-white/70 mb-4 max-w-md">
-              {getTranslation(footer.description, language)}
+              {typeof footer.description === 'string' ? footer.description : (footer.description as any)?.language_pt || ""}
             </p>
             {/* Social Media */}
             {redes && (
@@ -99,13 +101,13 @@ function FooterContent({ data }: FooterProps) {
                 Links
               </h3>
               <ul className="space-y-2">
-                {footer.links.map((linkItem) => (
+                {footer.links.map((linkItem: any) => (
                   <li key={linkItem.id}>
                     <Link
-                      href={`${linkItem.link}?lang=${language}`}
+                      href={formatLocalizedLink(linkItem.link, language)}
                       className="text-white/70 hover:text-primary transition-colors"
                     >
-                      {getTranslation(linkItem.title, language)}
+                      {typeof linkItem.title === 'string' ? linkItem.title : linkItem.title?.language_pt || ""}
                     </Link>
                   </li>
                 ))}

@@ -2,11 +2,10 @@
 
 import { motion } from "../../../lib/libraries";
 import { SectionDownloadApp } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
+import { toStr } from "@/src/services/content.service";
 
 interface FinalCTASectionProps {
   data: SectionDownloadApp;
-  language: string;
 }
 
 const buttonTranslations: Record<string, { apple: string; google: string }> = {
@@ -15,13 +14,13 @@ const buttonTranslations: Record<string, { apple: string; google: string }> = {
   "es": { apple: "Descárgalo en la", google: "Disponible en" },
 };
 
-export default function FinalCTASection({ data, language }: FinalCTASectionProps) {
+export default function FinalCTASection({ data }: FinalCTASectionProps) {
   if (!data) return null;
 
-  const t = buttonTranslations[language] || buttonTranslations["pt-br"];
+  const t = buttonTranslations["pt-br"];
 
   return (
-    <section id="app" className="pt-16 pb-24 md:py-32 bg-black relative overflow-hidden border-t border-primary/20">
+    <section id="app" className="pt-16 pb-24 md:py-32 bg-black relative overflow-hidden border-t border-primary/20 scroll-mt-20">
       {/* Neon glow effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_70%)] opacity-5" />
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_20px_color-mix(in_srgb,var(--primary)_80%,transparent)]" />
@@ -42,11 +41,11 @@ export default function FinalCTASection({ data, language }: FinalCTASectionProps
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-4 italic" style={{ transform: 'skewX(-3deg)' }}>
               <span className="text-primary drop-shadow-[0_0_30px_color-mix(in_srgb,var(--primary)_60%,transparent)]">
-                {getTranslation(data.title, language)}
+                {toStr(data.title)}
               </span>
             </h2>
             <h3 className="text-2xl md:text-4xl font-bold text-white/80 mb-8 italic" style={{ transform: 'skewX(-3deg)' }}>
-              {getTranslation(data.subtitle, language)}
+              {toStr(data.subtitle)}
             </h3>
           </motion.div>
 

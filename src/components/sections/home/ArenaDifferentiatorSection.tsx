@@ -1,21 +1,20 @@
 "use client";
 
-import { motion, X, Zap, ArrowRight } from "../../../lib/libraries";
+import { motion, X, Zap } from "../../../lib/libraries";
 import { SectionCtaSimple } from "../../../types/strapi.home.model";
-import { getTranslation } from "../../../lib/i18n";
 import { ButtonCTA } from "../../elements/ButtonCTA";
 import { DynamicIcon } from "../../elements/DynamicIcon";
+import { toStr } from "@/src/services/content.service";
 
 interface ArenaDifferentiatorSectionProps {
   data: SectionCtaSimple;
-  language: string;
 }
 
-export default function ArenaDifferentiatorSection({ data, language }: ArenaDifferentiatorSectionProps) {
+export default function ArenaDifferentiatorSection({ data }: ArenaDifferentiatorSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
 
   return (
     <section id="arena-differentiator" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
@@ -52,45 +51,44 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
         </div>
 
         {/* Comparison Cards */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
-          {data.cards?.map((card, index) => {
-            // Usually index 0 is common arena, index 1 is Elite Play
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1920px] mx-auto mb-16">
+          {data.cards?.map((card: any, index: number) => {
             const isElite = index === 1;
             
             return (
               <motion.div
                 key={card.id || index}
-                initial={{ opacity: 0, x: isElite ? 40 : -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: isElite ? 0.1 : 0 }}
-                className={`relative rounded-3xl border ${isElite ? 'border-2 border-primary shadow-[0_0_60px_color-mix(in_srgb,var(--primary)_12%,transparent)]' : 'border-white/10'} bg-zinc-900/60 backdrop-blur-sm p-8 md:p-10 flex flex-col gap-6 overflow-hidden`}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className={`relative rounded-3xl border ${isElite ? 'border-2 border-primary shadow-[0_0_60px_color-mix(in_srgb,var(--primary)_12%,transparent)]' : 'border-white/10 hover:border-white/20'} bg-zinc-900/60 backdrop-blur-sm p-6 lg:p-8 flex flex-col gap-6 overflow-hidden transition-all duration-300 hover:-translate-y-1.5`}
               >
                 {/* Background tint */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${isElite ? 'from-primary/8' : 'from-red-900/5'} to-transparent pointer-events-none rounded-3xl`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${isElite ? 'from-primary/10' : 'from-zinc-800/10'} to-transparent pointer-events-none rounded-3xl`} />
 
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${isElite ? 'bg-primary shadow-[0_0_20px_color-mix(in_srgb,var(--primary)_50%,transparent)]' : 'bg-zinc-800 border border-white/10'}`}>
                     <DynamicIcon 
                       iconName={card.icon} 
                       size={20} 
-                      className={isElite ? 'text-black fill-black' : 'text-zinc-500'} 
+                      className={isElite ? 'text-black fill-black' : 'text-primary'} 
                       fallback={isElite ? Zap : X} 
                     />
                   </div>
-                  <span className={`font-black uppercase tracking-widest text-sm ${isElite ? 'text-primary' : 'text-zinc-400'}`}>
-                    {getTranslation(card.text_tooltip_one, language)}
+                  <span className={`font-black uppercase tracking-widest text-xs lg:text-sm ${isElite ? 'text-primary' : 'text-zinc-400'}`}>
+                    {card.text_tooltip_one}
                   </span>
                 </div>
 
-                <p className={`text-3xl md:text-4xl font-black leading-snug italic ${isElite ? 'text-white' : 'text-zinc-300'}`} style={{ transform: 'skewX(-2deg)' }}>
-                  {getTranslation(card.title_card, language)}
+                <p className={`text-2xl lg:text-3xl font-black leading-snug italic ${isElite ? 'text-white' : 'text-zinc-300'}`} style={{ transform: 'skewX(-2deg)' }}>
+                  {card.title_card}
                 </p>
 
-                <div className="flex items-center gap-3 mt-auto">
-                  <div className={`w-3 h-3 rounded-full ${isElite ? 'bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--primary)_80%,transparent)]' : 'bg-zinc-600'}`} />
-                  <span className={`${isElite ? 'text-primary/80' : 'text-zinc-500'} text-sm font-medium`}>
-                    {getTranslation(card.subtitle_card, language)}
+                <div className="flex items-center gap-3 mt-auto pt-2">
+                  <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${isElite ? 'bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--primary)_80%,transparent)]' : 'bg-zinc-600'}`} />
+                  <span className={`${isElite ? 'text-primary/90' : 'text-zinc-400'} text-xs lg:text-sm font-medium`}>
+                    {card.subtitle_card}
                   </span>
                 </div>
               </motion.div>
@@ -108,7 +106,7 @@ export default function ArenaDifferentiatorSection({ data, language }: ArenaDiff
         >
           <ButtonCTA 
             link={data.button_section_cta_simple.link || "/arenas"}
-            label={getTranslation(data.button_section_cta_simple.text_button, language)}
+            label={toStr(data.button_section_cta_simple.text_button)}
             iconName={data.button_section_cta_simple.icon || "ArrowRight"}
             className="px-12 py-5 text-lg"
             variant="primary"

@@ -11,21 +11,23 @@ import {
   Send,
   CheckCircle2,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
 import { SectionContainer } from "../../elements/SectionContainer";
 import { FormField } from "../../elements/FormField";
 import { fadeInUp, scaleIn } from "../../../lib/animations";
+import { toStr } from "../../../services/content.service";
 import type { SectionPartners } from "../../../types/strapi.arena.model";
 
 interface LeadFormSectionProps {
   data: SectionPartners;
-  language: string;
 }
 
-export default function LeadFormSection({ data, language }: LeadFormSectionProps) {
+// ⚠️ Troque pelo número de WhatsApp da ElitePlay (somente dígitos, com DDI)
+const WHATSAPP_NUMBER = '5511999999999';
+
+export default function LeadFormSection({ data }: LeadFormSectionProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -37,22 +39,31 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
 
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
-  const description = getTranslation(data.subtitle || undefined, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
+  const description = toStr(data.subtitle);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulação de envio para o email
-    console.log('Dados do Lead:', formData);
-    
-    // Simular delay de rede
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    const message =
+      `🏟️ *Nova Solicitação de Proposta — ElitePlay*\n\n` +
+      `👤 *Nome:* ${formData.nome}\n` +
+      `📍 *Cidade:* ${formData.cidade}\n` +
+      `📧 *E-mail:* ${formData.email}\n` +
+      `📱 *Telefone:* ${formData.telefone}`;
+
+    const encoded = encodeURIComponent(message);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    // Pequeno delay para feedback visual antes de redirecionar
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     setIsSubmitted(true);
     setIsSubmitting(false);
+
+    window.open(url, '_blank');
   };
 
   return (
@@ -79,7 +90,7 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
 
           {/* Features List from Strapi */}
           <div className="space-y-6">
-            {data.itens?.map((item, index) => (
+            {data.itens?.map((item: any, index: number) => (
               <motion.div 
                 key={item.id || index} 
                 className="flex items-center gap-4 text-zinc-300"
@@ -91,10 +102,10 @@ export default function LeadFormSection({ data, language }: LeadFormSectionProps
                 </div>
                 <div>
                   <p className="font-bold text-lg leading-tight uppercase">
-                    {getTranslation(item.item, language)}
+                    {item.item}
                   </p>
                   <p className="text-sm text-zinc-500 font-light mt-1">
-                    {getTranslation(item.subitem, language)}
+                    {item.subitem}
                   </p>
                 </div>
               </motion.div>

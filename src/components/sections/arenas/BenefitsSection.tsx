@@ -3,24 +3,23 @@
 import {
   motion,
 } from "../../../lib/libraries";
-import { getTranslation } from "../../../lib/i18n";
 import { DynamicIcon } from "../../elements/DynamicIcon";
 import { SectionBadge } from "../../elements/SectionBadge";
 import { SectionHeading } from "../../elements/SectionHeading";
 import { SectionContainer } from "../../elements/SectionContainer";
-import { fadeInUp } from "../../../lib/animations";
+import { fadeInUp, } from "../../../lib/animations";
+import { toStr } from "../../../services/content.service";
 import type { SectionDifferential } from "../../../types/strapi.arena.model";
 
 interface BenefitsSectionProps {
   data: SectionDifferential;
-  language: string;
 }
 
-export default function BenefitsSection({ data, language }: BenefitsSectionProps) {
+export default function BenefitsSection({ data }: BenefitsSectionProps) {
   if (!data) return null;
 
-  const badge = getTranslation(data.tooltip, language);
-  const title = getTranslation(data.title, language);
+  const badge = toStr(data.tooltip);
+  const title = toStr(data.title);
 
   return (
     <SectionContainer className="bg-zinc-950">
@@ -44,9 +43,9 @@ export default function BenefitsSection({ data, language }: BenefitsSectionProps
         <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20" />
 
         <div className="grid md:grid-cols-3 gap-12 md:gap-8">
-          {data.cards?.map((step, index) => {
-            const stepTitle = getTranslation(step.title, language);
-            const stepDescription = getTranslation(step.subtitle, language);
+          {data.cards?.map((step: any, index: number) => {
+            const stepTitle = step.title;
+            const stepDescription = step.subtitle;
             const stepNumber = (index + 1).toString().padStart(2, '0');
 
             return (

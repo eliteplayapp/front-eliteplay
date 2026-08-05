@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/sections/global/header";
 import Footer from "../components/sections/global/Footer";
-import { getInformacoesGlobais, getStrapiMedia } from "../services/strapi.service";
+import { getInformacoesGlobais, getMediaUrl } from "../services/content.service";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export default async function RootLayout({
   const informacoesGlobais = await getInformacoesGlobais();
 
   const rawLogoUrl = informacoesGlobais?.logo_global?.url;
-  const logoUrl = getStrapiMedia(rawLogoUrl);
+  const logoUrl = getMediaUrl(rawLogoUrl);
 
   return (
     <html lang="pt-BR" suppressHydrationWarning>

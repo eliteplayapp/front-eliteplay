@@ -1,0 +1,45 @@
+{
+  "global": {
+    "logo": "/img/logo-compact-dark.png",
+    "favicon": "/img/favicon.ico"
+  },
+  "home": {
+    "banner": [
+      "/img/webp/banner-one.webp",
+      "/img/webp/banner-two.webp",
+      "/img/webp/banner-three.webp",
+      "/img/webp/banner-four.webp"
+    ],
+    "how_it_works": [
+      "/img/webp/passo1.webp",
+      "/img/webp/passo2.webp",
+      "/img/webp/passo4.webp",
+      "/img/webp/beach-tennis.webp"
+    ],
+    "section_cta": {
+      "carousel_app": [
+        "/img/webp/app_1.webp",
+        "/img/webp/app_2.webp",
+        "/img/webp/app_3.webp",
+        "/img/webp/app_4.webp",
+        "/img/webp/app_5.webp"
+      ]
+    },
+    "sports": [
+      "/img/webp/padel.webp",
+      "/img/webp/tenis.webp",
+      "/img/webp/volei.webp",
+      "/img/webp/futebol.webp",
+      "/img/webp/basket.webp"
+    ]
+  },
+  "arenas": {
+    "banner": "/img/webp/banner-arena.webp",
+    "installation": "/img/webp/section_instructions_arena.webp",
+    "impact": "/img/webp/banner-arena.webp",
+    "comparative": [
+      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==",
+      "/img/webp/banner-arena.webp"
+    ]
+  }
+}

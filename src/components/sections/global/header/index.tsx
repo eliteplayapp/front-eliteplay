@@ -12,20 +12,19 @@ import {
   Image
 } from '../../../../lib/libraries';
 import LanguageSelector from './LanguageSelector';
-import { getTranslation } from "../../../../lib/i18n";
 import { ButtonCTA } from "../../../elements/ButtonCTA";
-import type { StrapiHeader } from "../../../../types/strapi.global.model";
+import { getDictionary } from "@/src/services/content.service";
+import { formatLocalizedLink } from "@/src/lib/i18n";
 
 interface HeaderProps {
   logoUrl?: string | null;
   logoAlt?: string;
-  headerData?: StrapiHeader;
+  headerData?: any;
 }
 
 function HeaderContent({
   logoUrl,
   logoAlt = "ElitePlay",
-  headerData
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,9 +33,9 @@ function HeaderContent({
   const pathname = usePathname();
   const language = (searchParams.get("lang") || "es") as string;
 
-  const menuItems = headerData?.menu_header || [];
-  const ctaButton = headerData?.button_cta_header;
-
+  const dict = getDictionary(language);
+  const menuItems = dict.global.header.menu_header || [];
+  const ctaButton = dict.global.header.button_cta_header;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,9 +68,9 @@ function HeaderContent({
       <div className="max-w-[1920px] mx-auto px-6 md:px-24 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center z-50">
+          <Link href={formatLocalizedLink("/", language)} className="flex items-center z-50">
             <Image
-              src={logoUrl!}
+              src={logoUrl || "/img/logo-compact-dark.png"}
               alt={logoAlt}
               width={180}
               height={40}
@@ -83,18 +82,15 @@ function HeaderContent({
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => {
-              const label = getTranslation(item.text_button, language);
-              return (
-                <Link
-                  key={item.id}
-                  href={item.link!}
-                  className={`text-sm transition-all duration-300 ${pathname === item.link ? 'text-primary' : 'text-white hover:text-primary'}`}
-                >
-                  {label}
-                </Link>
-              );
-            })}
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={formatLocalizedLink(item.link!, language)}
+                className={`text-sm transition-all duration-300 ${pathname === item.link ? 'text-primary' : 'text-white hover:text-primary'}`}
+              >
+                {item.text_button}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA and Language Toggle - Desktop */}
@@ -103,8 +99,8 @@ function HeaderContent({
 
             {ctaButton && (
               <ButtonCTA
-                link={ctaButton.link || "/arenas"}
-                label={getTranslation(ctaButton.text_button, language)}
+                link={formatLocalizedLink(ctaButton.link || "/arenas", language)}
+                label={ctaButton.text_button}
                 variant="primary"
                 size="sm"
               />
@@ -115,8 +111,8 @@ function HeaderContent({
           <div className="md:hidden flex items-center gap-4 z-50">
             {ctaButton && (
               <ButtonCTA
-                link={ctaButton.link || "/arenas"}
-                label={getTranslation(ctaButton.text_button, language)}
+                link={formatLocalizedLink(ctaButton.link || "/arenas", language)}
+                label={ctaButton.text_button}
                 variant="primary"
                 size="sm"
                 className="!py-1.5 !px-3 !rounded-lg"
@@ -144,20 +140,16 @@ function HeaderContent({
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col items-center gap-8 p-8">
-              {menuItems.map((item) => {
-                const label = getTranslation(item.text_button, language);
-
-                return (
-                  <Link
-                    key={item.id}
-                    href={item.link!}
-                    onClick={closeMobileMenu}
-                    className={`text-xl transition-colors ${pathname === item.link ? 'text-primary' : 'text-white'}`}
-                  >
-                    {label}
-                  </Link>
-                );
-              })}
+              {menuItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={formatLocalizedLink(item.link!, language)}
+                  onClick={closeMobileMenu}
+                  className={`text-xl transition-colors ${pathname === item.link ? 'text-primary' : 'text-white'}`}
+                >
+                  {item.text_button}
+                </Link>
+              ))}
 
               {/* Language Selector - Mobile */}
               <LanguageSelector variant="mobile" />

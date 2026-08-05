@@ -1,0 +1,608 @@
+{
+  "global": {
+    "id": 1,
+    "logo_global": {
+      "id": 1,
+      "url": "",
+      "alternativeText": "Logo ElitePlay"
+    },
+    "redes_sociais": [
+      {
+        "link_instagram": "#",
+        "link_facebook": "#",
+        "link_twiter": "#",
+        "link_linkedin": "#"
+      }
+    ],
+    "header": {
+      "id": 1,
+      "menu_header": [
+        {
+          "id": 1,
+          "link": "/#how-it-works",
+          "text_button": "Cómo Funciona"
+        },
+        {
+          "id": 2,
+          "link": "/arenas",
+          "text_button": "Para Arenas"
+        }
+      ],
+      "button_cta_header": {
+        "id": 1,
+        "link": "/arenas",
+        "text_button": "Soy una Arena"
+      }
+    },
+    "footer": {
+      "id": 1,
+      "description": "Cada jugada, inmortal. Revolucionando la experiencia deportiva con cámaras inteligentes y replays instantáneos.",
+      "links": [
+        {
+          "id": 1,
+          "link": "/#how-it-works",
+          "title": "Cómo Funciona"
+        },
+        {
+          "id": 2,
+          "link": "/arenas",
+          "title": "Para Arenas"
+        }
+      ],
+      "contato": {
+        "id": 1,
+        "email": "contact@eliteplayapp.com",
+        "telefone": "+55 (11) 99999-9999"
+      }
+    }
+  },
+  "home": {
+    "id": 1,
+    "meta_description": "ElitePlay - Cada jugada, inmortal. Tus mejores momentos deportivos grabados y compartidos en segundos con cámaras inteligentes.",
+    "banner_home_page": {
+      "id": 1,
+      "description_banner": "No pierdas tu mejor jugada. Guárdala, revívela y compártela",
+      "imgs_banner": [
+        {
+          "id": 1,
+          "url": "",
+          "alternativeText": "Banner ElitePlay"
+        }
+      ],
+      "logo_banner": {
+        "id": 1,
+        "url": "",
+        "alternativeText": "Logo ElitePlay Banner"
+      }
+    },
+    "section_instructions": {
+      "id": 1,
+      "tooltip_one": "PASO A PASO",
+      "title": "CÓMO FUNCIONA ELITEPLAY",
+      "subtitle": "Mira lo simple que es transformar la experiencia de tu arena",
+      "tooltip_two": "¡Todo esto en menos de 30 segundos!",
+      "instructions": [
+        {
+          "id": 1,
+          "icon": "Trophy",
+          "title_card": "JUEGA TU PARTIDO",
+          "subtitle_card": "Entra a la cancha y juega con normalidad. Nuestras cámaras inteligentes lo graban todo.",
+          "img_instruction": {
+            "id": 1,
+            "url": ""
+          }
+        },
+        {
+          "id": 2,
+          "icon": "Video",
+          "title_card": "PIDE EL REPLAY",
+          "subtitle_card": "Presiona la botonera de la cancha o usa la app para guardar esa jugada increíble.",
+          "img_instruction": {
+            "id": 2,
+            "url": ""
+          }
+        },
+        {
+          "id": 3,
+          "icon": "Smartphone",
+          "title_card": "RECÍBELO EN TU CELULAR",
+          "subtitle_card": "El video se procesa al instante y se envía directo a tu teléfono.",
+          "img_instruction": {
+            "id": 3,
+            "url": ""
+          }
+        },
+        {
+          "id": 4,
+          "icon": "Share2",
+          "title_card": "COMPARTE EL MOMENTO",
+          "subtitle_card": "Guarda, revive y comparte cada punto. Publícalo en redes, muéstraselo a tus amigos y revive tus mejores jugadas.",
+          "img_instruction": {
+            "id": 4,
+            "url": ""
+          }
+        }
+      ]
+    },
+    "section_cta": {
+      "id": 1,
+      "icon_tab": "Smartphone",
+      "tooltip": "APP ELITEPLAY",
+      "title": "NUNCA MÁS TE PIERDAS UNA JUGADA INCREÍBLE",
+      "subtitle": "Toda tu mejor jugada, directo en tu bolsillo. La app ElitePlay convierte cada partido en una colección de momentos inolvidables: accede a tus mejores jugadas cuando quieras y compártelas fácilmente.",
+      "itens": [
+        {
+          "id": 1,
+          "icon": "Check",
+          "item": "Recibe el video en tu celular apenas termina la jugada"
+        },
+        {
+          "id": 2,
+          "icon": "Check",
+          "item": "Biblioteca completa: filtra por fecha, horario y cancha"
+        },
+        {
+          "id": 3,
+          "icon": "Check",
+          "item": "Descarga y comparte con un solo toque"
+        },
+        {
+          "id": 4,
+          "icon": "Check",
+          "item": "Historial de cortes recientes siempre a mano"
+        }
+      ],
+      "button": {
+        "id": 1,
+        "link": "#app",
+        "text_button": "Descargar la app"
+      },
+      "carousel_app": {
+        "id": 1,
+        "badge_live": "En vivo",
+        "label_app": "App ElitePlay",
+        "subtitle_app": "Explora las funciones de la app",
+        "footer_text": "Disponible para iOS y Android con sincronización instantánea.",
+        "imgs": [
+          {
+            "id": 1,
+            "url": "",
+            "alternativeText": "Reproductor de jugada en la app ElitePlay",
+            "title": "Tus Mejores Jugadas",
+            "desc": "Captura tus mejores jugadas de pádel",
+            "icon": "Play"
+          },
+          {
+            "id": 2,
+            "url": "",
+            "alternativeText": "Lista de cortes recientes en la app ElitePlay",
+            "title": "Revive Cada Punto",
+            "desc": "Guarda, revive y comparte cada punto",
+            "icon": "Layers"
+          },
+          {
+            "id": 3,
+            "url": "",
+            "alternativeText": "Historial de jugadas por cancha en la app ElitePlay",
+            "title": "Momentos Inolvidables",
+            "desc": "Convierte cada partido en una colección de momentos inolvidables",
+            "icon": "History"
+          },
+          {
+            "id": 4,
+            "url": "",
+            "alternativeText": "Acceso a jugadas destacadas en la app ElitePlay",
+            "title": "Acceso Total",
+            "desc": "Accede a tus mejores jugadas cuando quieras y compártelas fácilmente",
+            "icon": "Smartphone"
+          },
+          {
+            "id": 5,
+            "url": "",
+            "alternativeText": "Descarga la app ElitePlay",
+            "title": "Descarga Ahora",
+            "desc": "Descarga ahora y no pierdas ningún punto",
+            "icon": "Download"
+          }
+        ]
+      }
+    },
+    "section_sports": {
+      "id": 1,
+      "tooltip": "DEPORTES",
+      "title": "PARA TODOS LOS DEPORTES DE ARENA",
+      "sports": [
+        {
+          "id": 1,
+          "icon_tab": "Target",
+          "tooltip": "PÁDEL",
+          "title": "PÁDEL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura tus mejores jugadas de pádel: smashes, salidas de pared y match points en tiempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cámaras panorámicas de alta resolución"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay rápido después de puntos clave"
+            }
+          ],
+          "video": {
+            "id": 1,
+            "link": "",
+            "conteudo": {
+              "id": 1,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 2,
+          "icon_tab": "Baseline",
+          "tooltip": "TENIS",
+          "title": "TENIS DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada saque, volea y match point con cámaras de alta precisión en tiempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cámaras de alta definición cubriendo toda la cancha"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de los puntos más emocionantes"
+            }
+          ],
+          "video": {
+            "id": 2,
+            "link": "",
+            "conteudo": {
+              "id": 2,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 3,
+          "icon_tab": "Volleyball",
+          "tooltip": "VÓLEIBOL",
+          "title": "VÓLEIBOL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada remate, bloqueo y ace en tiempo real con calidad profesional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Grabación de alta definición para cada rally"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de los puntos más destacados"
+            }
+          ],
+          "video": {
+            "id": 3,
+            "link": "",
+            "conteudo": {
+              "id": 3,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 4,
+          "icon_tab": "Footprints",
+          "tooltip": "FÚTBOL",
+          "title": "FÚTBOL DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada gol, asistencia y jugada clave de tus partidos de fútbol con cámaras de alta precisión en tiempo real.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Cobertura total del campo con cámaras panorámicas"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay instantáneo de goles y jugadas destacadas"
+            }
+          ],
+          "video": {
+            "id": 4,
+            "link": "",
+            "conteudo": {
+              "id": 4,
+              "url": ""
+            }
+          }
+        },
+        {
+          "id": 5,
+          "icon_tab": "CircleDot",
+          "tooltip": "BÁSQUET",
+          "title": "BÁSQUET DE ALTO RENDIMIENTO",
+          "subtitle": "Captura cada bandeja, volcada y triple con precisión de transmisión profesional.",
+          "itens": [
+            {
+              "id": 1,
+              "icon": "Check",
+              "item": "Múltiples ángulos para cubrir toda la cancha"
+            },
+            {
+              "id": 2,
+              "icon": "Check",
+              "item": "Replay inmediato de las jugadas más espectaculares"
+            }
+          ],
+          "video": {
+            "id": 5,
+            "link": "",
+            "conteudo": {
+              "id": 5,
+              "url": ""
+            }
+          }
+        }
+      ]
+    },
+    "section_cta_simple": {
+      "id": 1,
+      "tooltip": "PRINCIPALES DIFERENCIALES",
+      "title": "POR QUÉ LAS ARENAS ELIGEN ELITEPLAY",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "TrendingUp",
+          "icon_tooltip": "INGRESOS",
+          "text_tooltip_one": "FUNCIÓN EXCLUSIVA",
+          "title_card": "Aumenta tus Ingresos",
+          "subtitle_card": "Genera nuevas fuentes de ingresos con suscripciones y medios dentro de la arena."
+        },
+        {
+          "id": 2,
+          "icon": "Users",
+          "icon_tooltip": "FIDELIZACIÓN",
+          "text_tooltip_one": "ENGAGEMENT",
+          "title_card": "Fideliza a tus Jugadores",
+          "subtitle_card": "Los jugadores vuelven más seguido porque quieren revivir sus jugadas."
+        },
+        {
+          "id": 3,
+          "icon": "Zap",
+          "icon_tooltip": "TECNOLOGÍA",
+          "text_tooltip_one": "AUTOMATIZACIÓN",
+          "title_card": "100% Automatizado",
+          "subtitle_card": "No necesita operador. El sistema funciona de forma autónoma las 24 horas, los 7 días de la semana."
+        }
+      ],
+      "button_section_cta_simple": {
+        "id": 1,
+        "link": "/arenas",
+        "text_button": "Quiero para mi cancha"
+      }
+    },
+    "section_download_app": {
+      "id": 1,
+      "title": "DESCARGA LA APP ELITEPLAY",
+      "subtitle": "Disponible para iOS y Android. Descarga ahora y no pierdas ningún punto.",
+      "link_google_play": "https://play.google.com/store/apps/details?id=com.eliteplayapp&pcampaignid=web_share",
+      "link_apple_store": "https://apps.apple.com/br/app/elite-play/id6774013843"
+    }
+  },
+  "arenas": {
+    "id": 1,
+    "meta_description": "ElitePlay para Arenas - Convierte tu espacio deportivo en un hub tecnológico con cámaras de replay instantáneo.",
+    "banner": {
+      "id": 1,
+      "tooltip_one": "PARA DUEÑOS Y GERENTES",
+      "title": "LLEVA TU CANCHA AL SIGUIENTE NIVEL",
+      "subtitle": "Aumenta tus ingresos, fideliza a tus clientes y destácate de la competencia con el sistema de replay N°1.",
+      "image": {
+        "id": 1,
+        "url": "",
+        "alternativeText": "Arena con ElitePlay"
+      },
+      "button_cta_banner": {
+        "id": 1,
+        "link": "#lead-form",
+        "text_button": "Solicitar Propuesta"
+      },
+      "tooltip_two": "Sin costo inicial de instalación"
+    },
+    "section_installation": {
+      "id": 1,
+      "tooltip": "PROCESO SIMPLE",
+      "title": "INSTALACIÓN EN 4 PASOS",
+      "subtitle": "Nuestro equipo se encarga de todo para que empieces rápido.",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "MapPin",
+          "title": "1. Inspección Técnica",
+          "subtitle": "Revisamos tu arena para encontrar la ubicación óptima de las cámaras."
+        },
+        {
+          "id": 2,
+          "icon": "Wrench",
+          "title": "2. Instalación del Kit",
+          "subtitle": "Instalamos cámaras HD y botoneras de activación rápida."
+        },
+        {
+          "id": 3,
+          "icon": "Cpu",
+          "title": "3. Configuración",
+          "subtitle": "Conectamos el sistema a nuestra nube para el procesamiento automatizado."
+        },
+        {
+          "id": 4,
+          "icon": "CheckCircle",
+          "title": "4. Listo para Usar",
+          "subtitle": "Tu cancha ya puede ofrecer replays instantáneos a los jugadores."
+        }
+      ],
+      "image": {
+        "id": 1,
+        "url": "",
+        "alternativeText": "Instalación"
+      }
+    },
+    "section_comparative": {
+      "id": 1,
+      "tooltip": "COMPARATIVA",
+      "title": "POR QUÉ SER PARTNER DE ELITEPLAY",
+      "cards": [
+        {
+          "id": 1,
+          "image": {
+            "id": 1,
+            "url": ""
+          },
+          "title": "Cancha Tradicional",
+          "itens": [
+            {
+              "id": 1,
+              "item": "Sin diferenciación tecnológica"
+            },
+            {
+              "id": 2,
+              "item": "Jugadores graban con trípode de celular"
+            },
+            {
+              "id": 3,
+              "item": "Menor engagement en redes sociales"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "image": {
+            "id": 2,
+            "url": ""
+          },
+          "title": "Cancha ElitePlay",
+          "itens": [
+            {
+              "id": 1,
+              "item": "Cámaras profesionales de alta precisión"
+            },
+            {
+              "id": 2,
+              "item": "Replay en segundos, activado por botonera"
+            },
+            {
+              "id": 3,
+              "item": "Marketing orgánico: cada jugada compartida es publicidad gratuita"
+            }
+          ]
+        }
+      ]
+    },
+    "section_differential": {
+      "id": 1,
+      "tooltip": "FUNCIONES EXCLUSIVAS",
+      "title": "TECNOLOGÍA PENSADA PARA CANCHAS",
+      "cards": [
+        {
+          "id": 1,
+          "icon": "Shield",
+          "title": "Equipo Duradero",
+          "subtitle": "Hardware resistente al clima, al sol y al polvo."
+        },
+        {
+          "id": 2,
+          "icon": "Wifi",
+          "title": "Conexión Estable",
+          "subtitle": "Transferencia de replays rápida y segura directo a la nube."
+        },
+        {
+          "id": 3,
+          "icon": "BarChart3",
+          "title": "Panel de Gestión",
+          "subtitle": "Sigue las métricas de uso y el engagement de los jugadores en tu cancha."
+        }
+      ]
+    },
+    "section_impact": {
+      "id": 1,
+      "image": {
+        "id": 1,
+        "url": "",
+        "alternativeText": "Impacto ElitePlay"
+      },
+      "tooltip": "RESULTADOS COMPROBADOS",
+      "title": "IMPACTO REVOLUCIONARIO EN TU CANCHA",
+      "subtitle": "Métricas reales de canchas partner que usan ElitePlay.",
+      "button_section_impact": {
+        "id": 1,
+        "link": "#lead-form",
+        "text_button": "Quiero estos resultados"
+      },
+      "cards": [
+        {
+          "id": 1,
+          "metric": "+35%",
+          "category": "HORAS RESERVADAS",
+          "outcome": "Aumento promedio en las reservas semanales de cancha"
+        },
+        {
+          "id": 2,
+          "metric": "+80%",
+          "category": "ENGAGEMENT EN REDES",
+          "outcome": "Publicaciones de jugadores etiquetando la cancha"
+        },
+        {
+          "id": 3,
+          "metric": "94%",
+          "category": "RETENCIÓN DE CLIENTES",
+          "outcome": "Los jugadores prefieren canchas equipadas con ElitePlay"
+        }
+      ]
+    },
+    "section_partners": {
+      "id": 1,
+      "tooltip": "SÉ PARTNER",
+      "title": "¿LISTO PARA ELEVAR TU CANCHA?",
+      "subtitle": "Completa el formulario y nuestro equipo te contactará dentro de las 24 horas.",
+      "itens": [
+        {
+          "id": 1,
+          "icon": "Check",
+          "item": "Instalación sin complicaciones",
+          "subitem": "Equipo especializado se encarga de todo el montaje."
+        },
+        {
+          "id": 2,
+          "icon": "Check",
+          "item": "Soporte 24/7",
+          "subitem": "Mantenimiento y asistencia técnica continua."
+        }
+      ]
+    },
+    "section_faq": {
+      "id": 1,
+      "title": "PREGUNTAS FRECUENTES",
+      "subtitle": "Resuelve tus dudas sobre cómo funciona ElitePlay en canchas deportivas.",
+      "itens": [
+        {
+          "id": 1,
+          "question": "¿Qué infraestructura se necesita para instalar en mi cancha?",
+          "answer": "Solo un enchufe eléctrico y conexión a internet. Todo el resto del equipo lo provee e instala ElitePlay."
+        },
+        {
+          "id": 2,
+          "question": "¿Cuánto tiempo demora la instalación?",
+          "answer": "La instalación estándar demora aproximadamente 1 día por cancha, sin interrumpir los partidos programados."
+        },
+        {
+          "id": 3,
+          "question": "¿Cómo acceden los jugadores a sus videos?",
+          "answer": "Los jugadores descargan la app ElitePlay, se registran y encuentran sus videos guardados, filtrados por fecha, horario y cancha."
+        }
+      ]
+    }
+  }
+}

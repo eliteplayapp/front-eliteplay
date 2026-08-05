@@ -1,12 +1,15 @@
 /**
  * Interface para textos multi-idioma (Padrão ElitePlay)
+ * Agora aceita string direta (JSONs por idioma) ou objeto multi-idioma (Strapi legado)
  */
-export interface InputLanguages {
-  id: number;
+export interface InputLanguagesObject {
+  id?: number;
   language_pt: string;
   language_es?: string | null;
   language_en?: string | null;
 }
+
+export type InputLanguages = string | InputLanguagesObject;
 
 /**
  * Formatos de mídia do Strapi
@@ -127,6 +130,30 @@ export interface SectionInstructions {
 }
 
 /**
+ * Imagem de carrossel do app
+ */
+export interface CarouselAppImage {
+  id: number;
+  url: string;
+  alternativeText?: string | null;
+  title?: InputLanguages;
+  desc?: InputLanguages;
+  icon?: string;
+}
+
+/**
+ * Carrossel de screenshots do app
+ */
+export interface CarouselApp {
+  id: number;
+  badge_live?: InputLanguages;
+  label_app?: InputLanguages;
+  subtitle_app?: InputLanguages;
+  footer_text?: InputLanguages;
+  imgs: CarouselAppImage[];
+}
+
+/**
  * Seção de CTA Padrão (Cta_one)
  */
 export interface SectionCtaOne {
@@ -137,7 +164,8 @@ export interface SectionCtaOne {
   subtitle: InputLanguages;
   itens: ItemCta[];
   button?: ButtonInfo;
-  video: VideoItem;
+  video?: VideoItem | null;
+  carousel_app?: CarouselApp | null;
 }
 
 /**

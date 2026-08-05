@@ -4,63 +4,20 @@ import {
   motion,
   Trophy
 } from '../../../lib/libraries';
-import { getTranslation } from '../../../lib/i18n';
 import { DynamicIcon } from '../../elements/DynamicIcon';
 
 
 const sportsData = [
-  {
-    icon: "Trophy",
-    sport: {
-      language_pt: "Futebol",
-      language_es: "Fútbol",
-      language_en: "Football"
-    }
-  },
-  {
-    icon: "Target",
-    sport: {
-      language_pt: "Padel",
-      language_es: "Pádel",
-      language_en: "Padel"
-    }
-  },
-  {
-    icon: "Activity",
-    sport: {
-      language_pt: "Tênis",
-      language_es: "Tenis",
-      language_en: "Tennis"
-    }
-  },
-  {
-    icon: "Wind",
-    sport: {
-      language_pt: "Beach Tennis",
-      language_es: "Tenis de Playa",
-      language_en: "Beach Tennis"
-    }
-  },
-  {
-    icon: "Volleyball",
-    sport: {
-      language_pt: "Vôlei",
-      language_es: "Vóleibol",
-      language_en: "Volleyball"
-    }
-  },
-  {
-    icon: "CircleDot",
-    sport: {
-      language_pt: "Basquete",
-      language_es: "Baloncesto",
-      language_en: "Basketball"
-    }
-  },
+  { icon: "Trophy",    sport: { "pt-br": "Futebol",      "es": "Fútbol",        "en": "Football" } },
+  { icon: "Target",    sport: { "pt-br": "Padel",        "es": "Pádel",         "en": "Padel" } },
+  { icon: "Activity",  sport: { "pt-br": "Tênis",        "es": "Tenis",         "en": "Tennis" } },
+  { icon: "Wind",      sport: { "pt-br": "Beach Tennis", "es": "Tenis de Playa","en": "Beach Tennis" } },
+  { icon: "Volleyball",sport: { "pt-br": "Vôlei",        "es": "Vóleibol",      "en": "Volleyball" } },
+  { icon: "CircleDot", sport: { "pt-br": "Basquete",     "es": "Baloncesto",    "en": "Basketball" } },
 ];
 
-export default function SportsCarousel({ language }: { language: string }) {
-  // Dulicando os itens para o efeito de scroll infinito
+export default function SportsCarousel() {
+  // Duplicando os itens para o efeito de scroll infinito
   const duplicatedSports = [...sportsData, ...sportsData];
 
   return (
@@ -85,10 +42,7 @@ export default function SportsCarousel({ language }: { language: string }) {
           }}
         >
           {duplicatedSports.map((item, index) => {
-            const sportName = getTranslation(
-              { id: index, ...item.sport },
-              language
-            );
+            const sportName = item.sport["es"];
 
             return (
               <div

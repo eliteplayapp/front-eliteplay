@@ -2,20 +2,21 @@
 
 import { motion, Image, Sparkles } from "../../lib/libraries";
 import { InstructionItem } from "../../types/strapi.home.model";
-import { getTranslation } from "../../lib/i18n";
-import { getStrapiMedia } from "../../services/strapi.service";
+import { getMediaUrl } from "../../services/content.service";
 import { DynamicIcon } from "./DynamicIcon";
+
+import imagesData from "../../data/images.json";
 
 interface HowItWorksCardProps {
   data: InstructionItem;
-  language: string;
   index: number;
 }
 
-export function HowItWorksCard({ data, language, index }: HowItWorksCardProps) {
-  const title = getTranslation(data.title_card, language);
-  const description = getTranslation(data.subtitle_card, language);
-  const imageUrl = getStrapiMedia(data.img_instruction.url) || "";
+export function HowItWorksCard({ data, index }: HowItWorksCardProps) {
+  const title = typeof data.title_card === 'string' ? data.title_card : (data.title_card as any)?.language_pt || "";
+  const description = typeof data.subtitle_card === 'string' ? data.subtitle_card : (data.subtitle_card as any)?.language_pt || "";
+  const defaultImg = imagesData.home.how_it_works[index % imagesData.home.how_it_works.length] || "/img/passo1.jpg";
+  const imageUrl = getMediaUrl(data.img_instruction?.url) || defaultImg;
   const stepNumber = (index + 1).toString().padStart(2, '0');
 
   return (
